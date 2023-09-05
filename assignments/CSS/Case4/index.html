@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <title>case4</title>
+    <style>
+        main>section{
+            position: relative;
+            height: 100vh;
+        }
+        main>section>div{
+            position: sticky;
+            height: 10vh;
+            background-color: red;
+            top: 0;
+        }
+        main>section>section{
+            height: 90vh;
+            background-color: white;
+        }
+        h1{   
+            margin: 0;
+            font-size: 100px;
+            text-align: center;
+            padding-top: 40vh;
+        }
+        h3{
+            position: relative;
+            margin: 0;
+            color: white;
+            font-size: 30px;
+            margin-left: 10px;
+            top: 30%;
+        }
+
+        main>section:nth-child(2)>section{
+            background-color: lightblue;
+        }  
+        main>section:nth-child(3)>section{
+            background-color: rgb(52, 59, 59);
+        }  
+        main>section:nth-child(4)>section{
+            background-color: rgb(226, 38, 38);
+        } 
+         
+        main>section:nth-child(2)>div{
+            background-color: blue;
+        }
+        main>section:nth-child(3)>div{
+            background-color: rgb(36, 38, 41);
+        }
+        main>section:nth-child(4)>div{
+            background-color: rgb(82, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <h3>Card 1</h3>
+            </div>
+            <section>
+                <h1>Hello</h1>
+            </section>
+        </section>
+        <section>
+            <div>
+                <h3>Card 2</h3>
+            </div>
+            <section>
+                <h1>How</h1>
+            </section>
+        </section>
+
+        <section>
+            <div>
+                <h3>Card 3</h3>
+            </div>
+            <section>
+                <h1>Are</h1>
+            </section>
+        </section>
+        <section>
+            <div>
+                <h3>Card 4</h3>
+            </div>
+            <section>
+                <h1>You?</h1>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

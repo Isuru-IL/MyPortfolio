@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Case3</title>
+    <style>
+        body>section{
+            position: relative;
+            height: 100vh;
+        }
+
+        body>div{
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            border: 25px solid gray;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        body>div>div{ 
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border: 25px solid red;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        body>section:nth-child(1)>div{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        body>section:nth-child(2)>div{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: lightblue;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        body>section:nth-child(3)>div{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: lightcoral;
+            border-radius: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+
+        body>section:nth-child(3)>div>h1{ 
+            top: 100px;
+        }
+
+        h1{  
+            position: relative;
+            color: white;
+            text-align: center;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Hello</h1>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h1>Welcome to</h1>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h1>Institute<br>of<br>Software<br>Ingineering</h1>
+        </div>
+    </section>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>
