@@ -8,94 +8,76 @@
     <style>
         main{
             font-size: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
-        main>div{
+        /* main>div{
             position: relative;
             display: inline-block;
             width: 25%;
             height: 33.3vh;
-        }
-        main>div:first-child{
-            width: 50%;
-            background-color: red;
+        } */
+
+        main>div:nth-child(1){
+            grid-row: 1/2;
+            grid-column: 1/3;
+            background: url(assets/img08.jpg);
+            background-size: cover;
+            background-position: center;
         }
         main>div:nth-child(2){
-            background-color: green;
+            background: url(assets/img03.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(3){
-            position: absolute;
-            height: 99.9vh;
-            background-color: orangered;
+        main>div:nth-child(4){
+            background: url(assets/img06.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(4){ 
-            background-color: purple;
-            position: absolute;
-            margin: auto;
-            left: 0;
-            top: 33.3vh;
+        main>div:nth-child(3){ 
+            grid-row: 1/4;
+            grid-column: 4/5;
+            background: url(assets/img01.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(5){ 
-            background-color: palevioletred;
-            position: absolute;
-            margin: auto;
-            left: 25%;
-            top: 33.3vh;
+        main>div:nth-child(5){
+            background: url(assets/img02.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(6){ 
-            background-color: blue;
-            position: absolute;
-            margin: auto;
-            left: 50%;
-            top: 33.3vh;
+        main>div:nth-child(6){
+            background: url(assets/img05.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(7){ 
-            background-color: brown;
-            position: absolute;
-            margin: auto;
-            left: 0;
-            top: 66.6vh;
+        main>div:nth-child(7){
+            background: url(assets/img04.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        main>div:nth-child(8){ 
-            background-color: darkblue;
-            position: absolute;
-            margin: auto;
-            left: 25%;
-            top: 66.6vh;
-            width: 50%;
+        main>div:nth-child(8){
+            grid-row: 3/4;
+            grid-column: 2/4;
+            background: url(assets/img07.jpg);
+            background-size: cover;
+            background-position: center;
         }
-        img{
-            width: 100%;
-            height: 100%;
-        }
-
     </style>
 </head>
 <body>
     <main>
-        <div>
-            <img src="assets/img08.jpg" alt="img08">
-        </div>
-        <div>
-            <img src="assets/img03.jpg" alt="img03">
-        </div>
-        <div>
-            <img src="assets/img01.jpg" alt="img01">
-        </div>
-        <div>
-            <img src="assets/img06.jpg" alt="img06">
-        </div>
-        <div>
-            <img src="assets/img02.jpg" alt="img02">
-        </div>
-        <div>
-            <img src="assets/img05.jpg" alt="img05">
-        </div>
-        <div>
-            <img src="assets/img04.jpg" alt="img04">
-        </div>
-        <div>
-            <img src="assets/img07.jpg" alt="img07">
-        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div> </div>
+        <div></div>
+        <div></div>
+        <div></div>
     </main>
 </body>
 </html>
