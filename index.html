@@ -3,16 +3,193 @@
 <head>
     <title>My Portfolio</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png">
     <meta name="keyword" content="ISURU, LAKSHAN, HTML, APPS, SE">
     <meta name="description" content="????">
     <meta name="owner" content="Isuru">
     <meta name="author" content="Lakshan">
     <meta name="theme-color" content="green">
+    <link rel="stylesheet" href="assests/normalize.css">
+    <link rel="stylesheet" href="assests/resources/fontawesome/css/all.css">
 
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Poppins' ,sans-serif;
+        }
+        header{
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            box-shadow: 0 -1px 8px 2px #1c1717e8;
+            z-index: 3;
+        }
+
+        header>div{
+            display: inline-block;
+            margin-left: 6vw;
+        }
+
+        header>nav{
+            display: inline-block;
+            position: absolute;
+            width: max-content;
+            right: 6vw;
+            top: 10px;
+        }
+        header>nav>menu>li{
+            display: inline-block;
+            cursor: pointer;
+            margin-right: 50px;
+            font-size: 16px;
+        }
+        header>nav>menu>li>a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        header>nav>menu>li>a:hover{
+            color: #0056B3;
+        }
+
+        /* home page  #1c1717e8*/
+        main>section#home_page{
+            display: inline-block;
+            /* background-color:rgb(196, 252, 252); */
+            height: 100vh;
+            width: 100%;
+        }
+        main>section#home_page h1,h4{
+            margin: 0;
+        }
+        main>section#home_page h1{
+            display: inline-block;
+            font-size: 60px; 
+        }
+        main>section#home_page>section:first-child{
+            display: inline-block;
+            position: relative;
+            /* background-color: darkgray; */
+            width: 40vw;
+            right: 0px;
+            left: 165px;
+            bottom: 0px;
+            top: 300px;
+
+        }
+        main>section#home_page>section:first-child>hgroup>h1:nth-child(2){
+            color: #003E80;
+            margin-left: 10px;
+        }
+        main>section#home_page>section:first-child>hgroup>h4{
+            padding-top: 10px;
+        }
+
+
+        main>section#home_page>section>nav#home_social_links{
+            margin-top: 80px;
+        }
+        main>section#home_page>section>nav#home_social_links>div{
+            position: relative;
+            display: inline-block;
+            background-color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 10%;
+            margin-right: 15px;
+            box-shadow: 4px 4px 10px 0px #312c2ce8;
+        }
+        #home_social_links>div>a{  
+            position: absolute;
+            color: black;
+            font-size: 30px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: max-content;
+            height: max-content;
+            margin: auto;
+        }
+        
+
+        main>section#home_page>section>button{
+            margin-top: 40px;
+            margin-right: 50px;
+            width: 150px;
+            height: 40px;
+            border-radius: 1rem;
+            border-width: 0;
+            color: white;
+            background-color: #0056B3;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* about me */
+        main>section#about_me{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            /* background-color:rgb(196, 252, 252); */
+            height: 70vh;
+            width: 100%;
+        }
+        main>section#about_me>div{
+            position: relative;
+            display: inline-block;
+            width: max-content;
+            height: max-content;
+            /* background-color: azure; */
+            border-radius: 1rem;
+        }
+        main>section#about_me>div>img{
+            border-radius: 4rem;
+        }
+        
+        main>section#about_me>section:nth-child(2){
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: max-content;
+            /* background-color: bisque; */
+
+        }
+        main>section#about_me>section:nth-child(2)>hgroup{
+            align-self: center;
+            margin-bottom: 30px;
+        }
+        main>section#about_me>section:nth-child(2)>hgroup>h1{
+            font-size: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        main>section#about_me>section:nth-child(2)>article{
+            align-self: center;
+        }
+        main>section#about_me>section:nth-child(2)>button{
+            width: 150px;
+            height: 40px;
+            border-radius: 1rem;
+            border-width: 0;
+            color: white;
+            background-color: #0056B3;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 50px;
+            margin-left: 60px;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <div>
+            <h2>IsuruLak</h2>
+        </div>
         <nav>
             <menu>
                 <li><a href="">Home</a></li>
@@ -20,6 +197,7 @@
                 <li><a href="">Services</a></li>
                 <li><a href="">Skills</a></li>
                 <li><a href="">Projects</a></li>
+                <li><a href="">assignment</a></li>
                 <li><a href="">Gallery</a></li>
                 <li><a href="">Contact</a></li>
             </menu>
@@ -28,43 +206,58 @@
 
     <main>
         <!-- home Page -->
-        <section>`
+        <section id="home_page">
             <section>
                 <hgroup>
-                    <h1>Hi, I'm Isuru Lakshan</h1>
+                    <h1>Hi, I'm</h1>
+                    <h1>Isuru Lakshan</h1>
                     <h4>a software engineering undergraduate from Sri Lanka</h4>
                 </hgroup>
-                <nav>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <nav id="home_social_links">
+                    <div>
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
                 </nav>
+                <button>Hire me</button>
+                <button>Download CV</button>
             </section>
             <div></div>
 
         </section>
 
         <!-- about me -->
-        <section>
-            <hgroup>
-                <h6>Who I Am?</h6>
-                <h1>About me</h1>
-            </hgroup>
+        <section id="about_me">
             <div>
-                <img width="300" src="assests/resources/images/about-me.jpeg" alt="image not found">
+                <img width="450" src="assests/resources/images/about-me.jpeg" alt="image not found">
             </div>
-            <article>
-                <p>    Hello, I am Isuru Lakshan.  a dedicated software engineering<br> 
-                    student currently pursuing my studies at IJSE . As a passionate<br> 
-                    learner, I am actively acquiring the skills and knowledge necessary<br> 
-                    to excel in the field of software engineering.<br><br>
-                    
-                         I also have knowledge of web development ,UI/UX designing,<br> 
-                    database management and frameworks,...etc.I'm passionate about<br>
-                    using my skills to solve problems and create innovative solutions.</p>
-            </article>
+            <section>
+                <hgroup>
+                    <h1>About me</h1>
+                </hgroup>
+                <article>
+                    <p>    Hello, I am Isuru Lakshan.  a dedicated software engineering<br> 
+                        student currently pursuing my studies at IJSE . As a passionate<br> 
+                        learner, I am actively acquiring the skills and knowledge necessary<br> 
+                        to excel in the field of software engineering.<br><br>
+                        
+                             I also have knowledge of web development ,UI/UX designing,<br> 
+                        database management and frameworks,...etc.I'm passionate about<br>
+                        using my skills to solve problems and create innovative solutions.</p>
+                </article>
+                <button>Download CV</button>
+            </section>
         </section>
 
         <!-- my services -->
