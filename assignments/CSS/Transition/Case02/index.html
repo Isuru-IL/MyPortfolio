@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        body>div{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            border-radius: 100%;
+            background-color: gray;
+            border:20px solid lightpink ;
+            border-top: 20px solid brown;
+        }
+        body>div:hover{
+            transform: rotate(360deg);
+            transition: 2s all;
+
+        }
+        body>div>h1{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+            font-size: 50px;
+        }
+        body>div:hover h1{
+            transform: rotate(-360deg);
+            transition: 2s all;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>RWAD</h1>
+    </div>
+</body>
+</html>
