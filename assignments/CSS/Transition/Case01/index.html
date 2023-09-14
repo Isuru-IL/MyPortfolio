@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Transition Case01</title>
+    <style>
+        body>div{
+            position: relative;
+            transition-duration: 2s;
+            width: 300px;
+            height: 100px;
+            left: -220px;
+            background-color: palevioletred;
+            margin-top: 50px;
+            border-radius: 2rem;
+        }
+        body>div:hover{
+            transition-duration: 2s;
+            left: -30px;
+        }
+
+        body>div>h1{
+            position: absolute;
+            font-size: 30px;
+            color: white;
+            width: max-content;
+            height: max-content;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            padding-left: 50px;
+        }
+        body>div>i:nth-child(2){
+            position: absolute;
+            font-size: 40px;
+            color: white;
+            width: max-content;
+            height: max-content;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>menu one</h1>
+        <i class="fa fa-file"></i>
+    </div>
+    <div>
+        <h1>menu two</h1>
+        <i class="fa fa-file"></i>
+    </div>
+    <div>
+        <h1>menu three</h1>
+        <i class="fa fa-file"></i>
+    </div>
+    <div>
+        <h1>menu four</h1>
+        <i class="fa fa-file"></i>
+    </div>
+    <div>
+        <h1>menu five</h1>
+        <i class="fa fa-file"></i>
+    </div>
+</body>
+</html>
