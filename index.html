@@ -132,17 +132,20 @@
         main>section#about_me{
             position: relative;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 60px;
             /* background-color:rgb(196, 252, 252); */
-            height: 70vh;
+            /* height: 70vh; */
             width: 100%;
+            margin-top: 50px;
+            margin-bottom: 100px;
         }
         main>section#about_me>div{
             position: relative;
             display: inline-block;
-            width: max-content;
+            width: 25%;
             height: max-content;
             /* background-color: azure; */
             border-radius: 1rem;
@@ -189,7 +192,7 @@
         main>section#my_services{
             position: relative;
             /* background-color:rgb(196, 252, 252); */
-            height: 70vh;
+            height: max-content;
             width: 100%;
         }
         main>section#my_services h1, h3{
@@ -205,15 +208,23 @@
         main>section#my_services>section{
             position: relative;
             display: flex;
-            height: 60vh;
+            flex-wrap: wrap;
+            height: max-content;
             align-items: center;
             justify-content: center;
+            /* background-color: bisque; */
+            margin-top: 30px;
+            margin-bottom: 70px;
         }
         main>section#my_services>section>section#service_types{
             position: relative;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 60px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            /* background-color: burlywood; */
         }
 
         main>section#my_services>section>section#service_types>div{
@@ -249,26 +260,28 @@
 
         /* Skills //////////////////////////////////////////////////////// */
         main>section#skills{
+            /* background-color: aqua; */
             position: relative;
-            height: 60vh;
+            height: 80vh;
             width: 100%;
         }
         main>section#skills h1,h4{
             margin: 0;
         }
-        main>section#skills>h1{
+        main>section#skills>section>h1{
             margin-left: 10vw;
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
-        main>section#skills>h4{
+        main>section#skills>section>h4{
             text-align: center;
             padding: 25px;
             font-size: 30px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
 
-        main>section#skills>section{
+        main>section#skills>section#skill_icons{
+            /* background-color: bisque; */
             position: absolute;
             display: flex;
             flex-direction: row;
@@ -280,11 +293,11 @@
             left: 0;
             right: 0;
         }        
-        main>section#skills>section>div>i{
+        main>section#skills>section#skill_icons>div>i{
             font-size: 50px;
         }
 
-        main>section#skills>section>section{
+        main>section#skills>section#skill_icons>section{
             /* background-color: burlywood; */
             position: relative;
             display: grid;
@@ -299,7 +312,7 @@
             height: 40vh;
             width: 70%;
         }
-        main>section#skills>section>section>div{
+        main>section#skills>section#skill_icons>section>div{
             /* width: 120px;
             height: 120px; */
             width:max-content;
@@ -307,13 +320,126 @@
             margin-left: 40px;
         }
         
-        /* images */
-        /* main>section#skills>section>section>div:nth-child(3)>img{
+        /* images  */
+        main>section#skills>section>section>div:nth-child(3)>img{
             width: 110px;
         }
         main>section#skills>section>section>div:nth-child(8)>img{
             width: 110px;
-        } */
+        }
+        main>section#skills>section>section>div:nth-child(2)>img{
+            width: 95px;
+        }
+        main>section#skills>section>section>div:nth-child(4)>img{
+            width: 95px;
+        }
+        main>section#skills>section>section>div:nth-child(7)>img{
+            width: 95px;
+        }
+        main>section#skills>section>section>div:nth-child(9)>img{
+            width: 95px;
+        }
+        main>section#skills>section>section>div:nth-child(1)>img{
+            width: 80px;
+        }
+        main>section#skills>section>section>div:nth-child(5)>img{
+            width: 80px;
+        }
+        main>section#skills>section>section>div:nth-child(6)>img{
+            width: 80px;
+        }
+        main>section#skills>section>section>div:nth-child(10)>img{
+            width: 80px;
+        }
+
+
+        /* education ////////////////////////////////////////////////////// */
+        main>section#education{
+            /* background-color: aqua; */
+            position: relative;
+            height: max-content;
+            width: 100%;
+        }
+        main>section#education h1, h5, h3{
+            margin: 0;
+        }
+        main>section#education p, h5, h3{
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        main>section#education>section#title>h1{
+            text-align: center;
+            font-size: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        div#stages>h3{
+            font-size: 18px;
+        }
+
+        main>section#education>section#edu_content{
+            /* background-color:aquamarine; */
+            width: 100%;
+            margin-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        main>section#education>div{
+            position: absolute;
+            width: 10px;
+            height: 500px;
+            background-color: #0056B3;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        main>section#education>section#edu_content>section>div#line{
+            width: 50px;
+            height: 10px;
+            background-color: #0056B3;
+            top: 0;
+            bottom: 0;
+      
+        }
+        main>section#education>section#edu_content>section>div#curcle{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #0056B3;
+        }
+        main>section#education>section#edu_content>section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: azure; */
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        main>section#education>section#edu_content>section>div#stages{
+            /* background-color: bisque; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 420px;
+            height: 145px;
+            box-shadow: 6px 6px 20px 0px #0056b380;
+            border-radius: 2rem;
+        }
+        main>section#education>section#edu_content>section:nth-child(1){      
+            position: relative;
+            margin-left: 472px; 
+        }
+        main>section#education>section#edu_content>section:nth-child(3){
+            position: relative;
+            margin-left: 472px;
+        }
+        main>section#education>section#edu_content>section:nth-child(2){
+            position: relative;
+            margin-right: 472px;
+        }
     </style>
 </head>
 <body>
@@ -371,21 +497,21 @@
         <!-- about me -->
         <section id="about_me">
             <div>
-                <img width="450" src="assests/resources/images/about-me.jpeg" alt="image not found">
+                <img width="100%" src="assests/resources/images/about-me.jpeg" alt="image not found">
             </div>
             <section>
                 <hgroup>
                     <h1>About me</h1>
                 </hgroup>
                 <article>
-                    <p>    Hello, I am Isuru Lakshan.  a dedicated software engineering<br> 
-                        student currently pursuing my studies at IJSE . As a passionate<br> 
-                        learner, I am actively acquiring the skills and knowledge necessary<br> 
+                    <p>    Hello, I am Isuru Lakshan.  a dedicated software engineering 
+                        student currently pursuing my studies at IJSE . As a passionate 
+                        learner, I am actively acquiring the skills and knowledge necessary 
                         to excel in the field of software engineering.<br><br>
                         
-                             I also have knowledge of web development ,UI/UX designing,<br> 
-                        database management and frameworks,...etc.I'm passionate about<br>
-                        using my skills to solve problems and create innovative solutions.</p>
+                             I also have knowledge of web development ,UI/UX designing, 
+                        database management and frameworks,...etc.I'm passionate about
+                        using my skills to solve problems and create innovative solutions.
                 </article>
                 <button>Download CV</button>
             </section>
@@ -429,9 +555,11 @@
 
         <!-- skills -->
         <section id="skills">
-            <h1>Skills</h1>
-            <h4>Languages and Framework</h4>
             <section>
+                <h1>Skills</h1>
+                <h4>Languages and Framework</h4>
+            </section>
+            <section id="skill_icons">
                 <div><i class="fa-solid fa-circle-arrow-right fa-rotate-180"></i></div>
                 <section>
                     <div><img width="80px" src="assests/resources/images/icons/mysql_icon.png" alt="mysql_icon"></div>
@@ -450,31 +578,50 @@
         </section>
 
         <!-- education -->
-        <section>
-            <section>
+        <section id="education">
+            <section id="title">
                 <h1>Education</h1>
-                <div>
-                    <h5>Graduate Diploma in Software Engineering 
-                        <abbr title="Graduate Diploma in Software Engineering">(GDSE)</abbr></h5>
-                    <p>studies<br> 
-                        at Institute of Java Software Engineering<br>
-                        2022-2024
-                    </p>
-                </div>
-                <div>
-                    <h5>Advance Level Education 
-                        <abbr title="Advance Level">(A/L)</abbr><br></h5>
-                    <p>studied in maths stream<br> 
-                        at G/ Gintota Secondary School
-                        2018-2022
-                    </p> 
-                </div>
-                <div>
-                    <h5>Ordinary Level Education
-                        <abbr title="Ordinary Level">(O/L)</abbr></h5>
-                    <p></p>
-                </div>
             </section>
+            <section id="edu_content">
+                <section>
+                    <div id="curcle"></div>
+                    <div id="line"></div>
+                    <div id="stages">
+                        <h3>Graduate Diploma in Software Engineering<br> 
+                            <abbr title="Graduate Diploma in Software Engineering">(GDSE)</abbr></h3>
+                        <p>studies<br> 
+                            at Institute of Java Software Engineering<br>
+                        </p>
+                        <h5>2022-2024</h5>
+                    </div>
+                </section>
+                <section>
+                    <div id="stages">
+                        <h3>Advance Level Education 
+                            <abbr title="Advance Level">(A/L)</abbr><br></h3>
+                        <p>studied in maths stream<br> 
+                            at G/ Gintota Secondary School
+                        </p>
+                        <h5>2018-2022</h5> 
+                    </div>
+                    <div id="line"></div>
+                    <div id="curcle"></div>
+                </section>
+                <section>
+                    <div id="curcle"></div>
+                    <div id="line"></div>
+                    <div id="stages">
+                        <h3>Ordinary Level Education
+                            <abbr title="Ordinary Level">(O/L)</abbr></h3>
+                        <p>
+                            studied<br> 
+                            at G/ Gintota Secondary School
+                        </p>
+                        <h5>2018-2022</h5>
+                    </div>
+                </section>
+            </section>
+            <div></div>
         </section>
 
         <!-- projects -->
