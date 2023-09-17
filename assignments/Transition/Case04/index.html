@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assests/normalize.css">
+    <title>Transition Case04</title>
+    <style>
+        .curcle{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid gray;
+            border-top: 10px solid red ;
+        }
+
+        .line{ 
+            position: absolute;
+            top: 0;
+            bottom: 100px;
+            right: 0;
+            left: 100px;
+            margin: auto;
+            width: 10px;
+            height: 155px;
+            background-color: red;
+            rotate: 45deg;
+        }
+
+        .ball{
+            position: absolute;
+            bottom: 150px;
+            right: -10px;
+            /* top: 0; */
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .curcle:hover{
+            transition: all 2s;
+            rotate: 360deg;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="curcle">
+            <div class="line">
+                <div class="ball"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
