@@ -4,12 +4,12 @@
     <title>My Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="assests/resources/myPortfolio-icon.png">
     <meta name="keyword" content="ISURU, LAKSHAN, HTML, APPS, SE">
     <meta name="description" content="????">
     <meta name="owner" content="Isuru">
     <meta name="author" content="Lakshan">
-    <meta name="theme-color" content="green">
+    <meta name="theme-color" content="light">
     <link rel="stylesheet" href="assests/normalize.css">
     <link rel="stylesheet" href="assests/resources/fontawesome/css/all.css">
 
@@ -17,7 +17,28 @@
         *{
             box-sizing: border-box;
             font-family: 'Poppins' ,sans-serif;
+            scroll-behavior: smooth;
         }
+
+        ::-webkit-scrollbar{
+            width: 15px;
+            background-color: #dddddd;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #0056B3;
+        }
+
+        #button_navigation_a{
+            position: absolute;
+            /* background: black; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 1rem;
+        }
+
         header{
             position: fixed;
             width: 100%;
@@ -52,13 +73,15 @@
         }
         header>nav>menu>li>a:hover{
             color: #0056B3;
+            transition-duration: 1s;
         }
 
-        /* home page  #1c1717e8*/
+
+        
+        /* home page  #1c1717e8  //////////////////////////////////////////////////////////////////*/
         main>section#home_page{
             display: inline-block;
             /* background-color:rgb(196, 252, 252); */
-            height: 100vh;
             width: 100%;
         }
         main>section#home_page h1,h4{
@@ -68,43 +91,65 @@
             display: inline-block;
             font-size: 60px; 
         }
-        main>section#home_page>section:first-child{
-            display: inline-block;
-            position: relative;
-            /* background-color: darkgray; */
-            width: 40vw;
-            right: 0px;
-            left: 165px;
-            bottom: 0px;
-            top: 300px;
-
+        main>section#home_page>section#home_content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 150px;
+            margin-top: 200px;
+            margin-bottom: 150px;
         }
-        main>section#home_page>section:first-child>hgroup>h1:nth-child(2){
+
+        main>section#home_page>section#home_content>section#home_detail{ 
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            /* background-color: darkgray; */
+            width: max-content;
+        }
+        main>section#home_page>section#home_content>section#home_detail>hgroup{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        main>section#home_page>section#home_content>div#pro_pic{
+            position: relative;
+            display: inline-block;
+            width: max-content;
+            height: max-content;
+        }
+        main>section#home_page>section#home_content>div#pro_pic>img{
+            width: 500px;
+        }
+
+        main>section#home_page>section#home_content>section#home_detail>hgroup>h1>span{
             color: #003E80;
             margin-left: 10px;
         }
-        main>section#home_page>section:first-child>hgroup>h4{
+        main>section#home_page>section#home_content>section#home_detail>hgroup>h4{
             padding-top: 10px;
         }
 
 
-        main>section#home_page>section>nav#home_social_links{
+        main>section#home_page>section#home_content>section#home_detail>nav#home_social_links{ 
+            display: flex;
+            gap: 15px;
             margin-top: 80px;
         }
-        main>section#home_page>section>nav#home_social_links>div{
+        main>section#home_page>section#home_content>section#home_detail>nav#home_social_links>div{
             position: relative;
             display: inline-block;
             background-color: white;
             width: 55px;
             height: 55px;
             border-radius: 10%;
-            margin-right: 15px;
             box-shadow: 4px 4px 10px 0px #0056b380;
         }
         #home_social_links>div>a{  
             position: absolute;
             color: black;
-            font-size: 30px;
+            font-size: 35px;
             left: 0;
             right: 0;
             top: 0;
@@ -114,21 +159,48 @@
             margin: auto;
         }
         
+        main>section#home_page>section#home_content>section#home_detail>div#home_button{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        main>section#home_page>section#home_content>section#home_detail>div#home_button>button>a{
+            position: absolute;
+            /* background: black; */
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 1rem;
+        }
 
-        main>section#home_page>section>button{
-            margin-top: 40px;
-            margin-right: 50px;
+        main>section#home_page>section#home_content>section#home_detail>div#home_button>button{
+            position: relative;
             width: 150px;
             height: 40px;
             border-radius: 1rem;
             border-width: 0;
             color: white;
-            background-color: #0056B3;
+            background: linear-gradient(45deg, #0056B3, #0056B3);
             font-weight: 600;
             cursor: pointer;
+            /* transition: all .5s ease-out; */
+            transition: all;
+
+        }
+        main>section#home_page>section#home_content>section#home_detail>div#home_button>button:hover{
+            transition: all;
+            background: linear-gradient(45deg, #001a36, #003c7d);
+            /* background: linear-gradient(145deg, #ff014f, #d11414); */
+            box-shadow: 0px 5px 8px 0px #001a368a;
+        }
+        main>section#home_page>section#home_content>section#home_detail>div#home_button>button:active{
+            transform: scale(0.9);
         }
 
-        /* about me */
+        /* about me ////////////////////////////////////////////////////////////////////////////// */
         main>section#about_me{
             position: relative;
             display: flex;
@@ -139,8 +211,7 @@
             /* background-color:rgb(196, 252, 252); */
             /* height: 70vh; */
             width: 100%;
-            margin-top: 50px;
-            margin-bottom: 100px;
+            padding-top: 90px;
         }
         main>section#about_me>div{
             position: relative;
@@ -148,10 +219,11 @@
             width: 25%;
             height: max-content;
             /* background-color: azure; */
-            border-radius: 1rem;
+            border-radius: 20%;
         }
         main>section#about_me>div>img{
-            border-radius: 4rem;
+            border-radius: 20%;
+            box-shadow: 0px 0px 10px 0px #0056b380;
         }
         
         main>section#about_me>section:nth-child(2){
@@ -188,7 +260,7 @@
         }
 
 
-        /* My Services */
+        /* My Services //////////////////////////////////////////////////////////////////////////// */
         main>section#my_services{
             position: relative;
             /* background-color:rgb(196, 252, 252); */
@@ -200,7 +272,7 @@
         }
         main>section#my_services>h1{
             text-align: center;
-            /* padding-top: 25px; */
+            padding-top: 100px;
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
@@ -235,63 +307,90 @@
             align-items: center;
             width: 320px;
             height: 320px;
-        }
-        main>section#my_services>section>section#service_types>div{
             background-color: white;
             box-shadow: 6px 6px 20px 0px #0056b380;
             border-radius: 2rem;
+            transition: .5s all;
         }
+        main>section#my_services>section>section#service_types>div:hover{
+            transition: .5s all;
+            transform: scale(0.95);
+            background: #0056B3;
+        }
+        main>section#my_services>section>section#service_types>div:hover>h3{
+            transition: .5s all;
+            color: white;
+        }
+        main>section#my_services>section>section#service_types>div:hover>div>i{
+            transition: .5s all;
+            color: white;
+        }
+        main>section#my_services>section>section#service_types>div:hover>article>p{
+            transition: .5s all;
+            color: white;
+        }
+
         /* icons */
         main>section#my_services>section>section#service_types>div>div>i{ 
             font-size: 40px;
             color: #0056B3;
+            transition: .5s all;
         }
         main>section#my_services>section>section#service_types>div>h3{ 
             margin-top: 30px;
             font-size: 25px;
+            transition: .5s all;
         }
         main>section#my_services>section>section#service_types>div>article>p{
             text-align: center;
             margin-top: 30px;
             font-size: 18px;
             color: #1a1a1a;
+            transition: .5s all;
         }
 
 
-        /* Skills //////////////////////////////////////////////////////// */
+        /* Skills //////////////////////////////////////////////////////////////////////////////////////// */
         main>section#skills{
             /* background-color: aqua; */
             position: relative;
-            height: 80vh;
+            height: max-content;
             width: 100%;
         }
         main>section#skills h1,h4{
             margin: 0;
         }
-        main>section#skills>section>h1{
+        main>section#skills>section#skills_title>h1{
             margin-left: 10vw;
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
-        main>section#skills>section>h4{
+        main>section#skills>section#skills_title>h4{
             text-align: center;
             padding: 25px;
             font-size: 30px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
+        main>section#skills>section#skills_title{
+            display: flex;
+            flex-direction: column;
+            padding-top: 90px;
+        }
 
         main>section#skills>section#skill_icons{
             /* background-color: bisque; */
-            position: absolute;
+            position: relative;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            height: 50vh;
+            height: max-content;
             width: 80%;
             margin: auto;
             left: 0;
             right: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }        
         main>section#skills>section#skill_icons>div>i{
             font-size: 50px;
@@ -306,54 +405,87 @@
             justify-content:space-around;
             align-items: center;
             column-gap: 20px;
+            row-gap: 70px;
             margin: auto;
             left: 0;
             right: 0;
-            height: 40vh;
+            height: max-content;
             width: 70%;
         }
         main>section#skills>section#skill_icons>section>div{
-            /* width: 120px;
-            height: 120px; */
-            width:max-content;
-            height: max-content;
+            position: relative;
+            /* width: 100px;
+            height: 100px; */
             margin-left: 40px;
+            /* width: calc(100% - 70px);
+            height: calc(100% - 70px); */
+            box-shadow: 2px 2px 10px 0px #0056b380;
+            border-radius: 1rem;
+        }
+        main>section#skills>section>section>div>img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 80%;
         }
         
         /* images  */
-        main>section#skills>section>section>div:nth-child(3)>img{
+        main>section#skills>section>section>div:nth-child(3){
             width: 110px;
+            height: 110px;
+            align-self: self-end;
         }
-        main>section#skills>section>section>div:nth-child(8)>img{
+        main>section#skills>section>section>div:nth-child(8){
             width: 110px;
+            height: 110px;
+            align-self: self-start;
         }
-        main>section#skills>section>section>div:nth-child(2)>img{
+        main>section#skills>section>section>div:nth-child(2){
             width: 95px;
+            height: 95px;
+            align-self: self-end;
         }
-        main>section#skills>section>section>div:nth-child(4)>img{
+        main>section#skills>section>section>div:nth-child(4){
             width: 95px;
+            height: 95px;
+            align-self: self-end;
         }
-        main>section#skills>section>section>div:nth-child(7)>img{
+        main>section#skills>section>section>div:nth-child(7){
             width: 95px;
+            height: 95px;
+            align-self: self-start;
         }
-        main>section#skills>section>section>div:nth-child(9)>img{
+        main>section#skills>section>section>div:nth-child(9){
             width: 95px;
+            height: 95px;
+            align-self: self-start;
         }
-        main>section#skills>section>section>div:nth-child(1)>img{
+        main>section#skills>section>section>div:nth-child(1){
             width: 80px;
+            height: 80px;
+            align-self: self-end;
         }
-        main>section#skills>section>section>div:nth-child(5)>img{
+        main>section#skills>section>section>div:nth-child(5){
             width: 80px;
+            height: 80px;
+            align-self: self-end;
         }
-        main>section#skills>section>section>div:nth-child(6)>img{
+        main>section#skills>section>section>div:nth-child(6){
             width: 80px;
+            height: 80px;
+            align-self: self-start;
         }
-        main>section#skills>section>section>div:nth-child(10)>img{
+        main>section#skills>section>section>div:nth-child(10){
             width: 80px;
+            height: 80px;
+            align-self: self-start;
         }
 
 
-        /* education ////////////////////////////////////////////////////// */
+        /* education //////////////////////////////////////////////////////////////////////////////////////// */
         main>section#education{
             /* background-color: aqua; */
             position: relative;
@@ -372,6 +504,7 @@
             text-align: center;
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            padding-top: 110px;
         }
         div#stages>h3{
             font-size: 18px;
@@ -391,7 +524,7 @@
             background-color: #0056B3;
             left: 0;
             right: 0;
-            top: 0;
+            top: 110px;
             bottom: 0;
             margin: auto;
         }
@@ -427,7 +560,16 @@
             height: 145px;
             box-shadow: 6px 6px 20px 0px #0056b380;
             border-radius: 2rem;
+            transition: .5s all;
         }
+        main>section#education>section#edu_content>section>div#stages:hover{
+            transition: .5s all;
+            transform: scale(0.98);
+            /* box-shadow: 0px 0px 10px 0px #0056b380; */
+            box-shadow: inset 4px 4px 3px 0px #0056b380;
+
+        }
+
         main>section#education>section#edu_content>section:nth-child(1){      
             position: relative;
             margin-left: 472px; 
@@ -440,6 +582,317 @@
             position: relative;
             margin-right: 472px;
         }
+
+
+        /* projects //////////////////////////////////////////////////////////////////////////////////// */
+        main>section#projects{
+            position: relative;
+            width: 100%;
+            height: max-content;
+            /* background-color: aquamarine; */
+        }
+        main>section#projects>section#project_title{
+            padding-top: 100px;
+        }
+        main>section#projects h1, h3{
+            margin: 0;
+        }
+        main>section#projects>section#project_title>h1{
+            margin-left: 10vw;
+            font-size: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        main>section#projects>section#project_content{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            /* background-color: burlywood; */
+        }
+
+        main>section#projects>section#project_content>div{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 350px;
+            height: 400px;
+            /* background-color: antiquewhite; */
+            background-color: white;
+            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* background: linear-gradient(45deg, white, #e6eef7); */
+            background-color: white;
+            border-radius: 2rem;
+        }
+        main>section#projects>section#project_content>div>div{
+            width: 80%;
+        }
+        main>section#projects>section#project_content>div>div>img{
+            width: 100%;
+        }
+
+        main>section#projects>section#btn_see_all{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            padding-bottom: 20px;
+        }
+        main>section#projects>section#btn_see_all>button{
+            width: 150px;
+            height: 40px;
+            border-radius: 1rem;
+            border-width: 0;
+            color: white;
+            background-color: #0056B3;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        /* assigment //////////////////////////////////////////////////////////////////////////////// */
+        main>section#assignment{
+            position: relative;
+            width: 100%;
+            height: max-content;
+            /* background-color: aquamarine; */
+        }
+        main>section#assignment>section#assignment_title{
+            padding-top: 100px;
+        }
+        main>section#assignment h1, h3{
+            margin: 0;
+        }
+        main>section#assignment>section#assignment_title>h1{
+            margin-left: 10vw;
+            font-size: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        main>section#assignment>section#assignment_content{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            /* background-color: burlywood; */
+        }
+
+        main>section#assignment>section#assignment_content>div{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 350px;
+            height: 400px;
+            /* background-color: antiquewhite; */
+            background-color: white;
+            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* background: linear-gradient(45deg, white, #e6eef7); */
+            background-color: white;
+            border-radius: 2rem;
+        }
+        main>section#assignment>section#assignment_content>div>div{
+            width: 80%;
+        }
+        main>section#assignment>section#assignment_content>div>div>img{
+            width: 100%;
+        }
+
+        main>section#assignment>section#btn_see_all{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            padding-bottom: 20px;
+        }
+        main>section#assignment>section#btn_see_all>button{
+            width: 150px;
+            height: 40px;
+            border-radius: 1rem;
+            border-width: 0;
+            color: white;
+            background-color: #0056B3;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+
+        /* contact_me ///////////////////////////////////////////////////////////////////////////// */
+        main>section#contact_me{
+            position: relative;
+            width: 100%;
+            height: max-content;
+            /* background-color: aquamarine; */
+        }
+        main>section#contact_me>section#contact_title{
+            padding-top: 100px;
+        }
+        /* main>section#contact_me h1, h3{
+            margin: 0;
+        } */
+        main>section#contact_me>section#contact_title>h1{
+            margin: 0;
+            text-align: center;
+            font-size: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+
+        main>section#contact_me>section#contact_content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 70px;
+            padding-bottom: 100px;
+        }
+        main>section#contact_me>section#contact_content>aside{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+            height: 450px;
+            margin-left: 15%;
+            /* background: linear-gradient(45deg, white, #cccccc); */
+            /* box-shadow: 6px 6px 20px 0px #003E80; */
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset{
+            border: none;
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset>form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset>form>div{
+            box-shadow: 6px 6px 20px 0px #0056b380;
+            border-radius: 0.5rem;
+            width: 90%;
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset>form>div>input{
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            background-color: white;
+            border-radius: 0.5rem;
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset>form>div>textarea{
+            width: 100%;
+            height: 140px;
+            border: none;
+            outline: none;
+            background-color: white;
+            border-radius: 0.5rem;
+        }
+        main>section#contact_me>section#contact_content>aside>fieldset>form>button{
+            width: 90%;
+            height: 40px;
+            margin-top: 15px;
+            border-radius: 0.5rem;
+            border-width: 0;
+            color: #0056B3;
+            background-color: white;
+            box-shadow: 6px 6px 20px 0px #0056b380;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .5s;
+        }
+
+        main>section#contact_me>section#contact_content>aside>fieldset>form>button:hover{
+            transition: all .5s;
+            background-color: #0056B3;
+            color: white;
+        }
+
+        main>section#contact_me>section#contact_content>address{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+        }
+        main>section#contact_me>section#contact_content>address>div{
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin-left: 30px;
+            gap: 30px;
+        }
+        main>section#contact_me>section#contact_content>address>div>i{
+            font-size: 30px;
+            color: #0056B3;
+        }
+        main>section#contact_me>section#contact_content>address>div>p{
+            font-size: 15px;
+        }
+        main>section#contact_me>section#contact_content>address>div>p>span{
+            font-size: 20px;
+            font-weight: 700px;
+        }
+
+        main>section#contact_me>section#contact_content>address>section#social_links{
+            display: flex;
+            gap: 15px;
+            width: 90%;
+            align-self: center;
+            margin-top: 60px;
+        }
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i{
+            font-size: 30px;
+            color: black;
+        }
+
+
+        /* footer /////////////////////////////////////////////////////////////////////////////////// */
+        footer{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            background-color: #003E80;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        footer>div:nth-child(1){
+            display: flex;
+            justify-content: space-around;
+        }
+        footer>div:nth-child(1)>nav>ul{
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+        footer>div:nth-child(1)>nav>ul>li{
+            display: inline-block;
+        }
+        footer>div:nth-child(1)>nav>ul>li>a{
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+        }
+
+        footer>div:nth-child(2){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer>div:nth-child(2)>cite{
+            font-size: 70%;
+            color: white;
+        }
+        footer>div:nth-child(2)>small{
+            font-size: 70%;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -449,14 +902,14 @@
         </div>
         <nav>
             <menu>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">assignment</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#home_page">Home</a></li>
+                <li><a href="#about_me">About</a></li>
+                <li><a href="#my_services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#assignment">assignment</a></li>
+                <!-- <li><a href="">Gallery</a></li> -->
+                <li><a href="#contact_me">Contact</a></li>
             </menu>
         </nav>
     </header>
@@ -464,33 +917,40 @@
     <main>
         <!-- home Page -->
         <section id="home_page">
-            <section>
-                <hgroup>
-                    <h1>Hi, I'm</h1>
-                    <h1>Isuru Lakshan</h1>
-                    <h4>a software engineering undergraduate from Sri Lanka</h4>
-                </hgroup>
-                <nav id="home_social_links">
-                    <div>
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <section id="home_content">
+                <section id="home_detail">
+                    <hgroup>
+                        <h1>Hi, I'm 
+                            <span>Isuru Lakshan</span>
+                        </h1>
+                        <h4>a software engineering undergraduate from Sri Lanka</h4>
+                    </hgroup>
+                    <nav id="home_social_links">
+                        <div>
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                        <div>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <div>
+                            <a href=""><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <div>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                        <div>
+                            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </nav>
+                    <div id="home_button">
+                        <button>Hire me <a id="button_navigation_a" href="#contact_me"></a></button>
+                        <button>Download CV <a id="button_navigation_a" href="assests/resources/My CV/Transition Tasks.pdf" target="_blank" download="Transition Tasks.pdf"></a></button>
                     </div>
-                    <div>
-                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                    <div>
-                        <a href=""><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <div>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    </div>
-                    <div>
-                        <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </nav>
-                <button>Hire me</button>
-                <button>Download CV</button>
+                </section>
+                <div id="pro_pic">
+                    <img src="assests/resources/images/home-profile-picture.svg" alt="image not found">
+                </div>
             </section>
-            <div></div>
 
         </section>
 
@@ -513,7 +973,7 @@
                         database management and frameworks,...etc.I'm passionate about
                         using my skills to solve problems and create innovative solutions.
                 </article>
-                <button>Download CV</button>
+                <button>Download CV <a id="button_navigation_a" href="assests/resources/My CV/Transition Tasks.pdf" target="_blank" download="Transition Tasks.pdf"></a></a></button>
             </section>
         </section>
 
@@ -555,23 +1015,33 @@
 
         <!-- skills -->
         <section id="skills">
-            <section>
+            <section id="skills_title">
                 <h1>Skills</h1>
                 <h4>Languages and Framework</h4>
             </section>
             <section id="skill_icons">
                 <div><i class="fa-solid fa-circle-arrow-right fa-rotate-180"></i></div>
                 <section>
-                    <div><img width="80px" src="assests/resources/images/icons/mysql_icon.png" alt="mysql_icon"></div>
-                    <div><img width="95px" src="assests/resources/images/icons/html_icon.png" alt="html_icon"></div>
-                    <div><img width="110px" src="assests/resources/images/icons/java_icon.png" alt="Java Icon"></div>
-                    <div><img width="95px" src="assests/resources/images/icons/javascript_icon.png" alt="javascript_icon"></div>
-                    <div><img width="80px" src="assests/resources/images/icons/css_icon.png" alt="css_icon"></div>
-                    <div><img width="80px" src="assests/resources/images/icons/photoshop_icon.png" alt="photoshop_icon.png"></div>
-                    <div><img width="95px" src="assests/resources/images/icons/figma_icon.png" alt="figma_icon"></div>
-                    <div><img width="110px" src="assests/resources/images/icons/intelij_icon.png" alt="Intelij Icon"></div>
-                    <div><img width="95px" src="assests/resources/images/icons/hibernate_icon.png" alt="hibernate_icon.png"></div>
-                    <div><img width="80px" src="assests/resources/images/icons/github_icon.png" alt="github_icon"></div>
+                    <div><img src="assests/resources/images/icons/mysql_icon.png" alt="mysql_icon"></div>
+                    <div><img src="assests/resources/images/icons/html_icon.png" alt="html_icon"></div>
+                    <div><img src="assests/resources/images/icons/java_icon.png" alt="Java Icon"></div>
+                    <div><img src="assests/resources/images/icons/javascript_icon.png" alt="javascript_icon"></div>
+                    <div><img src="assests/resources/images/icons/css_icon.png" alt="css_icon"></div>
+                    <div><img src="assests/resources/images/icons/photoshop_icon.png" alt="photoshop_icon.png"></div>
+                    <div><img src="assests/resources/images/icons/figma_icon.png" alt="figma_icon"></div>
+                    <div><img src="assests/resources/images/icons/intelij_icon.png" alt="Intelij Icon"></div>
+                    <div><img src="assests/resources/images/icons/hibernate_icon.png" alt="hibernate_icon.png"></div>
+                    <div><img src="assests/resources/images/icons/github_icon.png" alt="github_icon"></div>
+                    <!-- <img src="assests/resources/images/icons/mysql_icon.png" alt="mysql_icon">
+                    <img src="assests/resources/images/icons/html_icon.png" alt="html_icon">
+                    <img src="assests/resources/images/icons/java_icon.png" alt="Java Icon">
+                    <img src="assests/resources/images/icons/javascript_icon.png" alt="javascript_icon">
+                    <img src="assests/resources/images/icons/css_icon.png" alt="css_icon">
+                    <img src="assests/resources/images/icons/photoshop_icon.png" alt="photoshop_icon.png">
+                    <img src="assests/resources/images/icons/figma_icon.png" alt="figma_icon">
+                    <img src="assests/resources/images/icons/intelij_icon.png" alt="Intelij Icon">
+                    <img src="assests/resources/images/icons/hibernate_icon.png" alt="hibernate_icon.png">
+                    <img src="assests/resources/images/icons/github_icon.png" alt="github_icon"> -->
                 </section>
                 <div><i class="fa-solid fa-circle-arrow-right"></i></div>
             </section>
@@ -592,7 +1062,7 @@
                         <p>studies<br> 
                             at Institute of Java Software Engineering<br>
                         </p>
-                        <h5>2022-2024</h5>
+                        <h5>2022-Present</h5>
                     </div>
                 </section>
                 <section>
@@ -602,7 +1072,7 @@
                         <p>studied in maths stream<br> 
                             at G/ Gintota Secondary School
                         </p>
-                        <h5>2018-2022</h5> 
+                        <h5>2020</h5> 
                     </div>
                     <div id="line"></div>
                     <div id="curcle"></div>
@@ -617,7 +1087,7 @@
                             studied<br> 
                             at G/ Gintota Secondary School
                         </p>
-                        <h5>2018-2022</h5>
+                        <h5>2017</h5>
                     </div>
                 </section>
             </section>
@@ -625,83 +1095,120 @@
         </section>
 
         <!-- projects -->
-        <section>
-           <h1>Projects</h1>
-           <section>
-                <div></div>
+        <section id="projects">
+           <section id="project_title">
+            <h1>Projects</h1>
+           </section>
+           <section id="project_content">
                 <div>
-                    <img width="300" src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    <h3>Management System</h3>
+                    <div id="project_images">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
                 </div>
-                <div></div>
+                <div>
+                    <h3>Sport Shop Management System</h3>
+                    <div id="project_images">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
+                </div>
+                <div>
+                    <h3>Management System</h3>
+                    <div id="project_images">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
+                </div>
+           </section>
+           <section id="btn_see_all">
+                <button>See All <a id="button_navigation_a" href="assests/anthorPages/projectPage.html" target="_blank"></a></button>
            </section>
         </section>
 
         <!-- assignment -->
-        <section>
-           <h1>assignment</h1>
-           <section>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <section id="assignment">
+           <section id="assignment_title">
+            <h1>Assignment</h1>
            </section>
-        </section>
-
-        <!-- galary -->
-        <section>
-            <h1>Gallery</h1>
-            <section>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
+           <section id="assignment_content">
+                <div>
+                    <h3>Assignment</h3>
+                    <div id="assignment_img">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
+                </div>
+                <div>
+                    <h3>Assignment</h3>
+                    <div id="assignment_img">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
+                </div>
+                <div>
+                    <h3>Assignment</h3>
+                    <div id="assignment_img">
+                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    </div>
+                </div>
+           </section>
+           <section id="btn_see_all">
+            <button>See All <a id="button_navigation_a" href="assests/anthorPages/assignmentPage.html" target="_blank"></a></button>
+       </section>
         </section>
 
         <!-- contact with me -->
-        <section>
-            <hgroup>
-                <h6>Contact</h6>
+        <section id="contact_me">
+            <section id="contact_title">
                 <h1>Contact With Me</h1>
-            </hgroup>
-           <aside>
-                <fieldset>
-                    <form>
+            </section>
+            <section id="contact_content">
+                <aside>
+                    <fieldset>
+                        <form>
+                            <div>
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Email" required>
+                            </div>
+                            <div>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
+                            </div>
+    
+                            <button>Submit Message</button>
+                        </form>
+                    </fieldset>
+               </aside>
+               <address>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        <p><span>Phone</span><br>+94 717248582</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p><span>Address</span> <br>Temple road, Pitiwella, Boossa, Galle, Sri Lanka</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <p><span>Email</span> <br>isurulakshan607@gmail.com</p>
+                    </div>
+                    <section id="social_links">
                         <div>
-                            <p>Your Name</p>
-                            <input type="text" required>
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div>
-                            <p>Phone Number</p>
-                            <input type="text" required>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <div>
-                            <p>Your Email</p>
-                            <input type="text" required>
+                            <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
                         <div>
-                            <p>Message</p>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
                         </div>
-
-                        <button>Submit</button>
-                    </form>
-                </fieldset>
-           </aside>
-           <address>
-                <div>
-                    <p>Phone<br>+94 717248582</p>
-                </div>
-                <div>
-                    <p>Address <br>Temple road, Pitiwella, Boossa, Galle, Sri Lanka</p>
-                </div>
-                <div>
-                    <p>Email <br>isurulakshan607@gmail.com</p>
-                </div>
-                <div></div>
-           </address>
+                        <div>
+                            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </section>
+               </address>
+            </section>
         </section>
     </main>
 
@@ -709,17 +1216,17 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Skills</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="#home_page">Home</a></li>
+                    <li><a href="#about_me">About</a></li>
+                    <li><a href="#my_services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#assignment">Assignment</a></li>
+                    <li><a href="#contact_me">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <div>
+        <!-- <div>
             <nav>
                 <ul>
                     <li><a href="">Privacy Policy</a></li>
@@ -727,7 +1234,7 @@
                     <li><a href="">Cookies Settings</a></li>
                 </ul>
             </nav>
-        </div>
+        </div> -->
         <div>
             <cite>Designed and developed by Isuru Lakshan <br></cite>
             <small>Copyright © 2023 - Isuru Lakshan All Rights Reserved</small>
