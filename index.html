@@ -17,7 +17,26 @@
         *{
             box-sizing: border-box;
             font-family: 'Poppins' ,sans-serif;
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth; */
+        }
+
+        body{
+            height: 100vh;
+            background-image: url(assests/resources/images/background-img.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        header{
+            height: 70px;
+            background-image: url(assests/resources/images/background-img.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
         }
 
         ::-webkit-scrollbar{
@@ -41,8 +60,11 @@
 
         header{
             position: fixed;
-            width: 100%;
-            height: 70px;
+            width: 90%;
+            height: 70px;    
+            border-radius: 2rem;
+            margin-left: 5%;
+            margin-top: 20px;
             background-color: white;
             box-shadow: 0 -1px 8px 2px #0056b380;
             z-index: 3;
@@ -53,6 +75,21 @@
             margin-left: 6vw;
         }
 
+        header #header-bar{ 
+            /* background-color: aqua; */
+            position: absolute;
+            display: none;
+            right: 70px;
+            top: 20px;
+        }
+        header #header-bar>i{
+            font-size: 25px;
+        }
+
+        header>div>h2>span{
+            color: #0056B3;
+            font-family: cursive;
+        }
         header>nav{
             display: inline-block;
             position: absolute;
@@ -60,38 +97,82 @@
             right: 6vw;
             top: 10px;
         }
+        header>nav>menu{
+            display: flex;
+            gap: 30px;
+        }
         header>nav>menu>li{
             display: inline-block;
             cursor: pointer;
-            margin-right: 50px;
-            font-size: 16px;
+            /* margin-right: 50px; */
+            font-size: 17px;
         }
         header>nav>menu>li>a{
             text-decoration: none;
             color: black;
-            font-weight: 600;
-        }
-        header>nav>menu>li>a:hover{
-            color: #0056B3;
-            transition-duration: 1s;
-        }
+            /* font-weight: 600; */
 
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 12px;
+            padding-right: 12px;
+            transition: all 0.2s ease-in-out;
+        }
+        a#home-nav:hover{
+            color: #0056B3;
+            /* border: 2px solid #0056B3; */
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
+        a#about-me-nav:hover{
+            color: #0056B3;
+            /* border: 2px solid #0056B3; */
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
+        a#my-services-nav:hover{
+            color: #0056B3;
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
+        a#skills-nav:hover{
+            color: #0056B3;
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
+        a#projects-nav:hover{
+            color: #0056B3;
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
+        a#assignment-nav:hover{
+            color: #0056B3;
+            transition: all 0.2s ease-in-out;
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+        }
+        a#contact-me-nav:hover{
+            color: #0056B3;
+            box-shadow: inset 2px 2px 2px 0px #0056b380;
+            transition: all 0.2s ease-in-out;
+        }
 
         
         /* home page  #1c1717e8  //////////////////////////////////////////////////////////////////*/
-        main>section#home_page{
+        main>section#home-page{
             display: inline-block;
             /* background-color:rgb(196, 252, 252); */
             width: 100%;
         }
-        main>section#home_page h1,h4{
+        main>section#home-page h1,h4{
             margin: 0;
         }
-        main>section#home_page h1{
+        main>section#home-page h1{
             display: inline-block;
             font-size: 60px; 
         }
-        main>section#home_page>section#home_content{
+        main>section#home-page>section#home-content{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -100,7 +181,7 @@
             margin-bottom: 150px;
         }
 
-        main>section#home_page>section#home_content>section#home_detail{ 
+        main>section#home-page>section#home-content>section#home-detail{ 
             display: flex;
             position: relative;
             flex-direction: column;
@@ -108,45 +189,48 @@
             /* background-color: darkgray; */
             width: max-content;
         }
-        main>section#home_page>section#home_content>section#home_detail>hgroup{
+        main>section#home-page>section#home-content>section#home-detail>hgroup{
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        main>section#home_page>section#home_content>div#pro_pic{
+        main>section#home-page>section#home-content>div#pro-pic{
             position: relative;
             display: inline-block;
             width: max-content;
             height: max-content;
         }
-        main>section#home_page>section#home_content>div#pro_pic>img{
+        main>section#home-page>section#home-content>div#pro-pic>img{
             width: 500px;
         }
 
-        main>section#home_page>section#home_content>section#home_detail>hgroup>h1>span{
+        main>section#home-page>section#home-content>section#home-detail>hgroup>h1>span{
+            font-family:cursive;
             color: #003E80;
             margin-left: 10px;
         }
-        main>section#home_page>section#home_content>section#home_detail>hgroup>h4{
+        main>section#home-page>section#home-content>section#home-detail>hgroup>h4{
             padding-top: 10px;
         }
 
 
-        main>section#home_page>section#home_content>section#home_detail>nav#home_social_links{ 
+        main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{ 
             display: flex;
             gap: 15px;
             margin-top: 80px;
         }
-        main>section#home_page>section#home_content>section#home_detail>nav#home_social_links>div{
+        main>section#home-page>section#home-content>section#home-detail>nav#home-social-links>div{
             position: relative;
             display: inline-block;
-            background-color: white;
+            /* background-color: white; */
             width: 55px;
             height: 55px;
             border-radius: 10%;
             box-shadow: 4px 4px 10px 0px #0056b380;
+            transition: all .5s;
         }
-        #home_social_links>div>a{  
+
+        #home-social-links>div>a{  
             position: absolute;
             color: black;
             font-size: 35px;
@@ -157,15 +241,16 @@
             width: max-content;
             height: max-content;
             margin: auto;
+            transition: all .5s ;
         }
         
-        main>section#home_page>section#home_content>section#home_detail>div#home_button{
+        main>section#home-page>section#home-content>section#home-detail>div#home-button{
             display: flex;
             flex-wrap: wrap;
             margin-top: 30px;
             gap: 15px;
         }
-        main>section#home_page>section#home_content>section#home_detail>div#home_button>button>a{
+        main>section#home-page>section#home-content>section#home-detail>div#home-button>button>a{
             position: absolute;
             /* background: black; */
             left: 0;
@@ -176,32 +261,90 @@
             border-radius: 1rem;
         }
 
-        main>section#home_page>section#home_content>section#home_detail>div#home_button>button{
+        main>section#home-page>section#home-content>section#home-detail>div#home-button>button{
             position: relative;
             width: 150px;
             height: 40px;
             border-radius: 1rem;
             border-width: 0;
             color: white;
-            background: linear-gradient(45deg, #0056B3, #0056B3);
-            font-weight: 600;
+            border: 2px solid #0056B3;
+            background-color: #0056B3;
             cursor: pointer;
             /* transition: all .5s ease-out; */
-            transition: all;
+            transition: all .3s;
 
         }
-        main>section#home_page>section#home_content>section#home_detail>div#home_button>button:hover{
-            transition: all;
-            background: linear-gradient(45deg, #001a36, #003c7d);
-            /* background: linear-gradient(145deg, #ff014f, #d11414); */
-            box-shadow: 0px 5px 8px 0px #001a368a;
+        main>section#home-page>section#home-content>section#home-detail>div#home-button>button:hover{
+            transition: all .3s;
+            background-color: transparent;
+            border: 2px solid #0056B3;
+            color: #0056B3;
+            box-shadow: 4px 4px 10px 0px #0056b380;
         }
-        main>section#home_page>section#home_content>section#home_detail>div#home_button>button:active{
+        main>section#home-page>section#home-content>section#home-detail>div#home-button>button:active{
             transform: scale(0.9);
         }
 
+        /* home-nav-icon-hover ------------------------------------------------- */
+        main>section#home-page>section#home-content>section#home-detail>#home-social-links>#nav-icon-facebook:hover{
+            background-color: white;
+            box-shadow: inset 4px 4px 3px 0px #0056b380;
+            transition: all .5s ;
+        }
+        .home-page .home-social-links>div#nav-icon-facebook:hover i{
+            color: #0056B3;
+            transition: all .5s ;
+        }
+        main>section#home-page>section#home-content>section#home-detail>#home-social-links>#nav-icon-linked-in:hover{
+            background-color: white;
+            /* box-shadow: inset 4px 4px 3px 0px #000f1e80; */
+            box-shadow: inset 4px 4px 3px 0px #0056b380;
+            transition: all .5s ;
+        }
+        .home-page .home-social-links>div#nav-icon-linked-in:hover i{
+            color: #0056B3;
+            transition: all .5s ;
+        }
+        main>section#home-page>section#home-content>section#home-detail>#home-social-links>#nav-icon-github:hover{
+            background-color: white;
+            box-shadow: inset 4px 4px 3px 0px #0056b380;
+            transition: all .5s ;
+        }
+        .home-page .home-social-links>div#nav-icon-github:hover i{
+            color: #0056B3;
+            transition: all .5s ;
+        }
+        main>section#home-page>section#home-content>section#home-detail>#home-social-links>#nav-icon-twitter:hover{
+            background-color: white;
+            /* box-shadow: inset 4px 4px 3px 0px #000f1e80; */
+            box-shadow: inset 4px 4px 3px 0px #0056b380;
+            transition: all .5s ;
+        }
+        .home-page .home-social-links>div#nav-icon-twitter:hover i{
+            color: #0056B3;
+            transition: all .5s ;
+        }
+        main>section#home-page>section#home-content>section#home-detail>#home-social-links>#nav-icon-whatsapp:hover{
+            /* background-color: #11b611; */
+            background-color: white;
+            box-shadow: inset 4px 4px 3px 0px #0056b380; 
+            transition: all .5s ;
+        }
+        .home-page .home-social-links>div#nav-icon-whatsapp:hover i{
+            color: #0056B3;
+            transition: all .5s ;
+        }
+
+
         /* about me ////////////////////////////////////////////////////////////////////////////// */
-        main>section#about_me{
+        main .about_me_page{
+            display: inline-block;
+            /* background-color: rgb(196, 252, 252); */
+            width: 100%;
+        }
+
+        main>.about_me_page>section#about_me{
             position: relative;
             display: flex;
             flex-wrap: wrap;
@@ -213,7 +356,7 @@
             width: 100%;
             padding-top: 90px;
         }
-        main>section#about_me>div{
+        main>.about_me_page>section#about_me>div{
             position: relative;
             display: inline-block;
             width: 25%;
@@ -221,12 +364,12 @@
             /* background-color: azure; */
             border-radius: 20%;
         }
-        main>section#about_me>div>img{
+        main>.about_me_page>section#about_me>div>img{
             border-radius: 20%;
             box-shadow: 0px 0px 10px 0px #0056b380;
         }
         
-        main>section#about_me>section:nth-child(2){
+        main>.about_me_page>section#about_me>section:nth-child(2){
             position: relative;
             display: flex;
             flex-direction: column;
@@ -235,28 +378,38 @@
             /* background-color: bisque; */
 
         }
-        main>section#about_me>section:nth-child(2)>hgroup{
+        main>.about_me_page>section#about_me>section:nth-child(2)>hgroup{
             align-self: center;
             margin-bottom: 30px;
+            width: max-content;
         }
-        main>section#about_me>section:nth-child(2)>hgroup>h1{
+        main>.about_me_page>section#about_me>section:nth-child(2)>hgroup>h1{
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
-        main>section#about_me>section:nth-child(2)>article{
+        main>.about_me_page>section#about_me>section:nth-child(2)>article{
             align-self: center;
         }
-        main>section#about_me>section:nth-child(2)>button{
+        main>.about_me_page>section#about_me>section:nth-child(2)>button{
+            position: relative;
             width: 150px;
             height: 40px;
             border-radius: 1rem;
             border-width: 0;
             color: white;
             background-color: #0056B3;
-            font-weight: 600;
+            border: 2px solid #0056B3;
+            /* font-weight: 600; */
             cursor: pointer;
             margin-top: 50px;
             margin-left: 60px;
+            transition: all .2s;
+        }
+        main>.about_me_page>section#about_me>section:nth-child(2)>button:hover{
+            transition: all .2s;
+            background-color: transparent;
+            color: #0056B3;
+            border: 2px solid #0056B3;
         }
 
 
@@ -307,15 +460,16 @@
             align-items: center;
             width: 320px;
             height: 320px;
-            background-color: white;
+            /* background-color: white; */
             box-shadow: 6px 6px 20px 0px #0056b380;
             border-radius: 2rem;
             transition: .5s all;
         }
         main>section#my_services>section>section#service_types>div:hover{
             transition: .5s all;
-            transform: scale(0.95);
+            transform: scale(0.96);
             background: #0056B3;
+            /* background: linear-gradient(to top, #0056B3, #80abd900); */
         }
         main>section#my_services>section>section#service_types>div:hover>h3{
             transition: .5s all;
@@ -416,11 +570,12 @@
             position: relative;
             /* width: 100px;
             height: 100px; */
-            margin-left: 40px;
             /* width: calc(100% - 70px);
             height: calc(100% - 70px); */
             box-shadow: 2px 2px 10px 0px #0056b380;
+            background: linear-gradient(to top, #ccddf0, transparent);
             border-radius: 1rem;
+            margin-left: 20px;
         }
         main>section#skills>section>section>div>img{
             position: absolute;
@@ -527,6 +682,7 @@
             top: 110px;
             bottom: 0;
             margin: auto;
+            z-index: 1;
         }
         main>section#education>section#edu_content>section>div#line{
             width: 50px;
@@ -534,13 +690,13 @@
             background-color: #0056B3;
             top: 0;
             bottom: 0;
-      
         }
         main>section#education>section#edu_content>section>div#curcle{
             width: 35px;
             height: 35px;
             border-radius: 50%;
             background-color: #0056B3;
+            z-index: 2;
         }
         main>section#education>section#edu_content>section{
             display: flex;
@@ -558,13 +714,15 @@
             align-items: center;
             width: 420px;
             height: 145px;
-            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* box-shadow: 6px 6px 20px 0px #0056b380; */
+            border: 3px solid #0056B3;
             border-radius: 2rem;
             transition: .5s all;
         }
         main>section#education>section#edu_content>section>div#stages:hover{
             transition: .5s all;
             transform: scale(0.98);
+            border: none;
             /* box-shadow: 0px 0px 10px 0px #0056b380; */
             box-shadow: inset 4px 4px 3px 0px #0056b380;
 
@@ -602,38 +760,55 @@
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
-        main>section#projects>section#project_content{
-            position: relative;
+        main>section#projects>section#flex-cover{
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 80px;
             margin-top: 50px;
             margin-bottom: 50px;
+        }
+        main>section#projects>section#flex-cover>section#project_content{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             /* background-color: burlywood; */
         }
 
-        main>section#projects>section#project_content>div{
+        main>section#projects>section#flex-cover>section#project_content>section{ 
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+        main>section#projects>section#flex-cover>section#project_content>section>div{
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 40px;
-            width: 350px;
-            height: 400px;
+            gap: 10px;
+            width: 32%;
+            /* width: 525px; */
+            height: 325px;
             /* background-color: antiquewhite; */
-            background-color: white;
-            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* background-color: white; */
+            /* box-shadow: 6px 6px 20px 0px #0056b380; */
             /* background: linear-gradient(45deg, white, #e6eef7); */
-            background-color: white;
+            border-radius: 2rem;
+            margin: 40px;
+        }
+        main>section#projects>section#flex-cover>section#project_content>section>div>div#project_images{
+            width: 90%;
+            height: 90%;
             border-radius: 2rem;
         }
-        main>section#projects>section#project_content>div>div{
-            width: 80%;
-        }
-        main>section#projects>section#project_content>div>div>img{
+        main>section#projects>section#flex-cover>section#project_content>section>div>div>img{
             width: 100%;
+            height: 100%;
+            border-radius: 2rem;
         }
 
         main>section#projects>section#btn_see_all{
@@ -643,14 +818,53 @@
             padding-bottom: 20px;
         }
         main>section#projects>section#btn_see_all>button{
+            position: relative;
             width: 150px;
             height: 40px;
             border-radius: 1rem;
             border-width: 0;
             color: white;
             background-color: #0056B3;
-            font-weight: 600;
+            border: 2px solid #0056B3;
             cursor: pointer;
+            transition: all .2s;
+        }
+        main>section#projects>section#btn_see_all>button:hover{
+            transition: all .2s;
+            background-color: transparent;
+            border: 2px solid #0056B3;
+            color: #0056B3;
+        }
+        .projects-page .hide-layer-project{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 0;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            gap: 20px;
+            transition: height 0.5s;
+            background: linear-gradient(to top, #0056B3, transparent);
+            border-radius: 2rem;
+        }
+        .projects-page .hide-layer-project>p{
+            font-size: 16px;
+            /* font-weight: 600; */
+            color: white;
+        }
+        .projects-page .hide-layer-project>a>i{
+            font-size: 40px;
+            color: white;
+        }
+        .projects-page .project:hover #project_images{
+            opacity: 0.3;
+        }
+        .projects-page .project:hover .hide-layer-project{
+            height: 100%;
         }
 
 
@@ -677,7 +891,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 80px;
+            gap: 20px;
             margin-top: 50px;
             margin-bottom: 50px;
             /* background-color: burlywood; */
@@ -689,21 +903,26 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 40px;
-            width: 350px;
-            height: 400px;
+            /* gap: 20px; */
+            /* width: 500px; */
+            width: 25%;
+            height: 275px;
             /* background-color: antiquewhite; */
-            background-color: white;
-            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* background-color: white; */
+            /* box-shadow: 6px 6px 20px 0px #0056b380; */
             /* background: linear-gradient(45deg, white, #e6eef7); */
-            background-color: white;
             border-radius: 2rem;
         }
-        main>section#assignment>section#assignment_content>div>div{
-            width: 80%;
+        main>section#assignment>section#assignment_content>div>div#assignment_img{
+            border-radius: 2rem;
+            width: 85%;
+            height: 85%;
+            transition: height .8s;
         }
         main>section#assignment>section#assignment_content>div>div>img{
+            border-radius: 2rem;
             width: 100%;
+            height: 100%;
         }
 
         main>section#assignment>section#btn_see_all{
@@ -713,14 +932,57 @@
             padding-bottom: 20px;
         }
         main>section#assignment>section#btn_see_all>button{
+            position: relative;
             width: 150px;
             height: 40px;
             border-radius: 1rem;
             border-width: 0;
             color: white;
             background-color: #0056B3;
-            font-weight: 600;
+            border: 2px solid #0056B3;
             cursor: pointer;
+            transition: all .2s;
+        }
+        main>section#assignment>section#btn_see_all>button:hover{
+            transition: all .2s;
+            background-color: transparent;
+            border: 2px solid #0056B3;
+            color: #0056B3;
+        }
+
+        .assignments-page .hide-layer-assignment{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 0;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            gap: 20px;
+            transition: height 0.5s;
+            background: linear-gradient(to top, #0056B3, transparent);
+            border-radius: 2rem;
+        }
+        .assignments-page .hide-layer-assignment>p{
+            font-size: 16px;
+            /* font-weight: 600; */
+            color: white;
+        }
+        .assignments-page .hide-layer-assignment>a>i{
+            font-size: 40px;
+            color: white;
+        }
+        .assignments-page .assignment:hover #assignment_img{
+            transition: height .8s;
+            width: 100% !important;
+            height: 100% !important;
+            opacity: 0.3;
+        }
+        .assignments-page .assignment:hover .hide-layer-assignment{
+            height: 100%;
         }
 
 
@@ -781,7 +1043,7 @@
             height: 50px;
             border: none;
             outline: none;
-            background-color: white;
+            background: transparent;
             border-radius: 0.5rem;
         }
         main>section#contact_me>section#contact_content>aside>fieldset>form>div>textarea{
@@ -789,7 +1051,7 @@
             height: 140px;
             border: none;
             outline: none;
-            background-color: white;
+            background: transparent;
             border-radius: 0.5rem;
         }
         main>section#contact_me>section#contact_content>aside>fieldset>form>button{
@@ -799,9 +1061,10 @@
             border-radius: 0.5rem;
             border-width: 0;
             color: #0056B3;
-            background-color: white;
+            background: transparent;
+            border: 1.9px solid #0056B3;
             box-shadow: 6px 6px 20px 0px #0056b380;
-            font-weight: 600;
+            font-size: 17px;
             cursor: pointer;
             transition: all .5s;
         }
@@ -830,11 +1093,10 @@
             color: #0056B3;
         }
         main>section#contact_me>section#contact_content>address>div>p{
-            font-size: 15px;
+            font-size: 14px;
         }
         main>section#contact_me>section#contact_content>address>div>p>span{
-            font-size: 20px;
-            font-weight: 700px;
+            font-size: 18px;
         }
 
         main>section#contact_me>section#contact_content>address>section#social_links{
@@ -847,7 +1109,36 @@
         main>section#contact_me>section#contact_content>address>section#social_links>div>a>i{
             font-size: 30px;
             color: black;
+            transition: all 0.25s;
         }
+
+        /* nav-icon-hover----------------------------------- */
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i#nav-icon-facebook:hover{
+            transition: all 0.25s;
+            color: #0056B3;
+            transform: scale(1.2);
+        }
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i#nav-icon-linked-in:hover{
+            transition: all 0.25s;
+            color: #0056B3;
+            transform: scale(1.2);
+        }
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i#nav-icon-github:hover{
+            transition: all 0.25s;
+            color: #0056B3;
+            transform: scale(1.2);
+        }
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i#nav-icon-twitter:hover{
+            transition: all 0.25s;
+            color: #0056B3;
+            transform: scale(1.2);
+        }
+        main>section#contact_me>section#contact_content>address>section#social_links>div>a>i#nav-icon-whatsapp:hover{
+            transition: all 0.25s;
+            color: #0056B3;
+            transform: scale(1.2);
+        }
+
 
 
         /* footer /////////////////////////////////////////////////////////////////////////////////// */
@@ -859,6 +1150,7 @@
             background-color: #003E80;
             padding-top: 40px;
             padding-bottom: 40px;
+            opacity: .89;
         }
         footer>div:nth-child(1){
             display: flex;
@@ -875,7 +1167,6 @@
         footer>div:nth-child(1)>nav>ul>li>a{
             text-decoration: none;
             font-size: 14px;
-            font-weight: 700;
             color: white;
         }
 
@@ -893,61 +1184,507 @@
             color: white;
         }
 
+
+        /* media query (320)/////////////////////////////////////////////////////////////// */
+
+        @media (min-width :320px) and (max-width: 1023px){
+
+            .title-name{
+                font-size: 30px !important;
+            }
+
+            /* header ---------------------------------------- */
+            header>#header-nav{
+                display: none;
+            }
+            header #header-bar{  
+            display: inline-block;
+            right: 30px;
+            }
+
+
+            /* home-page -------------------------------------- */
+            main>section#home-page>section#home-content {
+                flex-wrap: wrap-reverse;
+                gap: 60px;
+                margin-top: 150px;
+                margin-bottom: 100px;
+            }
+            main>section#home-page>section#home-content>section#home-detail{
+                width: 80%;
+            }
+
+            .home-page #home-detail>hgroup>h1{
+                font-size: 30px;
+            }
+            main>section#home-page>section#home-content>section#home-detail>hgroup>h4{
+                padding-top: 0;
+                font-size: 15px;
+            }
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
+                margin-top: 40px;
+            }
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links>div {
+                width: 40px;
+                height: 40px;
+            }
+            main>section#home-page #nav-icon{
+                font-size: 30px;
+            }
+            main>section#home-page>section#home-content>section#home-detail>div#home-button>button{
+                font-size: 13.5px;
+                width: 110px;
+                height: 35px;
+            }
+            main>section#home-page>section#home-content>div#pro-pic>img {
+                width: 200px;
+            }
+
+
+            /* aboutme-page -------------------------------------- */
+            main>.about_me_page>section#about_me{
+                flex-direction: column;
+            }
+            main>.about_me_page>section#about_me>div{
+                width: 50%;
+            }
+            main>.about_me_page>section#about_me>section:nth-child(2){
+                width: 80%;
+            }
+            main>.about_me_page>section#about_me>section:nth-child(2)>article{
+                text-align: -webkit-center;
+            }
+            main>.about_me_page>section#about_me>section:nth-child(2)>button{
+                font-size: 13.5px;
+                width: 110px;
+                height: 35px;  
+                align-self: center;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+
+            /* service-page -------------------------------------- */
+            main>section#my_services>section>section#service_types>div{
+                width: 80%;
+                height: 265px;
+            }
+            main>section#my_services>section>section#service_types>div>div>i{
+                font-size: 30px;
+            }
+            main>section#my_services>section>section#service_types>div>h3{
+                font-size: 20px
+            }
+            main>section#my_services>section>section#service_types>div>article>p{
+                font-size: 15px;
+            }
+
+
+            /* skills-page -------------------------------------- */
+            main>section#skills>section#skills_title>h4{
+                font-size: 20px;
+            }
+            main>section#skills>section#skill_icons>section{   
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+            }
+            main>section#skills>section>section>div:nth-child(3){
+                width: 80px;
+                height: 80px;
+                align-self: self-end;
+            }
+            main>section#skills>section>section>div:nth-child(8){
+                width: 90px;
+                height: 90px;
+                align-self: self-start;
+            }
+            main>section#skills>section>section>div:nth-child(2){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(4){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(7){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(9){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(1){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(5){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(6){
+                display: none;
+            }
+            main>section#skills>section>section>div:nth-child(10){
+                display: none;
+            }
+            main>section#skills>section#skill_icons>div>i{
+                font-size: 35px;
+            }
+
+
+            /* education-page -------------------------------------- */
+            main>section#education>section#edu_content>section:nth-child(1){
+                margin-left: 0;
+            }
+            main>section#education>section#edu_content>section:nth-child(2){
+                flex-direction: row-reverse;
+                margin-right: 0;
+            }
+            main>section#education>section#edu_content>section:nth-child(3){
+                margin-left: 0;
+            }
+            div#stages>h3{
+                font-size: 12px;
+            }
+            div#stages>p, h5{
+                font-size: 11px;
+            }
+            main>section#education>section#edu_content>section>div#stages{
+                width: 190px;
+            }
+            main>section#education>section#edu_content>section>div#line{
+                width: 40px;
+                height: 8px;
+            }
+            main>section#education>section#edu_content>section>div#curcle{
+                width: 30px;
+                height: 30px;
+            }
+            main>section#education>div{
+                right: 230px;
+                top: 85px;
+                width: 8px;
+            }
+
+
+            /* project-page -------------------------------------- */
+            main>section#projects>section#flex-cover>section#project_content{
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(4,1fr);
+                gap: 0;
+            }
+            main>section#projects>section#flex-cover>section#project_content>section>div{
+                width: 80%;
+                height: 150px;
+                gap: 5px;
+            }
+            main>section#projects>section#flex-cover>section#project_content>section>div>h3{
+                font-size: 12px;
+            }
+            main>section#projects>section#btn_see_all>button{
+                font-size: 13.5px;
+                width: 110px;
+                height: 35px;
+            }
+
+            /* assignment-page -------------------------------------- */
+            main>section#assignment>section#assignment_content>div{
+                width: 80%;
+                height: 150px;
+                gap: 5px;
+            }
+            main>section#assignment>section#assignment_content>div>h3{
+                font-size: 12px;
+            }
+            main>section#assignment>section#btn_see_all>button{
+                font-size: 13.5px;
+                width: 110px;
+                height: 35px;
+            }
+
+            /* contactme-page -------------------------------------- */
+            main>section#contact_me>section#contact_content{
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            main>section#contact_me>section#contact_content>aside{          
+                margin: 0;
+                width: 100%;
+                height: max-content;
+            }
+            main>section#contact_me>section#contact_content>aside>fieldset>form>div>input{
+                height: 35px;
+                font-size: 12px;
+            }
+            main>section#contact_me>section#contact_content>aside>fieldset>form>div>textarea{
+                height: 120px;
+                font-size: 12px;
+            }
+            main>section#contact_me>section#contact_content>aside>fieldset>form>button{
+                height: 25px;
+                font-size: 12px;
+            }
+
+            main>section#contact_me>section#contact_content>address{
+                width: 80%;
+            }
+            main>section#contact_me>section#contact_content>address>div{
+                margin: 0;
+                gap: 5px;
+            }
+            main>section#contact_me>section#contact_content>address>div>i {
+                font-size: 20px;
+            }
+            main>section#contact_me>section#contact_content>address>div>p{
+                font-size: 11px;
+            }
+            main>section#contact_me>section#contact_content>address>div>p>span{
+                font-size: 13px;
+                font-weight: 700;
+            }
+            main>section#contact_me>section#contact_content>address>section#social_links{
+                width: max-content;
+                margin-top: 20px;
+            }
+
+
+             /* footer -------------------------------------- */
+            footer>div:nth-child(1)>nav>ul>li>a{
+                font-size: 9px;
+            }
+            footer>div:nth-child(1)>nav>ul{
+                gap: 5px;
+            }
+            footer{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* media query (425-769)/////////////////////////////////////////////////////////////// */
+        @media (min-width: 425px) and (max-width: 1023px){
+            /* home -------------------------------------- */
+            main>section#home-page>section#home-content>div#pro-pic>img{
+                width: 275px;
+            }
+
+            /* aboutme -------------------------------------- */
+            main>.about_me_page>section#about_me>div{
+                width: 225px;
+            }
+
+            /* service -------------------------------------- */
+            main>section#my_services>section>section#service_types>div{
+                width: 60%;
+            }
+        }
+
+        /* media query (575-768)/////////////////////////////////////////////////////////////// */
+        @media (min-width: 575px) and (max-width: 1023px){
+            /* skills -------------------------------------- */
+            main>section#skills>section#skill_icons>section{
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2,1fr);
+            }
+            main>section#skills>section>section>div:nth-child(2){
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+                margin-left: 10px;
+            }
+            main>section#skills>section>section>div:nth-child(4){
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+            }
+            main>section#skills>section>section>div:nth-child(7){
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+                margin-left: 10px;
+            }
+            main>section#skills>section>section>div:nth-child(9){
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+            }
+
+            /* education -------------------------------------- */
+            main>section#education>section#edu_content>section>div#stages{
+                width: 400px;
+            }
+            div#stages>h3{
+                font-size: 15px;
+            }
+            div#stages>p, h5{
+                font-size: 13px;
+            } 
+            main>section#education>div{
+                right: 440px;
+            }
+
+            /* project -------------------------------------- */
+            main>section#projects>section#flex-cover>section#project_content>section>div{
+                width: 60%;
+                height: 225px;
+                gap: 10px;
+            }
+            main>section#projects>section#flex-cover>section#project_content>section>div>h3{
+                font-size: 14px;
+            }
+
+            /* assignment -------------------------------------- */
+            main>section#assignment>section#assignment_content>div{
+                width: 70%;
+                height: 225px;
+                gap: 10px;
+            }
+            main>section#assignment>section#assignment_content>div>h3{
+                font-size: 14px;
+            }
+
+            /* contact-me -------------------------------------- */
+            main>section#contact_me>section#contact_content>aside{
+                width: 70%;
+            }
+            main>section#contact_me>section#contact_content>address{
+                width: 45%;
+            }
+        }
+
+        /* media query (715-1024)/////////////////////////////////////////////////////////////// */
+        @media (min-width: 715px) and (max-width: 1023px){
+            main>section#assignment>section#assignment_content>div {
+                width: 425px;
+            }
+        }
+
+        /* media query (1024-1224)/////////////////////////////////////////////////////////////// */
+        @media (min-width: 1023px) and (max-width: 1224px){
+            /* header -------------------------------------- */
+            header>nav>menu{
+                gap: 20px;
+            }
+            header>nav>menu>li{
+                font-size: 15px;
+            }
+
+            /* home -------------------------------------- */
+            main>section#home-page h1{
+                font-size: 50px;
+            }
+            main>section#home-page>section#home-content{
+                gap: 8%;
+            }
+            main>section#home-page>section#home-content>section#home-detail>hgroup{
+                gap: 0;
+            }
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
+                margin-top: 50px;
+            }
+            main>section#home-page>section#home-content>div#pro-pic>img{
+                width: 350px;
+            }
+
+            /* education -------------------------------------- */
+            main>section#education>section#edu_content>section:nth-child(1){
+                margin-left: 0;
+            }
+            main>section#education>section#edu_content>section:nth-child(2){
+                margin-right: 0;
+                flex-direction: row-reverse;
+            }
+            main>section#education>section#edu_content>section:nth-child(3){
+                margin-left: 0;
+            } 
+            main>section#education>div{
+                right: 470px;
+            }
+
+            /* project -------------------------------------- */
+            main>section#projects>section#flex-cover>section#project_content>section>div{
+                height: 250px;
+            }
+
+            /* assignment -------------------------------------- */
+            main>section#assignment>section#assignment_content>div{
+                height: 200px;
+            }
+        }
+
+        /* media query (1224-1324)/////////////////////////////////////////////////////////////// */
+        @media (min-width: 1224px) and (max-width: 1324px){
+            /* home -------------------------------------- */
+            main>section#home-page h1{
+                font-size: 50px;
+            }
+            main>section#home-page>section#home-content{
+                gap: 8%;
+            }
+            main>section#home-page>section#home-content>section#home-detail>hgroup{
+                gap: 0;
+            }
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
+                margin-top: 50px;
+            }
+            main>section#home-page>section#home-content>div#pro-pic>img{
+                width: 350px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div>
-            <h2>IsuruLak</h2>
+            <h2>Isuru<span>Lak</span></h2>
         </div>
-        <nav>
+        <nav id="header-nav">
             <menu>
-                <li><a href="#home_page">Home</a></li>
-                <li><a href="#about_me">About</a></li>
-                <li><a href="#my_services">Services</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#assignment">assignment</a></li>
+                <li><a id="home-nav" href="#home-page">Home</a></li>
+                <li><a  id="about-me-nav" href="#about_me">About</a></li>
+                <li><a id="my-services-nav" href="#my_services">Services</a></li>
+                <li><a id="skills-nav" href="#skills">Skills</a></li>
+                <li><a id="projects-nav" href="#projects">Projects</a></li>
+                <li><a id="assignment-nav" href="#assignment">Assignment</a></li>
                 <!-- <li><a href="">Gallery</a></li> -->
-                <li><a href="#contact_me">Contact</a></li>
+                <li><a id="contact-me-nav" href="#contact_me">Contact</a></li>
             </menu>
         </nav>
+        <div id="header-bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
 
     <main>
         <!-- home Page -->
-        <section id="home_page">
-            <section id="home_content">
-                <section id="home_detail">
+        <section class="home-page" id="home-page">
+            <section id="home-content">
+                <section id="home-detail">
                     <hgroup>
                         <h1>Hi, I'm 
                             <span>Isuru Lakshan</span>
                         </h1>
                         <h4>a software engineering undergraduate from Sri Lanka</h4>
                     </hgroup>
-                    <nav id="home_social_links">
-                        <div>
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <nav class="home-social-links" id="home-social-links">
+                        <div id="nav-icon-facebook">
+                            <a href=""><i id="nav-icon" class="fa-brands fa-facebook"></i></a>
                         </div>
-                        <div>
-                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <div id="nav-icon-linked-in">
+                            <a href=""><i id="nav-icon" class="fa-brands fa-linkedin-in"></i></a>
                         </div>
-                        <div>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
+                        <div id="nav-icon-github">
+                            <a href=""><i id="nav-icon" class="fa-brands fa-github"></i></a>
                         </div>
-                        <div>
-                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <div id="nav-icon-twitter">
+                            <a href=""><i id="nav-icon" class="fa-brands fa-twitter"></i></a>
                         </div>
-                        <div>
-                            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        <div id="nav-icon-whatsapp">
+                            <a href=""><i id="nav-icon" class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </nav>
-                    <div id="home_button">
+                    <div id="home-button">
                         <button>Hire me <a id="button_navigation_a" href="#contact_me"></a></button>
                         <button>Download CV <a id="button_navigation_a" href="assests/resources/My CV/Transition Tasks.pdf" target="_blank" download="Transition Tasks.pdf"></a></button>
                     </div>
                 </section>
-                <div id="pro_pic">
+                <div id="pro-pic">
                     <img src="assests/resources/images/home-profile-picture.svg" alt="image not found">
                 </div>
             </section>
@@ -955,31 +1692,33 @@
         </section>
 
         <!-- about me -->
-        <section id="about_me">
-            <div>
-                <img width="100%" src="assests/resources/images/about-me.jpeg" alt="image not found">
-            </div>
-            <section>
-                <hgroup>
-                    <h1>About me</h1>
-                </hgroup>
-                <article>
-                    <p>    Hello, I am Isuru Lakshan.  a dedicated software engineering 
-                        student currently pursuing my studies at IJSE . As a passionate 
-                        learner, I am actively acquiring the skills and knowledge necessary 
-                        to excel in the field of software engineering.<br><br>
-                        
-                             I also have knowledge of web development ,UI/UX designing, 
-                        database management and frameworks,...etc.I'm passionate about
-                        using my skills to solve problems and create innovative solutions.
-                </article>
-                <button>Download CV <a id="button_navigation_a" href="assests/resources/My CV/Transition Tasks.pdf" target="_blank" download="Transition Tasks.pdf"></a></a></button>
+        <section class="about_me_page">
+            <section id="about_me">
+                <div>
+                    <img width="100%" src="assests/resources/images/about-me.jpeg" alt="image not found">
+                </div>
+                <section>
+                    <hgroup>
+                        <h1 class="title-name">About me</h1>
+                    </hgroup>
+                    <article>
+                        <p class="text-content">    Hello, I am Isuru Lakshan.  a dedicated software engineering 
+                            student currently pursuing my studies at IJSE . As a passionate 
+                            learner, I am actively acquiring the skills and knowledge necessary 
+                            to excel in the field of software engineering.<br><br>
+                            
+                                 I also have knowledge of web development ,UI/UX designing, 
+                            database management and frameworks,...etc.I'm passionate about
+                            using my skills to solve problems and create innovative solutions.
+                    </article>
+                    <button>Download CV <a id="button_navigation_a" href="assests/resources/My CV/Transition Tasks.pdf" target="_blank" download="Transition Tasks.pdf"></a></a></button>
+                </section>
             </section>
         </section>
 
         <!-- my services -->
-        <section id="my_services">
-            <h1>My Services</h1>
+        <section class="service-page" id="my_services">
+            <h1 class="title-name">My Services</h1>
             <section>
                 <section id="service_types">
                     <div>
@@ -1014,9 +1753,9 @@
         </section>
 
         <!-- skills -->
-        <section id="skills">
+        <section class="skills-page" id="skills">
             <section id="skills_title">
-                <h1>Skills</h1>
+                <h1 class="title-name">Skills</h1>
                 <h4>Languages and Framework</h4>
             </section>
             <section id="skill_icons">
@@ -1048,9 +1787,9 @@
         </section>
 
         <!-- education -->
-        <section id="education">
+        <section class="education-page" id="education">
             <section id="title">
-                <h1>Education</h1>
+                <h1 class="title-name">Education</h1>
             </section>
             <section id="edu_content">
                 <section>
@@ -1095,29 +1834,57 @@
         </section>
 
         <!-- projects -->
-        <section id="projects">
+        <section class="projects-page" id="projects">
            <section id="project_title">
-            <h1>Projects</h1>
+            <h1 class="title-name">Projects</h1>
            </section>
-           <section id="project_content">
-                <div>
-                    <h3>Management System</h3>
-                    <div id="project_images">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+           <section id="flex-cover">
+            <section id="project_content">
+                <section >
+                    <div class="project">
+                        <h3>Management System</h3>
+                        <div id="project_images">
+                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        </div>
+                        <div class="hide-layer-project">
+                            <p>java/javaFX</p>
+                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <h3>Sport Shop Management System</h3>
-                    <div id="project_images">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                    <div class="project">
+                        <h3>Sport Shop Management System</h3>
+                        <div id="project_images">
+                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        </div>
+                        <div class="hide-layer-project">
+                            <p>java/javaFX</p>
+                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <h3>Management System</h3>
-                    <div id="project_images">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                </section>
+                <section>
+                    <div class="project">
+                        <h3>Management System</h3>
+                        <div id="project_images">
+                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        </div>
+                        <div class="hide-layer-project">
+                            <p>java/javaFX</p>
+                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        </div>
                     </div>
-                </div>
+                    <div class="project">
+                        <h3>Management System4</h3>
+                        <div id="project_images">
+                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        </div>
+                        <div class="hide-layer-project">
+                            <p>java/javaFX</p>
+                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        </div>
+                    </div>
+                </section>
+           </section>
            </section>
            <section id="btn_see_all">
                 <button>See All <a id="button_navigation_a" href="assests/anthorPages/projectPage.html" target="_blank"></a></button>
@@ -1125,39 +1892,51 @@
         </section>
 
         <!-- assignment -->
-        <section id="assignment">
+        <section class="assignments-page" id="assignment">
            <section id="assignment_title">
-            <h1>Assignment</h1>
+            <h1 class="title-name">Assignment</h1>
            </section>
            <section id="assignment_content">
-                <div>
-                    <h3>Assignment</h3>
+                <div class="assignment">
+                    <!-- <h3>Assignment</h3> -->
                     <div id="assignment_img">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        <img src="assests/resources/images/assignment-page/Screenshot-1.png" alt="image not found">
+                    </div>
+                    <div class="hide-layer-assignment">
+                        <p>CSS Assignments</p>
+                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h3>Assignment</h3>
+                <div class="assignment">
+                    <!-- <h3>Assignment</h3> -->
                     <div id="assignment_img">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        <img src="assests/resources/images/assignment-page/Screenshot-2.png" alt="image not found">
+                    </div>
+                    <div class="hide-layer-assignment">
+                        <p>Transition Assignments</p>
+                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h3>Assignment</h3>
+                <div class="assignment">
+                    <!-- <h3>Assignment</h3> -->
                     <div id="assignment_img">
-                        <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                        <img src="assests/resources/images/assignment-page/Screenshot-3.png" alt="image not found">
+                    </div>
+                    <div class="hide-layer-assignment">
+                        <p>CSS Assignments</p>
+                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                     </div>
                 </div>
            </section>
            <section id="btn_see_all">
             <button>See All <a id="button_navigation_a" href="assests/anthorPages/assignmentPage.html" target="_blank"></a></button>
-       </section>
+         </section>
         </section>
 
         <!-- contact with me -->
-        <section id="contact_me">
+        <section class="contact-me-page" id="contact_me">
             <section id="contact_title">
-                <h1>Contact With Me</h1>
+                <h1 class="title-name">Contact With Me</h1>
             </section>
             <section id="contact_content">
                 <aside>
@@ -1192,19 +1971,19 @@
                     </div>
                     <section id="social_links">
                         <div>
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i id="nav-icon-facebook" class="fa-brands fa-facebook"></i></a>
                         </div>
                         <div>
-                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href=""><i id="nav-icon-linked-in" class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <div>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
+                            <a href=""><i id="nav-icon-github" class="fa-brands fa-github"></i></a>
                         </div>
                         <div>
-                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""><i id="nav-icon-twitter" class="fa-brands fa-twitter"></i></a>
                         </div>
                         <div>
-                            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href=""><i id="nav-icon-whatsapp" class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </section>
                </address>
@@ -1216,7 +1995,7 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="#home_page">Home</a></li>
+                    <li><a href="#home-page">Home</a></li>
                     <li><a href="#about_me">About</a></li>
                     <li><a href="#my_services">Services</a></li>
                     <li><a href="#skills">Skills</a></li>
