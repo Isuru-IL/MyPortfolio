@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../assests/normalize.css">
+    <title>Animation case01</title>
+    <style>
+        main>div{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            border-radius: 2rem;
+            animation-name: rect;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            display: inline-block;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        @keyframes rect{
+            0%{
+                left: 0;
+                top: 0;
+                background-color: blue;
+                transform: rotate(0deg);
+            }
+            25%{
+                position: relative;
+                top: 0;
+                left: 500px;
+                background-color: yellow;
+                transform: rotate(180deg);
+            }
+            50%{
+                position: relative;
+                top: 500px;
+                left: 500px;
+                background-color: green;
+                transform: rotate(360deg);
+            }
+            75%{
+                position: relative;
+                top: 500px;
+                left: 0;
+                background-color: black;
+                transform: rotate(180deg);
+            }
+            100%{
+                top: 0;
+                left: 0;
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+</html>

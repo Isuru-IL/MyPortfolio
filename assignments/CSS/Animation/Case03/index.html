@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../assests/normalize.css">
+    <title>Transition case03</title>
+    <style>
+        section{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 700px;
+            height: 500px;
+        }
+
+        div{
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 700px;
+            height: 500px;
+            animation-name: img-div;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes img-div{
+            0%{
+              margin-right: 700px;
+            }
+            33%{
+                margin-right: 1400px;
+            }
+            66%{
+                margin-right: 2100px;
+            }
+            100%{
+                margin-right: 2800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <img width="700px" src="assets/img02.jpg" alt="">
+                <img width="700px" src="assets/img03.jpg" alt="">
+                <img width="700px" src="assets/img05.jpg" alt="">
+                <img width="700px" src="assets/img06.jpg" alt="">
+                <img width="700px" src="assets/img03.jpg" alt="">
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>
