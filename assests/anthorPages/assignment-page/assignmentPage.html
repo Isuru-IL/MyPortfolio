@@ -3,16 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../resources/myPortfolio-icon.png">
+    <link rel="icon" href="../../resources/myPortfolio-icon.png">
     <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../../resources/fontawesome/css/all.css">
     <title>Assignment</title>
     <style>
+         *{
+            box-sizing: border-box;
+            font-family: 'Poppins' ,sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+        }
+
+        body{
+            height: 100vh;
+            background-image: url(assets/background-img.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
         header>h1{
             margin: 0;
             text-align: center;
             font-size: 50px;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-            padding-top: 110px;
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+
+
+        .main-section{
+            margin-top: 50px;
+            margin-bottom: 150px;
+
+        }
+        .main-section>h1{
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 50px;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .cover{
+            /* background-color: aqua; */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .cover .container{
+            /* background-color: antiquewhite; */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            width: 80%;
+        }
+        .cover .assignment-item-div{
+            /* background-color: burlywood; */
+            position: relative;
+            width: 300px;
+            border-radius: 30px;
+            background: transparent;
+            /* box-shadow: 6px 6px 20px 0px #0056b380; */
+            transition: all .5s;
+        }
+        .assignment-item-div>img{
+            width: 100%;
+            border-radius: 30px;
+            transition: all .5s;
+        }
+        .assignment-item-div .hide-div{
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            height: 100%;
+            background-color: transparent;
+            transition: all .5s;
+        }
+        .hide-div .git-hub-icon-a>i{
+            font-size: 30px;
+            color: black;
+        }
+        .hide-div>h4,p{
+            font-size: 25px;
+            text-align: center;
+            color: black;
+            font-weight: 100;
+        }
+
+        .cover .assignment-item-div:hover{
+            transition: all .5s;
+            scale: .95;
+        }
+        .cover .assignment-item-div:hover img{
+            transition: all .5s;
+            opacity: 0.2;
+        }
+        .assignment-item-div:hover .hide-div{
+            transition: all .5s;
+            border-radius: 30px;
+
+            opacity: 1;
         }
     </style>
 </head>
@@ -20,5 +124,117 @@
     <header>
         <h1>ASSIGNMENTS</h1>
     </header>
+    <section class="main-section" id="CSS-section">
+        <h1>CSS</h1>
+        <section class="cover">
+            <section class="container">
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case01.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 01</h4>
+                        <!-- <p>1'st semester final project using JavaFx and JDBC</p> -->
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case1/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case02.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 02</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case2/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case03.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 03</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case3/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case04.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 04</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case4/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case05.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 05</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case5/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/CSS/CSS-case06.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 06</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Case6/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section class="main-section" id="animation-section">
+        <h1>TRANSITION</h1>
+        <section class="cover">
+            <section class="container">
+                <div class="assignment-item-div">
+                    <img src="assets/Transition/transition-case01.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 01</h4>
+                        <!-- <p>1'st semester final project using JavaFx and JDBC</p> -->
+                        <a class="git-hub-icon-a" href="../../../assignments/Transition/Case01/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/Transition/trnsition-case02.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 02</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/Transition/Case02/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/Transition/transition-case03.gif" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 03</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/Transition/Case03/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/Transition/transition-case04.png" alt="assignment-img not found">
+                    <div class="hide-div">
+                        <h4>Case 04</h4>
+                        <a class="git-hub-icon-a" href="../../../assignments/Transition/Case04/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section class="main-section" id="transition-section">
+        <h1>ANIMATION</h1>
+        <section class="cover">
+            <section class="container">
+                <div class="assignment-item-div">
+                    <img src="assets/Animation/animation-case01.gif" alt="gif not foud">
+                    <div class="hide-div">
+                        <h4>Case 01</h4>
+                        <!-- <p>1'st semester final project using JavaFx and JDBC</p> -->
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Animation/Case01/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment-item-div">
+                    <img src="assets/Animation/animation-case03.gif" alt="gif not foud">
+                    <div class="hide-div">
+                        <h4>Case 03</h4>
+                        <!-- <p>1'st semester final project using JavaFx and JDBC</p> -->
+                        <a class="git-hub-icon-a" href="../../../assignments/CSS/Animation/Case03/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
 </body>
 </html>

@@ -14,6 +14,15 @@
             scroll-behavior: smooth;
             margin: 0;
         }
+        body{
+            height: 100vh;
+            background-image: url(assets/background-img.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
         header>h1{
             margin: 0;
             text-align: center;
@@ -42,10 +51,10 @@
         .projects-cover .project-item-div{
             /* background-color: burlywood; */
             position: relative;
-            width: 350px;
+            width: 550px;
             border-radius: 30px;
             background: transparent;
-            box-shadow: 6px 6px 20px 0px #0056b380;
+            /* box-shadow: 6px 6px 20px 0px #0056b380; */
             transition: all .5s;
         }
         .project-item-div>img{
@@ -71,12 +80,13 @@
             transition: all .5s;
         }
         .hide-div .git-hub-icon-a>i{
-            font-size: 30px;
-            color: #0056B3;
+            font-size: 50px;
+            color: black;
         }
         .hide-div>h4,p{
+            font-size: 20px;
             text-align: center;
-            color: #0056B3;
+            color: black;
         }
 
         .projects-cover .project-item-div:hover{
@@ -85,7 +95,7 @@
         }
         .projects-cover .project-item-div:hover img{
             transition: all .5s;
-            opacity: 0.2;
+            opacity: 0.4;
         }
         .project-item-div:hover .hide-div{
             transition: all .5s;
@@ -103,24 +113,20 @@
         <section class="projects-cover">
             <section class="projects-container">
                 <div class="project-item-div">
-                    <img src="assets/LoginForm-project.png" alt="project-img not found">
+                    <img src="assets/sports-zone.png" alt="project-img not found">
                     <div class="hide-div">
                         <h4>sport shop management system</h4>
-                        <p>1'st semester final project using JavaFx and JDBC</p>
-                        <a class="git-hub-icon-a" href=""><i class="fa-brands fa-github fa-beat"></i></a>
+                        <p>1'st semester final project using JavaFx, JDBC</p>
+                        <a class="git-hub-icon-a" href="https://github.com/Isuru-IL/simple-hostel-management-system" target="_blank"><i class="fa-brands fa-github fa-beat"></i></a>
                     </div>
                 </div>
                 <div class="project-item-div">
-                    <img src="assets/LoginForm-project.png" alt="project-img not found">
-                </div>
-                <div class="project-item-div">
-                    <img src="assets/LoginForm-project.png" alt="project-img not found">
-                </div>
-                <div class="project-item-div">
-                    <img src="assets/LoginForm-project.png" alt="project-img not found">
-                </div>
-                <div class="project-item-div">
-                    <img src="assets/LoginForm-project.png" alt="project-img not found">
+                    <img src="assets/D24-hostal.png" alt="project-img not found">
+                    <div class="hide-div">
+                        <h4>D24 Hostel management system</h4>
+                        <p>Hostel management system using JavaFx, Hibernate</p>
+                        <a class="git-hub-icon-a" href="https://github.com/Isuru-IL/simple-hostel-management-system" target="_blank"><i class="fa-brands fa-github fa-beat"></i></a>
+                    </div>
                 </div>
             </section>
         </section>

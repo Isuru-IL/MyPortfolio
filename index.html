@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <title>Isuru Lakshan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assests/resources/myPortfolio-icon.png">
@@ -162,7 +162,9 @@
         
         /* home page  #1c1717e8  //////////////////////////////////////////////////////////////////*/
         main>section#home-page{
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             /* background-color:rgb(196, 252, 252); */
             width: 100%;
         }
@@ -177,6 +179,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            width: 70%;
             gap: 150px;
             margin-top: 200px;
             margin-bottom: 150px;
@@ -198,15 +201,14 @@
         main>section#home-page>section#home-content>div#pro-pic{
             position: relative;
             display: inline-block;
-            width: max-content;
+            width: 35%;
             height: max-content;
         }
         main>section#home-page>section#home-content>div#pro-pic>img{
-            width: 500px;
+            width: 100%;
         }
 
         main>section#home-page>section#home-content>section#home-detail>hgroup>h1>span{
-            font-family:cursive;
             color: #003E80;
             margin-left: 10px;
         }
@@ -857,7 +859,7 @@
             color: white;
         }
         .projects-page .hide-layer-project>a>i{
-            font-size: 40px;
+            font-size: 50px;
             color: white;
         }
         .projects-page .project:hover #project_images{
@@ -1559,6 +1561,16 @@
         /* media query (1024-1224)/////////////////////////////////////////////////////////////// */
         @media (min-width: 1023px) and (max-width: 1224px){
             /* header -------------------------------------- */
+            header{
+                height: 60px;
+            }
+            header>div>h2{
+                margin: 0;
+                margin-top: 15px;
+            }
+            header>nav{
+                top: 5px;
+            }
             header>nav>menu{
                 gap: 20px;
             }
@@ -1568,7 +1580,7 @@
 
             /* home -------------------------------------- */
             main>section#home-page h1{
-                font-size: 50px;
+                font-size: 35px;
             }
             main>section#home-page>section#home-content{
                 gap: 8%;
@@ -1576,12 +1588,29 @@
             main>section#home-page>section#home-content>section#home-detail>hgroup{
                 gap: 0;
             }
+            main>section#home-page>section#home-content>section#home-detail>hgroup>h4 {
+                font-size: 13px;
+            }
             main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
                 margin-top: 50px;
             }
-            main>section#home-page>section#home-content>div#pro-pic>img{
-                width: 350px;
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links>div {
+                width: 40px;
+                height: 40px;
             }
+            .home-page #nav-icon{
+                font-size: 28px;
+            }
+            main>section#home-page>section#home-content>div#pro-pic>img{
+                width: 100%;
+            }
+            main>section#home-page>section#home-content>section#home-detail>div#home-button>button{
+                width: 120px;
+                height: 35px;
+                font-size: 15px;
+            }
+
+
 
             /* education -------------------------------------- */
             main>section#education>section#edu_content>section:nth-child(1){
@@ -1610,10 +1639,28 @@
         }
 
         /* media query (1224-1324)/////////////////////////////////////////////////////////////// */
-        @media (min-width: 1224px) and (max-width: 1340px){
+        @media (min-width: 1224px) and (max-width: 1640px){
+            /* header -------------------------------------- */
+            header{
+                height: 60px;
+            }
+            header>div>h2{
+                margin: 0;
+                margin-top: 15px;
+            }
+            header>nav{
+                top: 5px;
+            }
+            header>nav>menu{
+                gap: 20px;
+            }
+            header>nav>menu>li{
+                font-size: 15px;
+            }
+
             /* home -------------------------------------- */
             main>section#home-page h1{
-                font-size: 50px;
+                font-size: 40px;
             }
             main>section#home-page>section#home-content{
                 gap: 8%;
@@ -1624,15 +1671,24 @@
             main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
                 margin-top: 50px;
             }
-            main>section#home-page>section#home-content>div#pro-pic>img{
-                width: 350px;
-            }
         }
 
-        @media (min-width: 1340px) and (max-width: 1500px){
+        @media (min-width: 1340px) and (max-width: 1640px){
+
             /* home -------------------------------------- */
-            main>section#home-page>section#home-content>div#pro-pic>img{
-                width: 400px;
+            main>section#home-page h1{
+                font-size: 45px;
+            } 
+        }
+
+        @media (min-width: 1640px) and (max-width: 1830px){
+
+            /* home -------------------------------------- */
+            main>section#home-page h1{
+                font-size: 48px;
+            } 
+            main>section#home-page>section#home-content>section#home-detail>nav#home-social-links{
+                margin-top: 60px;
             }
         }
     </style>
@@ -1850,27 +1906,27 @@
             <section id="project_content">
                 <section >
                     <div class="project">
-                        <h3>Management System</h3>
+                        <h3>Sport Shop Management System</h3>
                         <div id="project_images">
-                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                            <img src="assests/resources/images/projects-page/sports-zone.png" alt="image not found">
                         </div>
                         <div class="hide-layer-project">
-                            <p>java/javaFX</p>
-                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                            <!-- <p>java/javaFX</p> -->
+                            <a href="assests/anthorPages/project-page/projectPage.html" target="_blank"><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                         </div>
                     </div>
                     <div class="project">
-                        <h3>Sport Shop Management System</h3>
+                        <h3>Hostel Management System</h3>
                         <div id="project_images">
-                            <img src="assests/resources/images/LoginForm-project.png" alt="image not found">
+                            <img src="assests/resources/images/projects-page/D24-hostal.png" alt="image not found">
                         </div>
                         <div class="hide-layer-project">
-                            <p>java/javaFX</p>
-                            <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                            <!-- <p>java/javaFX</p> -->
+                            <a href="assests/anthorPages/project-page/projectPage.html" target="_blank"><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                         </div>
                     </div>
                 </section>
-                <section>
+                <!-- <section>
                     <div class="project">
                         <h3>Management System</h3>
                         <div id="project_images">
@@ -1891,7 +1947,7 @@
                             <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                         </div>
                     </div>
-                </section>
+                </section> -->
            </section>
            </section>
            <section id="btn_see_all">
@@ -1908,31 +1964,31 @@
                 <div class="assignment">
                     <!-- <h3>Assignment</h3> -->
                     <div id="assignment_img">
+                        <img src="assests/resources/images/assignment-page/animation-case03.gif" alt="image not found">
+                    </div>
+                    <div class="hide-layer-assignment">
+                        <p>Animation Assignments</p>
+                        <a href="assests/anthorPages/assignment-page/assignmentPage.html#animation-section" target="_blank"><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                    </div>
+                </div>
+                <div class="assignment">
+                    <!-- <h3>Assignment</h3> -->
+                    <div id="assignment_img">
                         <img src="assests/resources/images/assignment-page/Screenshot-1.png" alt="image not found">
                     </div>
                     <div class="hide-layer-assignment">
-                        <p>CSS Assignments</p>
-                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        <p>CSS Basics Assignments</p>
+                        <a href="assests/anthorPages/assignment-page/assignmentPage.html#CSS-section" target="_blank"><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                     </div>
                 </div>
                 <div class="assignment">
                     <!-- <h3>Assignment</h3> -->
                     <div id="assignment_img">
-                        <img src="assests/resources/images/assignment-page/Screenshot-2.png" alt="image not found">
+                        <img src="assests/resources/images/assignment-page/transition-case03.gif" alt="image not found">
                     </div>
                     <div class="hide-layer-assignment">
                         <p>Transition Assignments</p>
-                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
-                    </div>
-                </div>
-                <div class="assignment">
-                    <!-- <h3>Assignment</h3> -->
-                    <div id="assignment_img">
-                        <img src="assests/resources/images/assignment-page/Screenshot-3.png" alt="image not found">
-                    </div>
-                    <div class="hide-layer-assignment">
-                        <p>CSS Assignments</p>
-                        <a href=""><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
+                        <a href="assests/anthorPages/assignment-page/assignmentPage.html#transition-section" target="_blank"><i class="fa-solid fa-circle-arrow-right fa-beat"></i></a>
                     </div>
                 </div>
            </section>
