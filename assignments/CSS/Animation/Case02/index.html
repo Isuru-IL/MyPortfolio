@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../assests/normalize.css">
+    <title>Animation case02</title>
+    <style>
+        body{
+            background-color: #00004c;
+        }
+
+        #hide-curcle{
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 275px;
+            height: 275px;
+            border-radius: 50%;
+            background-color: antiquewhite;
+            animation-name: move-curcle;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+        }
+        #stable-curcle{
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #00004c;
+        }
+
+        @keyframes move-curcle{
+            0%{
+                left: 0;
+                bottom: 0; 
+                right: 0;
+                top: 0;
+                box-shadow: 0px 0px 70px 20px antiquewhite;
+            }
+            25%{
+                left: 75px;
+                bottom: 75px;
+                right: 0;
+                top: 0;
+                box-shadow: 0px 0px 0px 0px antiquewhite;
+            }
+            50%{
+                left: 0;
+                bottom: 0; 
+                right: 0;
+                top: 0;
+                box-shadow: 0px 0px 70px 20px antiquewhite;
+            }
+            75%{
+                left: 0;
+                bottom: 0; 
+                right: 75px;
+                top: 75px;
+                box-shadow: 0px 0px 0px 0px antiquewhite;
+            }
+            100%{
+                left: 0;
+                bottom: 0; 
+                right: 0;
+                top: 0;
+                box-shadow: 0px 0px 70px 20px antiquewhite;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="hide-curcle"></div>
+    <div id="stable-curcle"></div>
+</body>
+</html>
