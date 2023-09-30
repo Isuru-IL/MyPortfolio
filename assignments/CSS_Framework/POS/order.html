@@ -34,6 +34,9 @@
             <li class="nav-item">
               <a class="nav-link active fw-medium text-body-secondary" aria-current="page" href="#">Place Orders</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orderDetails.html">Order Details</a>
+            </li>
           </ul>
           <ul class="navbar-nav gap-2">
             <li class="nav-item">
@@ -56,13 +59,13 @@
     <section id="content" class="container-fluid py-4 rounded-4">
       <section class="container-fluid">
         <section id="place-order-content" class="row d-flex justify-content-between flex-wrap">
-          <section id="order-details" class="col-8">
+          <section id="order-details" class="col-12 col-sm-8">
             <section id="invoice-details" class=" col-12 p-2 rounded-4">
               <div class="rounded-3 w-100 bg-primary">
                 <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Invoice Details</h5>
               </div>
               <div id="customer-detail-cover" class="row">
-                <div id="order-id" class="d-flex gap-5">
+                <div id="order-id" class="d-flex flex-wrap gap-5">
                   <div class="mt-1 col-5 col-md-3">
                     <label for="formGroupOrder-id-Input" class="form-label m-0">Order ID :</label>
                     <input type="text" class="form-control" id="formGroupOrder-id-Input" placeholder="Ex: OD-0001">
@@ -73,7 +76,7 @@
                   </div>
                 </div>
 <!--                order-id ////////////////////////-->
-                <div id="customer-id" class="d-flex align-items-center gap-3">
+                <div id="customer-id" class="d-flex flex-wrap align-items-center gap-3">
                   <div class="mt-1 col-5 col-md-3">
                     <label for="formGroupDateInput" class="form-label m-0">Customer ID :</label>
                     <select class="form-select" aria-label="Default select example">
@@ -102,8 +105,8 @@
                 <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Item Details</h5>
               </div>
               <div id="item-details-cover">
-                <div id="item-id" class="d-flex gap-5 align-items-center">
-                  <div class="mt-1 col-5 col-md-3">
+                <div id="item-id" class="d-flex flex-wrap gap-5 align-items-center">
+                  <div class="mt-1 col-4 col-md-3">
                     <label for="formGroupDateInput" class="form-label m-0">Item Code :</label>
                     <select class="form-select" aria-label="Default select example">
                       <option selected></option>
@@ -121,16 +124,16 @@
                   </div>
                 </div>
 <!--                item-id /////////////////-->
-                <div id="item-name" class="d-flex align-items-center gap-3">
-                  <div class="mt-1 col-5 col-md-4">
+                <div id="item-name" class="d-flex flex-wrap align-items-center gap-3">
+                  <div class="mt-1 col-4 col-md-4">
                     <label for="formGroupDateInput" class="form-label m-0">Item Name :</label>
                     <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
                   </div>
-                  <div class="mt-1 col-5 col-md-4">
+                  <div class="mt-1 col-3 col-md-3">
                     <label for="formGroupDateInput" class="form-label m-0">Unit Price :</label>
                     <label for="formGroupDateInput" class="form-label m-0 fw-semibold">200</label>
                   </div>
-                  <div class="mt-1 col-5 col-md-4">
+                  <div class="mt-1 col-3 col-md-3">
                     <label for="formGroupDateInput" class="form-label m-0">Qty On Hand :</label>
                     <label for="formGroupDateInput" class="form-label m-0 fw-semibold">20</label>
                   </div>
