@@ -15,8 +15,17 @@ header .nav-link{
 /*}*/
 #content{
     box-shadow: 0px 0px 8px 1px #0000007a;
-    width: 90%;
+    width: 95%;
 }
 #right-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#invoice-details{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#item-details{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#amount-details{
     box-shadow: 0px 0px 8px 1px #0000007a;
 }

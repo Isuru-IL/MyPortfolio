@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../assests/normalize.css">
+  <link rel="stylesheet" href="../../../assests/resources/fontawesome/css/all.css">
+  <link rel="stylesheet" href="assets/css/order.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <title>POS System-place order</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <h1 class="navbar-brand me-4 fs-2">POS System</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="customer.html">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="item.html">Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-medium text-body-secondary" aria-current="page" href="#">Place Orders</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="title" class=" d-flex my-5 justify-content-center">
+      <div class="rounded-pill w-75 bg-primary">
+        <h3 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-cart-shopping px-2"></i>Place Order</h3>
+      </div>
+    </section>
+    <section id="content" class="container-fluid py-4 rounded-4">
+      <section class="container-fluid">
+        <section id="place-order-content" class="row d-flex justify-content-between flex-wrap">
+          <section id="order-details" class="col-8">
+            <section id="invoice-details" class=" col-12 p-2 rounded-4">
+              <div class="rounded-3 w-100 bg-primary">
+                <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Invoice Details</h5>
+              </div>
+              <div id="customer-detail-cover" class="row">
+                <div id="order-id" class="d-flex gap-5">
+                  <div class="mt-1 col-5 col-md-3">
+                    <label for="formGroupOrder-id-Input" class="form-label m-0">Order ID :</label>
+                    <input type="text" class="form-control" id="formGroupOrder-id-Input" placeholder="Ex: OD-0001">
+                  </div>
+                  <div class="mt-1 col-5 col-md-3">
+                    <label for="formGroupDateInput" class="form-label m-0">Order Date :</label>
+                    <input type="text" class="form-control" id="formGroupDateInput" placeholder="30/09/2023">
+                  </div>
+                </div>
+<!--                order-id ////////////////////////-->
+                <div id="customer-id" class="d-flex align-items-center gap-3">
+                  <div class="mt-1 col-5 col-md-3">
+                    <label for="formGroupDateInput" class="form-label m-0">Customer ID :</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected></option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="mt-1 col-5 col-md-4">
+                    <label for="formGroupDateInput" class="form-label m-0">Customer Name :</label>
+                    <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                  </div>
+                  <div class="mt-1 col-5 col-md-4">
+                    <label for="formGroupDateInput" class="form-label m-0">Customer Address :</label>
+                    <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Galle</label>
+                  </div>
+                </div>
+<!--                customer-id //////////////////////-->
+              </div>
+<!--              customer-detail-cover/////////////////////-->
+            </section>
+<!--           invoice-details ////////////////////////////-->
+            <section id="item-details" class="mt-4 p-2 rounded-4">
+              <div class="rounded-3 w-100 bg-primary">
+                <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Item Details</h5>
+              </div>
+              <div id="item-details-cover">
+                <div id="item-id" class="d-flex gap-5 align-items-center">
+                  <div class="mt-1 col-5 col-md-3">
+                    <label for="formGroupDateInput" class="form-label m-0">Item Code :</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected></option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="mt-1 col-5 col-md-3">
+                    <label for="formGroupDateInput" class="form-label m-0">Order qty :</label>
+                    <input type="text" class="form-control" id="formGroupOrderQtyInput" >
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-warning">Add to Cart</button>
+                  </div>
+                </div>
+<!--                item-id /////////////////-->
+                <div id="item-name" class="d-flex align-items-center gap-3">
+                  <div class="mt-1 col-5 col-md-4">
+                    <label for="formGroupDateInput" class="form-label m-0">Item Name :</label>
+                    <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                  </div>
+                  <div class="mt-1 col-5 col-md-4">
+                    <label for="formGroupDateInput" class="form-label m-0">Unit Price :</label>
+                    <label for="formGroupDateInput" class="form-label m-0 fw-semibold">200</label>
+                  </div>
+                  <div class="mt-1 col-5 col-md-4">
+                    <label for="formGroupDateInput" class="form-label m-0">Qty On Hand :</label>
+                    <label for="formGroupDateInput" class="form-label m-0 fw-semibold">20</label>
+                  </div>
+                </div>
+<!--                item-name //////////////////-->
+              </div>
+<!--              item-details-cover //////////////-->
+            </section>
+<!--            item-details ////////////////////-->
+          </section>
+<!--           order-details ////////////////////////////-->
+          <section id="amount-details" class="col-4 p-2 rounded-4">
+            <div id="sub-total" class="d-flex justify-content-center align-items-center gap-2 mb-2 mt-4">
+              <label for="formGroupDateInput" class="form-label m-0 text-danger fs-4 fw-semibold">Sub Total :</label>
+              <label for="formGroupDateInput" class="form-label m-0 fw-semibold text-danger fs-4">2 000</label>
+            </div>
+            <div id="total" class="d-flex justify-content-center gap-2">
+              <label for="formGroupDateInput" class="form-label m-0 fs-5">Total :</label>
+              <label for="formGroupDateInput" class="form-label m-0 fs-5">2 100</label>
+            </div>
+            <div id="enter-total-div" class="row d-flex justify-content-center gap-1 my-2">
+              <div class="mt-1 col-6 col-md-5">
+                <label for="formGroupCashInput" class="form-label m-0">Cash :</label>
+                <input type="text" class="form-control" id="formGroupCashInput" >
+              </div>
+              <div class="mt-1 col-6 col-md-6">
+                <label for="formGroupDiscountInput" class="form-label m-0">Discount :</label>
+                <input type="text" class="form-control" id="formGroupDiscountInput" >
+              </div>
+            </div>
+            <div id="balance" class="d-flex justify-content-start gap-2 my-3 ms-3">
+              <label for="formGroupDateInput" class="form-label m-0 fs-6">Balance :</label>
+              <label for="formGroupDateInput" class="form-label m-0 fs-6">2 100</label>
+            </div>
+            <div class="col-auto d-flex justify-content-center mt-5">
+              <button type="submit" class="btn btn-success">Place Order</button>
+            </div>
+<!--            enter-total-div /////////////////////-->
+          </section>
+<!--          amount-details ///////////////////-->
+        </section>
+<!--          place-order-content ///////////////////////-->
+      </section>
+<!--      table///////////////////////////////////////////////////////////////-->
+      <section id="customer-table" class="pt-5 rounded-4 bg-light">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col" class="bg-primary text-white">Item Code</th>
+            <th scope="col" class="bg-primary text-white">Item Name</th>
+            <th scope="col" class="bg-primary text-white">Price</th>
+            <th scope="col" class="bg-primary text-white">Quantity</th>
+            <th scope="col" class="bg-primary text-white">Total</th>
+          </tr>
+          </thead>
+          <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">I-001</th>
+            <td>Mark</td>
+            <td>200</td>
+            <td>2</td>
+            <td>400</td>
+          </tr>
+          <tr>
+            <th scope="row">I-002</th>
+            <td>Jacob</td>
+            <td>100</td>
+            <td>3</td>
+            <td>300</td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </section>
+    </section>
+  </main>
+
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
