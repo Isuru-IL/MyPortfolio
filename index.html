@@ -345,6 +345,7 @@
             display: inline-block;
             /* background-color: rgb(196, 252, 252); */
             width: 100%;
+            padding-bottom: 100px;
         }
 
         main>.about_me_page>section#about_me{
@@ -422,14 +423,21 @@
             /* background-color:rgb(196, 252, 252); */
             height: max-content;
             width: 100%;
+            background-image: url(assests//resources/images/service-page/service-bg.jpg);
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-bottom: 10px;
         }
         main>section#my_services h1, h3{
             margin: 0;
         }
         main>section#my_services>h1{
             text-align: center;
-            padding-top: 100px;
+            padding-top: 50px;
             font-size: 50px;
+            color: white;
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
 
@@ -463,8 +471,8 @@
             align-items: center;
             width: 320px;
             height: 320px;
-            /* background-color: white; */
-            box-shadow: 6px 6px 20px 0px #0056b380;
+            background-color: rgba(0, 0, 0, 0.445);
+            box-shadow: 6px 6px 20px 0px #000000;
             border-radius: 2rem;
             transition: .5s all;
         }
@@ -472,7 +480,7 @@
             transition: .5s all;
             transform: scale(0.96);
             background: #0056B3;
-            /* background: linear-gradient(to top, #0056B3, #80abd900); */
+            background: linear-gradient(to top, black, rgba(0, 0, 0, 0.5));
         }
         main>section#my_services>section>section#service_types>div:hover>h3{
             transition: .5s all;
@@ -490,19 +498,20 @@
         /* icons */
         main>section#my_services>section>section#service_types>div>div>i{ 
             font-size: 40px;
-            color: #0056B3;
+            color: white;
             transition: .5s all;
         }
         main>section#my_services>section>section#service_types>div>h3{ 
             margin-top: 30px;
             font-size: 25px;
             transition: .5s all;
+            color: white;
         }
         main>section#my_services>section>section#service_types>div>article>p{
             text-align: center;
             margin-top: 30px;
             font-size: 18px;
-            color: #1a1a1a;
+            color: white;
             transition: .5s all;
         }
 
@@ -979,8 +988,8 @@
         }
         .assignments-page .assignment:hover #assignment_img{
             transition: height .8s;
-            width: 100% !important;
-            height: 100% !important;
+            /* width: 100% !important;
+            height: 100% !important; */
             opacity: 0.3;
         }
         .assignments-page .assignment:hover .hide-layer-assignment{

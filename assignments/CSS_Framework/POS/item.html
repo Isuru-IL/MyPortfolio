@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assests/normalize.css">
+    <link rel="stylesheet" href="../../../assests/resources/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/customer.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <title>POS System-store manage</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <h1 class="navbar-brand me-4 fs-2">POS System</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-medium text-body-secondary" aria-current="page" href="#">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Place Orders</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <section id="title" class=" d-flex my-5 justify-content-center">
+        <div class="rounded-pill w-75 bg-primary">
+            <h3 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-store px-2"></i>Manage Store</h3>
+        </div>
+    </section>
+    <section id="content" class="container-fluid py-4 rounded-4">
+        <section class="d-flex justify-content-around flex-wrap-reverse">
+            <section id="left-content" class="col-12 col-sm-8 my-2">
+                <section id="customer-search" class="mb-5">
+                    <form class="row gx-3 gy-2 align-items-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                            <select class="form-select" id="specificSizeSelect">
+                                <option value="1">Code</option>
+                                <option value="2">Name</option>
+                            </select>
+                        </div>
+                        <div class="w-50 col-sm-3">
+                            <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                            <input type="text" class="form-control" id="specificSizeInputName" placeholder="Search item">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-primary">Search</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-warning">Clear</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!--                    table-->
+                <section id="customer-table" class="p-2 rounded-4 bg-light">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="bg-primary text-white">Code</th>
+                            <th scope="col" class="bg-primary text-white">Name</th>
+                            <th scope="col" class="bg-primary text-white">Quantity</th>
+                            <th scope="col" class="bg-primary text-white">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>20</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>10</td>
+                            <td>2 000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>40</td>
+                            <td>30</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </section>
+            <section id="right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
+                <section class="col-8 p-2 bg-light rounded-4 w-100">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputCustID" placeholder="name@example.com">
+                        <label for="floatingInputCustID">Item Code</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputCustName" placeholder="name@example.com">
+                        <label for="floatingInputCustName">Item Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputAddress" placeholder="name@example.com">
+                        <label for="floatingInputAddress">Item Quantity</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputSalary" placeholder="name@example.com">
+                        <label for="floatingInputSalary">Price</label>
+                    </div>
+                    <section class="d-flex flex-wrap justify-content-center gap-2">
+                        <button type="button" class="btn btn-outline-success">Save</button>
+                        <button type="button" class="btn btn-outline-primary">update</button>
+                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</main>
+
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
