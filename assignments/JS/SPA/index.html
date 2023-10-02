@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assests/normalize.css">
+    <link rel="stylesheet" href="../../../assests/resources/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <title>SPA-POS System</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div id="logo-div" class="d-flex">
+                    <img src="assets/image/logo-icon.png" width="40px" height="40px">
+                    <h1 class="navbar-brand me-5 ms-2 fs-4">POS System</h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav gap-2">
+                        <li id="home-nav" class="nav-item">
+<!--                            <a class="nav-link active fw-medium text-body-secondary" aria-current="page" href="#"></i>Home</a>-->
+                            <a class="nav-link fw-medium" href="#home-page" style="font-size: 15px">Home</a>
+                        </li>
+                        <li id="customer-nav" class="nav-item">
+                            <a class=" nav-link fw-medium" href="#customer-page" style="font-size: 15px">Customers</a>
+                        </li>
+                        <li id="item-nav" class="nav-item">
+                            <a class="nav-link fw-medium" href="#item-page" style="font-size: 15px">Items</a>
+                        </li>
+                        <li id="order-nav" class="nav-item">
+                            <a class="nav-link fw-medium" href="#order-page" style="font-size: 15px">Place Orders</a>
+                        </li>
+                        <li id="order-detail-nav" class="nav-item">
+                            <a class="nav-link fw-medium" href="#order-detail-page" style="font-size: 15px">Order details</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav gap-2">
+                        <li id="sign-up-nav" class="nav-item">
+                            <a class="nav-link" href="#"><i class="fs-5 fa-solid fa-user-plus"></i></a>
+                        </li>
+                        <li id="log-in-nav" class="nav-item">
+                            <a class="nav-link" href="#"><i class="fs-5 fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-page">
+        </section>
+        <section id="customer-page">
+            <section id="customer-title" class="d-flex mt-5 mb-4 justify-content-center">
+                <div class="rounded-pill w-75 bg-primary">
+                    <h4 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-user mx-2"></i>Manage Customers</h4>
+                </div>
+            </section>
+            <section id="customer-content" class="container-fluid py-4 rounded-4">
+                <section class="d-flex justify-content-around flex-wrap-reverse">
+                    <section id="left-content" class="col-12 col-sm-8 my-2">
+                        <section id="customer-search" class="mb-5">
+                            <form class="row gx-3 gy-2 align-items-center">
+                                <div class="col-sm-3">
+                                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                                    <select class="form-select" id="specificSizeSelect">
+                                        <option value="1">ID</option>
+                                        <option value="2">Name</option>
+                                    </select>
+                                </div>
+                                <div class="w-50 col-sm-3">
+                                    <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                                    <input type="text" class="form-control" id="specificSizeInputName" placeholder="Search customer">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-outline-warning">Clear</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <!--                    table-->
+                        <section id="customer-table" class="p-2 rounded-4 bg-light">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="bg-primary text-white">ID</th>
+                                    <th scope="col" class="bg-primary text-white">Name</th>
+                                    <th scope="col" class="bg-primary text-white">Address</th>
+                                    <th scope="col" class="bg-primary text-white">Salary</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Galle</td>
+                                    <td>20 000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>25 000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>Nornton</td>
+                                    <td>30 000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </section>
+                    <section id="right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
+                        <section class="col-8 p-2 bg-light rounded-4 w-100">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputCustID" placeholder="name@example.com">
+                                <label for="floatingInputCustID">Customer ID</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputCustName" placeholder="name@example.com">
+                                <label for="floatingInputCustName">Customer Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputAddress" placeholder="name@example.com">
+                                <label for="floatingInputAddress">Address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputSalary" placeholder="name@example.com">
+                                <label for="floatingInputSalary">Salary</label>
+                            </div>
+                            <section class="d-flex flex-wrap justify-content-center gap-2">
+                                <button type="button" class="btn btn-outline-success">Save</button>
+                                <button type="button" class="btn btn-outline-primary">update</button>
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="item-page">
+            <section id="item-title" class=" d-flex mt-5 mb-4 justify-content-center">
+                <div class="rounded-pill w-75 bg-primary">
+                    <h4 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-store px-2"></i>Manage Store</h4>
+                </div>
+            </section>
+            <section id="item-content" class="container-fluid py-4 rounded-4">
+                <section class="d-flex justify-content-around flex-wrap-reverse">
+                    <section id="item-left-content" class="col-12 col-sm-8 my-2">
+                        <section id="item-search" class="mb-5">
+                            <form class="row gx-3 gy-2 align-items-center">
+                                <div class="col-sm-3">
+                                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                                    <select class="form-select" id="specificSizeSelectItem">
+                                        <option value="1">Code</option>
+                                        <option value="2">Name</option>
+                                    </select>
+                                </div>
+                                <div class="w-50 col-sm-3">
+                                    <label class="visually-hidden" for="specificSizeInputName">Item</label>
+                                    <input type="text" class="form-control" id="specificSizeInputItem" placeholder="Search item">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-outline-warning">Clear</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <!--                    table-->
+                        <section id="item-table" class="p-2 rounded-4 bg-light">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="bg-primary text-white">Code</th>
+                                    <th scope="col" class="bg-primary text-white">Name</th>
+                                    <th scope="col" class="bg-primary text-white">Quantity</th>
+                                    <th scope="col" class="bg-primary text-white">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table-group-divider">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>20</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>10</td>
+                                    <td>2 000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>40</td>
+                                    <td>30</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </section>
+                    <section id="item-right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
+                        <section class="col-8 p-2 bg-light rounded-4 w-100">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputItemCode" placeholder="name@example.com">
+                                <label for="floatingInputCustID">Item Code</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputItemName" placeholder="name@example.com">
+                                <label for="floatingInputCustName">Item Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputQuantity" placeholder="name@example.com">
+                                <label for="floatingInputAddress">Item Quantity</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputPrice" placeholder="name@example.com">
+                                <label for="floatingInputSalary">Price</label>
+                            </div>
+                            <section class="d-flex flex-wrap justify-content-center gap-2">
+                                <button type="button" class="btn btn-outline-success">Save</button>
+                                <button type="button" class="btn btn-outline-primary">update</button>
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="order-page">
+            <section id="title" class=" d-flex mt-5 mb-4 justify-content-center">
+                <div class="rounded-pill w-75 bg-primary">
+                    <h4 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-cart-shopping px-2"></i>Place Order</h4>
+                </div>
+            </section>
+            <section id="content" class="container-fluid py-4 rounded-4">
+                <section class="container-fluid">
+                    <section id="place-order-content" class="row d-flex justify-content-between flex-wrap">
+                        <section id="order-details" class="col-12 col-sm-8">
+                            <section id="invoice-details" class=" col-12 p-2 rounded-4">
+                                <div class="rounded-3 w-100 bg-primary">
+                                    <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Invoice Details</h5>
+                                </div>
+                                <div id="customer-detail-cover" class="row">
+                                    <div id="order-id" class="d-flex flex-wrap gap-5">
+                                        <div class="mt-1 col-5 col-md-3">
+                                            <label for="formGroupOrder-id-Input" class="form-label m-0">Order ID :</label>
+                                            <input type="text" class="form-control" id="formGroupOrder-id-Input" placeholder="Ex: OD-0001">
+                                        </div>
+                                        <div class="mt-1 col-5 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Order Date :</label>
+                                            <input type="text" class="form-control" id="formGroupDateInput" placeholder="30/09/2023">
+                                        </div>
+                                    </div>
+                                    <!--                order-id ////////////////////////-->
+                                    <div id="customer-id" class="d-flex flex-wrap align-items-center gap-3">
+                                        <div class="mt-1 col-5 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Customer ID :</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected></option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="mt-1 col-5 col-md-4">
+                                            <label for="formGroupDateInput" class="form-label m-0">Customer Name :</label>
+                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                                        </div>
+                                        <div class="mt-1 col-5 col-md-4">
+                                            <label for="formGroupDateInput" class="form-label m-0">Customer Address :</label>
+                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Galle</label>
+                                        </div>
+                                    </div>
+                                    <!--                customer-id //////////////////////-->
+                                </div>
+                                <!--              customer-detail-cover/////////////////////-->
+                            </section>
+                            <!--           invoice-details ////////////////////////////-->
+                            <section id="item-details" class="mt-4 p-2 rounded-4">
+                                <div class="rounded-3 w-100 bg-primary">
+                                    <h5 class="fw-normal ps-3 mb-0 py-1 text-white">Item Details</h5>
+                                </div>
+                                <div id="item-details-cover">
+                                    <div id="item-id" class="d-flex flex-wrap gap-5 align-items-center">
+                                        <div class="mt-1 col-4 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Item Code :</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected></option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="mt-1 col-5 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Order qty :</label>
+                                            <input type="text" class="form-control" id="formGroupOrderQtyInput" >
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="submit" class="btn btn-warning">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <!--                item-id /////////////////-->
+                                    <div id="item-name" class="d-flex flex-wrap align-items-center gap-3">
+                                        <div class="mt-1 col-4 col-md-4">
+                                            <label for="formGroupDateInput" class="form-label m-0">Item Name :</label>
+                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                                        </div>
+                                        <div class="mt-1 col-3 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Unit Price :</label>
+                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">200</label>
+                                        </div>
+                                        <div class="mt-1 col-3 col-md-3">
+                                            <label for="formGroupDateInput" class="form-label m-0">Qty On Hand :</label>
+                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">20</label>
+                                        </div>
+                                    </div>
+                                    <!--                item-name //////////////////-->
+                                </div>
+                                <!--              item-details-cover //////////////-->
+                            </section>
+                            <!--            item-details ////////////////////-->
+                        </section>
+                        <!--           order-details ////////////////////////////-->
+                        <section id="amount-details" class="col-4 p-2 rounded-4">
+                            <div id="sub-total" class="d-flex justify-content-center align-items-center gap-2 mb-2 mt-4">
+                                <label for="formGroupDateInput" class="form-label m-0 text-danger fs-4 fw-semibold">Sub Total :</label>
+                                <label for="formGroupDateInput" class="form-label m-0 fw-semibold text-danger fs-4">2 000</label>
+                            </div>
+                            <div id="total" class="d-flex justify-content-center gap-2">
+                                <label for="formGroupDateInput" class="form-label m-0 fs-5">Total :</label>
+                                <label for="formGroupDateInput" class="form-label m-0 fs-5">2 100</label>
+                            </div>
+                            <div id="enter-total-div" class="row d-flex justify-content-center gap-1 my-2">
+                                <div class="mt-1 col-6 col-md-5">
+                                    <label for="formGroupCashInput" class="form-label m-0">Cash :</label>
+                                    <input type="text" class="form-control" id="formGroupCashInput" >
+                                </div>
+                                <div class="mt-1 col-6 col-md-6">
+                                    <label for="formGroupDiscountInput" class="form-label m-0">Discount :</label>
+                                    <input type="text" class="form-control" id="formGroupDiscountInput" >
+                                </div>
+                            </div>
+                            <div id="balance" class="d-flex justify-content-start gap-2 my-3 ms-3">
+                                <label for="formGroupDateInput" class="form-label m-0 fs-6">Balance :</label>
+                                <label for="formGroupDateInput" class="form-label m-0 fs-6">2 100</label>
+                            </div>
+                            <div class="col-auto d-flex justify-content-center mt-5">
+                                <button type="submit" class="btn btn-success">Place Order</button>
+                            </div>
+                            <!--            enter-total-div /////////////////////-->
+                        </section>
+                        <!--          amount-details ///////////////////-->
+                    </section>
+                    <!--          place-order-content ///////////////////////-->
+                </section>
+                <!--      table///////////////////////////////////////////////////////////////-->
+                <section id="order-table" class="pt-5 rounded-4 bg-light">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col" class="bg-primary text-white">Item Code</th>
+                            <th scope="col" class="bg-primary text-white">Item Name</th>
+                            <th scope="col" class="bg-primary text-white">Price</th>
+                            <th scope="col" class="bg-primary text-white">Quantity</th>
+                            <th scope="col" class="bg-primary text-white">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        <tr>
+                            <th scope="row">I-001</th>
+                            <td>Mark</td>
+                            <td>200</td>
+                            <td>2</td>
+                            <td>400</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </section>
+        </section>
+        <section id="order-detail-page">
+            <section id="order-detail-title" class=" d-flex mt-5 mb-4 justify-content-center">
+                <div class="rounded-pill w-75 bg-primary">
+                    <h4 class="fw-normal ps-3 mb-0 py-2 text-white"><i class="fa-solid fa-circle-info px-2"></i>Order Details</h4>
+                </div>
+            </section>
+            <section id="order-detail-content" class="container-fluid py-4 rounded-4">
+                <section class="row">
+                    <section id="order-details-search" class="col-12 mb-5 d-flex justify-content-center">
+                        <form class="row gx-3 gy-2 align-items-center">
+                            <div class="col-sm-3">
+                                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
+                                <select class="form-select" id="specificSizeSelectOrderId">
+                                    <option value="1">Order ID</option>
+                                    <option value="2">Customer ID</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                                <input type="text" class="form-control" id="specificSizeInputOrderId" placeholder="Search Order">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-primary">Search</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-warning">Clear</button>
+                            </div>
+                        </form>
+                    </section>
+                    <!--          search order details ////////////////////-->
+
+                    <section id="order-detail-table" class="p-2 rounded-4 bg-light">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="bg-primary text-white">Order ID</th>
+                                <th scope="col" class="bg-primary text-white">Customer ID</th>
+                                <th scope="col" class="bg-primary text-white">Order Date</th>
+                                <th scope="col" class="bg-primary text-white">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Galle</td>
+                                <td>20 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>25 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>Nornton</td>
+                                <td>30 000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="log-in-page">
+            <section id="log-in-content-cover" class="d-flex col-8 col-sm-4 col-md-3 mt-5 justify-content-center rounded-4 w-100">
+                <section id="log-in-content" class="col-8 p-4 bg-light rounded-4 w-25">
+                    <div class=" w-100 mt-2 mb-4 bg-primary rounded-1">
+                        <h2 class="text-center m-0 pb-2 text-white">Log In</h2>
+                    </div>
+                    <div id="log-logo-div" class="d-flex justify-content-start mb-4">
+                        <img src="assets/image/logo-icon.png" width="35px" height="35px">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputUserName" placeholder="name@example.com">
+                        <label for="floatingInputUserName">User Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <section class="d-flex flex-wrap justify-content-center gap-2">
+                        <button id="btn-log-in" type="button" class="btn btn-outline-primary w-50">Log In</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="sign-up-page">
+            <section id="sign-up-content-cover" class="d-flex col-8 col-sm-4 col-md-3 mt-5 justify-content-center rounded-4 w-100">
+                <section id="sign-up-content" class="col-8 p-4 bg-light rounded-4 w-25">
+                    <div class=" w-100 mt-2 mb-4 bg-primary rounded-1">
+                        <h2 class="text-center m-0 pb-2 text-white">Sign Up</h2>
+                    </div>
+                    <div id="sign-logo-div" class="d-flex justify-content-start mb-4">
+                        <img src="assets/image/logo-icon.png" width="35px" height="35px">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputSignUpUserName" placeholder="name@example.com">
+                        <label for="floatingInputSignUpUserName">User Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingSignUpPassword" placeholder="Password">
+                        <label for="floatingSignUpPassword">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                        <label for="floatingConfirmPassword">Confirm Password</label>
+                    </div>
+                    <section class="d-flex flex-wrap justify-content-center gap-2">
+                        <button id="btn-sign-up" type="button" class="btn btn-outline-primary w-50">Sign Up</button>
+                    </section>
+                    <div class="d-flex justify-content-center gap-2 my-3">
+                        <p class=" m-0" style="font-size: 12px">Already have an account?</p>
+                        <p class="d-flex align-items-center m-0"><a id="link-log-in" class="link-opacity-100-hover" href="#" style="font-size: 12px">log in</a></p>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+     <script>
+         let imgBody = document.querySelector("body");
+
+
+         let clickHomeNav = document.querySelector("#home-nav");
+         let clickCustomerNav = document.querySelector("#customer-nav");
+         let clickItemNav = document.querySelector("#item-nav");
+         let clickOrderNav = document.querySelector("#order-nav");
+         let clickOrderDetailNav = document.querySelector("#order-detail-nav");
+         let clickLogInNav = document.querySelector("#log-in-nav");
+         let clickSignUpNav = document.querySelector("#sign-up-nav");
+
+
+         let pageHeader = document.querySelector("header");
+         let pageHome = document.querySelector("#home-page");
+         let pageCustomer = document.querySelector("#customer-page");
+         let pageItem = document.querySelector("#item-page");
+         let pageOrder = document.querySelector("#order-page");
+         let pageOrderDetail = document.querySelector("#order-detail-page");
+         let pageLogIn = document.querySelector("#log-in-page");
+         let pageSignUp = document.querySelector("#sign-up-page");
+
+         let btnLogIn = document.querySelector("#btn-log-in");
+         let btnSignUp = document.querySelector("#btn-sign-up");
+         let linkLogIn = document.querySelector("#link-log-in");
+
+         btnLogIn.addEventListener("click", function (){
+             pageHeader.style.display='block';
+             pageHome.style.display='block';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageLogIn.style.display='none';
+         });
+
+         btnSignUp.addEventListener("click", function (){
+             pageLogIn.style.display='block';
+             pageHeader.style.display='none';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageSignUp.style.display='none';
+         });
+
+         linkLogIn.addEventListener("click", function (){
+             pageLogIn.style.display='block';
+             pageSignUp.style.display='none';
+         });
+
+
+         clickHomeNav.addEventListener("click", function (){
+             pageHome.style.display='block';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageLogIn.style.display='none';
+
+             clickHomeNav.style.color='black';
+         });
+
+         clickCustomerNav.addEventListener("click", function (){
+             pageCustomer.style.display='block';
+             pageHome.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageLogIn.style.display='none';
+         });
+
+         clickItemNav.addEventListener("click", function (){
+             pageItem.style.display='block';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageLogIn.style.display='none';
+         });
+
+         clickOrderNav.addEventListener("click", function (){
+             pageOrder.style.display='block';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrderDetail.style.display='none';
+             pageLogIn.style.display='none';
+         });
+
+         clickOrderDetailNav.addEventListener("click", function (){
+             pageOrderDetail.style.display='block';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageLogIn.style.display='none';
+         });
+
+         clickLogInNav.addEventListener("click", function (){
+             pageLogIn.style.display='block';
+             pageHeader.style.display='none';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+         });
+
+         clickSignUpNav.addEventListener("click", function (){
+             pageSignUp.style.display='block';
+             pageHeader.style.display='none';
+             pageHome.style.display='none';
+             pageCustomer.style.display='none';
+             pageItem.style.display='none';
+             pageOrder.style.display='none';
+             pageOrderDetail.style.display='none';
+         });
+     </script>
+</body>
+</html>

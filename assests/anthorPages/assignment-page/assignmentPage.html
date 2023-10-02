@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../resources/myPortfolio-icon.png">
-    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../../normalize.css">
     <link rel="stylesheet" href="../../resources/fontawesome/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Assignment</title>
@@ -35,6 +35,37 @@
             padding-bottom: 30px;
         }
 
+        main #JS-container{
+            display: none;
+        }
+
+        #main-title{
+            display: flex;
+            justify-content: center;
+            gap: 40px;     
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+
+        #main-title .button{
+            position: relative;
+            width: 150px;
+            height: 40px;
+            border-radius: 1rem;
+            border-width: 0;
+            color: white;
+            background-color: #0056B3;
+            border: 2px solid #0056B3;
+            /* font-weight: 600; */
+            cursor: pointer;
+            transition: all .2s;
+        }
+        #main-title .button:hover{
+            transition: all .2s;
+            background-color: transparent;
+            color: #0056B3;
+            border: 2px solid #0056B3;
+        }
 
         .main-section{
             margin-top: 50px;
@@ -126,9 +157,13 @@
         <h1>ASSIGNMENTS</h1>
     </header>
     <main>
+        <section id="main-title">
+            <button class="button" id="btn-CSS">CSS</button>
+            <button class="button" id="btn-JS">JS</button>
+        </section>
         <section id="CSS-container">
             <section class="main-section" id="CSS-section">
-                <h1 class="animate__animated animate__jackInTheBox">CSS</h1>
+                <h1 class="animate__animated animate__jackInTheBox">CSS-Basics</h1>
                 <section class="cover">
                     <section class="container">
                         <div class="assignment-item-div">
@@ -252,7 +287,7 @@
                 </section>
             </section>
 
-            <section class="main-section" id="JS-section">
+            <section class="main-section" id="Framework-section">
                 <h1 class="animate__animated animate__jackInTheBox">CSS-Framework</h1>
                 <section class="cover">
                     <section class="container">
@@ -267,6 +302,40 @@
                 </section>
             </section>
         </section>
+        <section id="JS-container">
+            <section class="main-section" id="JS-section">
+<!--                <h1 class="animate__animated animate__jackInTheBox">JS</h1>-->
+                <section class="cover">
+                    <section class="container">
+                        <div class="assignment-item-div">
+                            <img src="assets/JS/CSS-framework.png" alt="gif not foud">
+                            <div class="hide-div">
+                                <h4>SPA-POS System</h4>
+                                <a class="git-hub-icon-a" href="../../../assignments/JS/SPA/index.html" target="_blank"><i class="fa-solid fa-link fa-beat"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
     </main>
+
+    <script>
+        let btnCSS = document.querySelector("#btn-CSS");
+        let btnJS = document.querySelector("#btn-JS");
+
+        let pageCSS = document.querySelector("#CSS-container");
+        let pageJS = document.querySelector("#JS-container");
+
+        btnCSS.addEventListener("click", function (){
+            pageCSS.style.display='block';
+            pageJS.style.display='none';
+        });
+
+        btnJS.addEventListener("click", function (){
+            pageJS.style.display='block';
+            pageCSS.style.display='none';
+        });
+    </script>
 </body>
 </html>
