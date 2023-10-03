@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assests/normalize.css">
+    <link rel="stylesheet" href="../../../assests/resources/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <title>QUE</title>
+    <style>
+      div{
+        width: 200px;
+        height: 80px;
+        border: solid 1px black;
+      }
+      main{
+        display: flex;
+        flex-direction: column;
+      }
+      #cover{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1210px;
+        height: 240px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #firstSection{
+        display: flex;
+        justify-content: start;
+      }
+      #SecondSection{
+        display: flex;
+        justify-content: center;
+      }
+      #thirdSection{
+        display: flex;
+        justify-content: end;
+      }
+
+    </style>
+</head>
+<body>
+    <main>
+      <section id="cover">
+        <section id="firstSection">
+          <div id="div1"></div>
+        </section>
+        <section id="SecondSection">
+          <div id="div2"></div>
+          <div id="div3"></div>
+          <div id="div4"></div>
+          <div id="div5"></div>
+        </section>
+        <section id="thirdSection">
+          <div id="div6"></div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+        var colors = ["red", "green", "blue", "yellow", "purple", "black"];
+
+        let divArray = document.querySelectorAll("div");
+
+        setInterval(function () {
+
+            for (let i=0; i< divArray.length; i++){
+                divArray[i].style.background = colors[i];
+            }
+
+            let changeColor = colors.pop();
+            colors.unshift(changeColor);
+            // let changeColor = colors.shift();
+            // colors.push(changeColor);
+
+        },300);
+
+    </script>
+</body>
+</html>
