@@ -5,83 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../assests/normalize.css">
     <link rel="stylesheet" href="../../../assests/resources/fontawesome/css/all.css">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../assests/resources/bootstrap/css/bootstrap.css">
     <title>QUE</title>
     <style>
-      div{
-        width: 200px;
-        height: 80px;
-        border: solid 1px black;
-      }
-      main{
-        display: flex;
-        flex-direction: column;
-      }
-      #cover{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        width: 1210px;
-        height: 240px;
-        display: flex;
-        flex-direction: column;
-      }
+        .colorDiv {
+            width: 150px;
+            height: 60px;
+            border-radius: 0.5rem;
+        }
 
-      #firstSection{
-        display: flex;
-        justify-content: start;
-      }
-      #SecondSection{
-        display: flex;
-        justify-content: center;
-      }
-      #thirdSection{
-        display: flex;
-        justify-content: end;
-      }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #cover {
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1000px;
+            /*height: 240px;*/
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #firstSection {
+            display: flex;
+            justify-content: start;
+        }
+
+        #SecondSection {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        #thirdSection {
+            display: flex;
+            justify-content: end;
+        }
+        .lineDiv{
+            background-color: black;
+            height: 3px;
+        }
 
     </style>
 </head>
 <body>
-    <main>
-      <section id="cover">
+<main>
+    <section id="cover">
         <section id="firstSection">
-          <div id="div1"></div>
+            <div class="colorDiv" id="div1"></div>
         </section>
+        <div class="lineDiv"></div>
         <section id="SecondSection">
-          <div id="div2"></div>
-          <div id="div3"></div>
-          <div id="div4"></div>
-          <div id="div5"></div>
+            <div class="colorDiv" id="div2"></div>
+            <div class="colorDiv" id="div3"></div>
+            <div class="colorDiv" id="div4"></div>
+            <div class="colorDiv" id="div5"></div>
         </section>
+        <div class="lineDiv"></div>
         <section id="thirdSection">
-          <div id="div6"></div>
+            <div class="colorDiv" id="div6"></div>
         </section>
-      </section>
-    </main>
+    </section>
+</main>
 
-    <script>
-        var colors = ["red", "green", "blue", "yellow", "purple", "black"];
+<script>
+    var colors = ["red", "green", "blue", "yellow", "purple", "black"];
+    let divArray = document.querySelectorAll(".colorDiv");
 
-        let divArray = document.querySelectorAll("div");
+    setInterval(processQUE, 300);
 
-        setInterval(function () {
+    function processQUE() {
+        for (let i = 0; i < divArray.length; i++) {
+            divArray[i].style.background = colors[i];
+        }
 
-            for (let i=0; i< divArray.length; i++){
-                divArray[i].style.background = colors[i];
-            }
+        let changeColor = colors.pop();
+        colors.unshift(changeColor);
+        // let changeColor = colors.shift();
+        // colors.push(changeColor);
+    }
 
-            let changeColor = colors.pop();
-            colors.unshift(changeColor);
-            // let changeColor = colors.shift();
-            // colors.push(changeColor);
-
-        },300);
-
-    </script>
+</script>
 </body>
 </html>

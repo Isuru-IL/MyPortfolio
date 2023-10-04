@@ -88,7 +88,7 @@
 
                         <!--                    table-->
                         <section id="customer-table" class="p-2 rounded-4 bg-light">
-                            <table class="table">
+                            <table id="tableCustomer" class="table">
                                 <thead>
                                 <tr>
                                     <th scope="col" class="bg-primary text-white">ID</th>
@@ -97,7 +97,7 @@
                                     <th scope="col" class="bg-primary text-white">Salary</th>
                                 </tr>
                                 </thead>
-                                <tbody class="table-group-divider">
+                                <tbody id="tbody" class="table-group-divider">
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark</td>
@@ -132,17 +132,17 @@
                                 <label for="floatingInputCustName">Customer Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputAddress" placeholder="name@example.com">
-                                <label for="floatingInputAddress">Address</label>
+                                <input type="email" class="form-control" id="floatingInputCustAddress" placeholder="name@example.com">
+                                <label for="floatingInputCustAddress">Address</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputSalary" placeholder="name@example.com">
-                                <label for="floatingInputSalary">Salary</label>
+                                <input type="number" class="form-control" id="floatingInputCustSalary" placeholder="name@example.com">
+                                <label for="floatingInputCustSalary">Salary</label>
                             </div>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
-                                <button type="button" class="btn btn-outline-success">Save</button>
-                                <button type="button" class="btn btn-outline-primary">update</button>
-                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                                <button id="btnCustomerSave" type="button" class="btn btn-outline-success">Save</button>
+                                <button id="btnCustomerUpdate" type="button" class="btn btn-outline-primary">update</button>
+                                <button id="btnCustomerDelete" type="button" class="btn btn-outline-danger">Delete</button>
                             </section>
                         </section>
                     </section>
@@ -227,11 +227,11 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputQuantity" placeholder="name@example.com">
-                                <label for="floatingInputAddress">Item Quantity</label>
+                                <label for="floatingInputQuantity">Item Quantity</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputPrice" placeholder="name@example.com">
-                                <label for="floatingInputSalary">Price</label>
+                                <label for="floatingInputPrice">Price</label>
                             </div>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
                                 <button type="button" class="btn btn-outline-success">Save</button>
@@ -519,6 +519,49 @@
     </main>
 
     <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script>
+        let txtCustID = document.querySelector("#floatingInputCustID");
+        let txtCustName = document.querySelector("#floatingInputCustName");
+        let txtCustAddress = document.querySelector("#floatingInputCustAddress");
+        let txtCustSalary = document.querySelector("#floatingInputCustSalary");
+
+        let tBodyCust = document.querySelector("#tbody");
+
+        let btnCustSave = document.querySelector("#btnCustomerSave");
+
+        let custList = new Array();
+        btnCustSave.addEventListener("click",function () {
+
+            var customer={
+                id:txtCustID.value,
+                name:txtCustName.value,
+                address:txtCustAddress.value,
+                salary:txtCustSalary.value,
+            }
+
+            custList.push(customer);
+            console.log(custList);
+
+            var tr = document.createElement("tr");
+            var th = document.createElement("th");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+
+            th.textContent = customer.id;
+            td1.textContent = customer.name;
+            td2.textContent = customer.address;
+            td3.textContent = customer.salary;
+            tr.append(th, td1, td2, td3);
+
+
+            tBodyCust.append(tr);
+
+        });
+
+
+
+    </script>
      <script>
          let imgBody = document.querySelector("body");
 
