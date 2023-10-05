@@ -15,6 +15,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
+        #loader-img{
+            width: 100vw;
+            height: 100vh;
+            border: 1px solid white;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+        }
+        #loader-img-div{
+            width: 100px;
+            height: 100px;
+            background: url("assests/resources/myPortfolio-icon.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
         *{
             box-sizing: border-box;
             font-family: 'Poppins' ,sans-serif;
@@ -1691,6 +1717,9 @@
     </style>
 </head>
 <body>
+    <section id="loader-img">
+        <di id="loader-img-div"></di>
+    </section>
     <header>
         <div>
             <h2>Isuru<span>Lak</span></h2>
@@ -2080,5 +2109,11 @@
             <small>Copyright © 2023 - Isuru Lakshan All Rights Reserved</small>
         </div>
     </footer>
+    <script src="assests/resources/bootstrap/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(window).on('load',function (){
+            $("#loader-img").fadeOut(1000);
+        });
+    </script>
 </body>
 </html>
