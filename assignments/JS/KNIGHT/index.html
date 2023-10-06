@@ -9,6 +9,8 @@
     <style>
         main{
             position: relative;
+            height: 100vh;
+            background-color: #000515;
         }
         #main-cover{
             display: flex;
@@ -16,6 +18,7 @@
             justify-content: center;
             align-items: center;
             gap: 50px;
+            padding-top: 10vw;
             /*position: relative;*/
             /*left: 0;*/
             /*right: 0;*/
@@ -36,6 +39,12 @@
         }
         #main-cover h2{
             color: red;
+            font-size: 2vw;
+        }
+
+        #title-cover h1{
+            color: white;
+            font-size: 2.6vw;
         }
         #title-cover span{
             color: #0d6efd;
@@ -50,7 +59,8 @@
         #knight-cover .div-color{
             width: 16%;
             height: 4vw;
-            border: solid 2px black;
+            border: solid 1px black;
+            background-color: white;
         }
 
         #btn-cover{
@@ -83,7 +93,7 @@
         <section id="main-cover">
             <section id="title-cover">
                 <h1>KNIGHT RIDER</h1>
-                <h2>Speed <span>50 </span>| Waiting Time <span>2000</span></h2>
+                <h2>Speed <span id="speedValue">50</span> | Waiting Time <span id="waitingValue">2000</span></h2>
             </section>
             <section id="knight-cover">
                 <div class="div-color"></div>
@@ -96,7 +106,7 @@
             <section id="btn-cover">
                 <button class="btn" id="btn-start">Start</button>
                 <button class="btn" id="btn-stop">Stop</button>
-                <input type="range" id="rangeInput" name="rangeInput" min="0" max="100" step="1" value="50">
+                <input type="range" id="rangeInput" name="rangeInput" min="40" max="80" step="1" value="50">
             </section>
         </section>
     </main>
@@ -104,57 +114,111 @@
     <script>
         let btnStart = document.querySelector("#btn-start");
         let btnStop = document.querySelector("#btn-stop");
+        let inputRange = document.querySelector("#rangeInput");
+        let spanSpeedValue = document.querySelector("#speedValue");
+        let spanWaitingValue = document.querySelector("#waitingValue")
 
-        let colorListLeft =[ "white", "white", "white", "white", "white", "white","#ffcccc", "#ff9999","#ff6666", "#ff3333", "#ff0000"];
-        let colorListRight =["white", "white", "white", "white", "white", "white", "#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000"];
-        let leftCount;
-        let rightCount;
+        let colorList =[ "white", "white", "white", "white", "white", "white", "white","#ffcccc", "#ff9999","#ff6666", "#ff3333", "#ff0000"];
+        let leftCount = 0;
+        let rightCount = 0;
+        let stopCount = 0;
+        let rangeValue = 50;
+        let waitingValue = 2000;
         let divList = document.querySelectorAll(".div-color");
-        let setTimer;
+        let colorTimer;
+        let stopTimer;
+        const music = new Audio('assets/knight-rider-sound.mpeg')
+
+        inputRange.addEventListener("input", function () {
+            rangeValue = inputRange.value;
+            waitingValue = rangeValue*40;
+            spanSpeedValue.innerText = rangeValue;
+            spanWaitingValue.innerText = waitingValue;
+
+            //startAnimation(rangeValue,waitingValue);
+            //clearInterval(colorTimer);
+            //colorTimer=setInterval(colorAnimate,rangeValue);
+        })
 
         function leftToRight() {
             for (let i=0; i<divList.length; i++){
-                divList[i].style.backgroundColor = colorListRight[i];
+                divList[i].style.backgroundColor = colorList[i];
                 // console.log("color = "+colorListRight[i]);
             }
-            let color = colorListRight.pop();
-            // console.log(color);
-            colorListRight.unshift(color);
+            let color = colorList.pop();
+            colorList.unshift(color);
+
+            rightCount++;
+            if (rightCount>=12){
+                leftCount=0;
+                rightCount=0;
+            }
         }
         function rightToLeft() {
             let j=0;
             for (let i=5; i>=0; i--){
-                divList[i].style.backgroundColor = colorListLeft[j];
+                divList[i].style.backgroundColor = colorList[j];
                 j++;
             }
-            let color = colorListLeft.pop();
-            colorListLeft.unshift(color);
+            let color = colorList.pop();
+            colorList.unshift(color);
+
         }
 
+        function colorAnimate() {
+             leftCount++;
+             if (leftCount<=12){
+                 rightToLeft();
+                 // console.log(leftCount);
+             }else {
+                 leftToRight();
+                 stopCount++;
+                 if (stopCount>=24){
+                     startAnimation(rangeValue, waitingValue);
+                     //console.log("stopCount = "+stopCount);
+                     stopCount = 0;
+                 }
+                 // console.log("leftToRight = "+leftCount);
+             }
+        }
+        function startAnimation(speed, waitTime) {
+            waitingValue = waitTime;
+            rangeValue = speed;
+            //console.log("waitingValueStartAnimation = "+ waitTime);
+            clearInterval(colorTimer);
+            if (stopCount == 24){
+                clearInterval(colorTimer);
+                stopTimer = setTimeout(function () {
+                    //console.log("Start stopTimer")
+                    startAnimation(rangeValue, waitingValue);
+                    stopCount = 0;
+                    //console.log("startAnimationStopCount = "+stopCount);
+                }, waitingValue);
+            }else {
+                colorTimer=setInterval(colorAnimate,rangeValue);
+                //console.log("Start colorTimer")
+                //console.log("Start colorTimer speed = "+speed);
+            }
+        }
+
+
         btnStart.addEventListener("click", function () {
-           setTimer = setInterval(function () {
 
-               // for (let i=0; i<12; i++){
-               //     leftToRight();
-               //     console.log("loop ="+i);
-               // }
-               //
-               // console.log("loop end")
+           startAnimation(rangeValue,waitingValue);
+           //console.log("waitingValue = "+ waitingValue);
+           //clearInterval(colorTimer);
+           //colorTimer=setInterval(colorAnimate,rangeValue);
+           music.play();
+           music.loop=true;
 
-
-               // while (rightCount<12){
-               //     rightToLeft()
-               //     rightCount++;
-               //     console.log("rightCount = "+rightCount);
-               // }
-               //  leftToRight();
-                rightToLeft();
-            },200);
         });
 
         btnStop.addEventListener("click", function () {
-            clearInterval(setTimer);
+            clearInterval(colorTimer);
+            clearInterval(stopTimer);
+            music.pause();
         });
+
     </script>
 </body>
 </html>
