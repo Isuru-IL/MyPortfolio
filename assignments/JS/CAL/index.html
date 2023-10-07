@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assests/normalize.css">
+<!--    <link rel="stylesheet" href="../../../assests/resources/bootstrap/css/bootstrap.min.css">-->
+    <title>CAL</title>
+    <style>
+        #cal-cover{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            width: max-content;
+            height: max-content;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 15px;
+            box-shadow: 0 0 8px 2px rgba(4, 6, 7, 0.5);
+            border-radius: 1.5rem;
+            background-color: #e6e6e6;
+        }
+        #txt-section{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+        #txt-section>button{
+            width: 3vw;
+            height: 3vw;
+            font-size:1.4vw;
+            font-weight: 800;
+            border-radius: .8vw;
+            border: none;
+            background-color: #ff1a1a;
+        }
+        #input-field{
+            width: 17vw;
+            height: 2.5vw;
+            text-align: right;
+            font-size:1.4vw;
+            font-weight: 800;
+        }
+
+        #btn-section{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4,1fr);
+            gap: 8px;
+        }
+        button{
+            width: 5vw;
+            height: 5vw;
+            font-size: 1.8vw;
+            font-weight: 800;
+            border-radius: 1.2vw;
+            border: none;
+            color: white;
+            background-color: #666666;
+            box-shadow: 0px 1px 6px 0px rgba(4, 6, 7, 0.5);
+            opacity: 0.8;
+        }
+
+        button:hover{
+            opacity: 1;
+        }
+        #btn-plus, #btn-minus, #btn-divide, #btn-equals, #btn-multiply{
+            background-color: #003E80;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="cal-cover">
+            <section id="txt-section">
+                <button id="btn-clear" value="c">C</button>
+                <input type="text" id="input-field" disabled>
+            </section>
+            <section id="btn-section">
+                <button class="btn-num" id="btn-7" value="7">7</button>
+                <button class="btn-num" id="btn-8" value="8">8</button>
+                <button class="btn-num" id="btn-9" value="9">9</button>
+                <button id="btn-plus" value="+">+</button>
+                <button class="btn-num" id="btn-4" value="4">4</button>
+                <button class="btn-num" id="btn-5" value="5">5</button>
+                <button class="btn-num" id="btn-6" value="6">6</button>
+                <button id="btn-minus" value="-">-</button>
+                <button class="btn-num" id="btn-1" value="1">1</button>
+                <button class="btn-num" id="btn-2" value="2">2</button>
+                <button class="btn-num" id="btn-3" value="3">3</button>
+                <button id="btn-divide" value="/">/</button>
+                <button class="btn-num" id="btn-0" value="0">0</button>
+                <button id="btn-dot" value=".">.</button>
+                <button id="btn-equals" value="=">=</button>
+                <button id="btn-multiply" value="*">*</button>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        let clickBtnNumber = document.querySelectorAll(".btn-num");
+        let txtField = document.querySelector("#input-field")
+
+        let btnClear = document.querySelector("#btn-clear");
+        let btnPlus = document.querySelector("#btn-plus");
+        let btnMinus = document.querySelector("#btn-minus");
+        let btnDivide = document.querySelector("#btn-divide");
+        let btnDot = document.querySelector("#btn-dot");
+        let btnEquals = document.querySelector("#btn-equals");
+        let btnMultiply = document.querySelector("#btn-multiply");
+
+        let number = 0;
+        let firstNumber = 0;
+        let operator;
+        let total;
+
+        for (let i = 0; i < clickBtnNumber.length; i++) {
+            clickBtnNumber[i].addEventListener("click", function () {
+                number = clickBtnNumber[i].value;
+
+                txtField.value = `${txtField.value}${number}`;
+                console.log(clickBtnNumber[i].value);
+                console.log("buttonValue = "+clickBtnNumber[i].value);
+            })
+        }
+        btnClear.addEventListener("click", function () {
+            txtField.value = null;
+        })
+
+        btnPlus.addEventListener("click", function () {
+            operator = "+";
+            firstNumber = txtField.value;
+            txtField.value = null;
+        });
+
+        btnMinus.addEventListener("click", function () {
+            operator = "-";
+            firstNumber = txtField.value;
+            txtField.value = null;
+        });
+
+        btnDivide.addEventListener("click", function () {
+            operator = "/";
+            firstNumber = txtField.value;
+            txtField.value = null;
+        });
+
+        btnMultiply.addEventListener("click", function () {
+            operator = "*";
+            firstNumber = txtField.value;
+            txtField.value = null;
+        });
+
+        btnEquals.addEventListener("click", function () {
+            if (txtField.value == null){
+                txtField.value = 0;
+            }
+            switch (operator){
+                case "+" :
+                    total = parseInt(firstNumber)+ parseInt(txtField.value);
+                    txtField.value = total;
+                    break;
+
+                case "-" :
+                    total = parseInt(firstNumber)- parseInt(txtField.value);
+                    txtField.value = total;
+                    break;
+
+                case "/" :
+                    total = parseInt(firstNumber)/ parseInt(txtField.value);
+                    txtField.value = total;
+                    break;
+
+                case "*" :
+                    total = parseInt(firstNumber)* parseInt(txtField.value);
+                    txtField.value = total;
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
