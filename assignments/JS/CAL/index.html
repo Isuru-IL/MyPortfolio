@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../assests/normalize.css">
-<!--    <link rel="stylesheet" href="../../../assests/resources/bootstrap/css/bootstrap.min.css">-->
     <title>CAL</title>
     <style>
+        *{
+            font-family: 'Poppins' ,sans-serif;
+        }
         #cal-cover{
             display: flex;
             flex-direction: column;
@@ -22,9 +24,9 @@
             bottom: 0;
             margin: auto;
             padding: 15px;
-            box-shadow: 0 0 8px 2px rgba(4, 6, 7, 0.5);
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.88);
             border-radius: 1.5rem;
-            background-color: #e6e6e6;
+            background-color: black;
         }
         #txt-section{
             display: flex;
@@ -37,7 +39,7 @@
             width: 3vw;
             height: 3vw;
             font-size:1.4vw;
-            font-weight: 800;
+            font-weight: 700;
             border-radius: .8vw;
             border: none;
             background-color: #ff1a1a;
@@ -47,7 +49,8 @@
             height: 2.5vw;
             text-align: right;
             font-size:1.4vw;
-            font-weight: 800;
+            font-weight: 700;
+            padding-right: 10px;
         }
 
         #btn-section{
@@ -60,7 +63,7 @@
             width: 5vw;
             height: 5vw;
             font-size: 1.8vw;
-            font-weight: 800;
+            font-weight: 700;
             border-radius: 1.2vw;
             border: none;
             color: white;
@@ -75,45 +78,56 @@
         #btn-plus, #btn-minus, #btn-divide, #btn-equals, #btn-multiply{
             background-color: #003E80;
         }
+
+        main>div{
+            height: 100vh;
+            background-image: url("assets/calc-bg-img.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
     </style>
 </head>
 <body>
     <main>
+        <div></div>
         <section id="cal-cover">
             <section id="txt-section">
-                <button id="btn-clear" value="c">C</button>
+                <button class="btn-operator" id="btn-clear" value="c">C</button>
                 <input type="text" id="input-field" disabled>
             </section>
             <section id="btn-section">
                 <button class="btn-num" id="btn-7" value="7">7</button>
                 <button class="btn-num" id="btn-8" value="8">8</button>
                 <button class="btn-num" id="btn-9" value="9">9</button>
-                <button id="btn-plus" value="+">+</button>
+                <button class="btn-operator" id="btn-plus" value="+">+</button>
                 <button class="btn-num" id="btn-4" value="4">4</button>
                 <button class="btn-num" id="btn-5" value="5">5</button>
                 <button class="btn-num" id="btn-6" value="6">6</button>
-                <button id="btn-minus" value="-">-</button>
+                <button class="btn-operator" id="btn-minus" value="-">-</button>
                 <button class="btn-num" id="btn-1" value="1">1</button>
                 <button class="btn-num" id="btn-2" value="2">2</button>
                 <button class="btn-num" id="btn-3" value="3">3</button>
-                <button id="btn-divide" value="/">/</button>
+                <button class="btn-operator" id="btn-divide" value="/">/</button>
                 <button class="btn-num" id="btn-0" value="0">0</button>
-                <button id="btn-dot" value=".">.</button>
-                <button id="btn-equals" value="=">=</button>
-                <button id="btn-multiply" value="*">*</button>
+                <button class="btn-num" value=".">.</button>
+                <button class="btn-operator" id="btn-equals" value="=">=</button>
+                <button class="btn-operator" id="btn-multiply" value="*">*</button>
             </section>
         </section>
     </main>
 
     <script>
         let clickBtnNumber = document.querySelectorAll(".btn-num");
+        let clickBtnOperator = document.querySelectorAll(".btn-operator");
         let txtField = document.querySelector("#input-field")
 
         let btnClear = document.querySelector("#btn-clear");
         let btnPlus = document.querySelector("#btn-plus");
         let btnMinus = document.querySelector("#btn-minus");
         let btnDivide = document.querySelector("#btn-divide");
-        let btnDot = document.querySelector("#btn-dot");
         let btnEquals = document.querySelector("#btn-equals");
         let btnMultiply = document.querySelector("#btn-multiply");
 
@@ -121,69 +135,95 @@
         let firstNumber = 0;
         let operator;
         let total;
+        let reSizeTimer
+        let checkTxtValue;
 
         for (let i = 0; i < clickBtnNumber.length; i++) {
             clickBtnNumber[i].addEventListener("click", function () {
                 number = clickBtnNumber[i].value;
-
                 txtField.value = `${txtField.value}${number}`;
-                console.log(clickBtnNumber[i].value);
-                console.log("buttonValue = "+clickBtnNumber[i].value);
-            })
+                clickBtnNumber[i].style.transform="scale(0.9)";
+                checkTxtValue = "defined";
+
+                reSizeTimer = setTimeout(function (){
+                    clickBtnNumber[i].style.transform="scale(1)";
+                },150);
+            });
+            clearInterval(reSizeTimer);
         }
+
+        for (let i = 0; i < clickBtnOperator.length; i++) {
+            clickBtnOperator[i].addEventListener("click", function () {
+                clickBtnOperator[i].style.transform="scale(0.9)";
+
+                reSizeTimer = setTimeout(function (){
+                    clickBtnOperator[i].style.transform="scale(1)";
+                },150);
+            });
+            clearInterval(reSizeTimer);
+        }
+
         btnClear.addEventListener("click", function () {
             txtField.value = null;
-        })
+            firstNumber = 0;
+            checkTxtValue = "unDefined";
+        });
 
         btnPlus.addEventListener("click", function () {
             operator = "+";
             firstNumber = txtField.value;
             txtField.value = null;
+            checkTxtValue = "unDefined";
         });
 
         btnMinus.addEventListener("click", function () {
             operator = "-";
             firstNumber = txtField.value;
             txtField.value = null;
+            checkTxtValue = "unDefined";
         });
 
         btnDivide.addEventListener("click", function () {
             operator = "/";
             firstNumber = txtField.value;
             txtField.value = null;
+            checkTxtValue = "unDefined";
         });
 
         btnMultiply.addEventListener("click", function () {
             operator = "*";
             firstNumber = txtField.value;
             txtField.value = null;
+            checkTxtValue = "unDefined";
         });
 
         btnEquals.addEventListener("click", function () {
-            if (txtField.value == null){
-                txtField.value = 0;
+            if (checkTxtValue === "unDefined"){
+                txtField.value = firstNumber;
+            }else {
+                switch (operator){
+                    case "+" :
+                        total = parseFloat(firstNumber)+ parseFloat(txtField.value);
+                        txtField.value = total;
+                        break;
+
+                    case "-" :
+                        total = parseFloat(firstNumber)- parseFloat(txtField.value);
+                        txtField.value = total;
+                        break;
+
+                    case "/" :
+                        total = parseFloat(firstNumber)/ parseFloat(txtField.value);
+                        txtField.value = total;
+                        break;
+
+                    case "*" :
+                        total = parseFloat(firstNumber)* parseFloat(txtField.value);
+                        txtField.value = total;
+                        break;
+                }
             }
-            switch (operator){
-                case "+" :
-                    total = parseInt(firstNumber)+ parseInt(txtField.value);
-                    txtField.value = total;
-                    break;
 
-                case "-" :
-                    total = parseInt(firstNumber)- parseInt(txtField.value);
-                    txtField.value = total;
-                    break;
-
-                case "/" :
-                    total = parseInt(firstNumber)/ parseInt(txtField.value);
-                    txtField.value = total;
-                    break;
-
-                case "*" :
-                    total = parseInt(firstNumber)* parseInt(txtField.value);
-                    txtField.value = total;
-                    break;
-            }
         });
     </script>
 </body>
