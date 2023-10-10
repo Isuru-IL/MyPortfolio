@@ -67,21 +67,21 @@
                         <section id="customer-search" class="mb-5">
                             <form class="row gx-3 gy-2 align-items-center">
                                 <div class="col-sm-3">
-                                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                                    <select class="form-select" id="specificSizeSelect">
-                                        <option value="1">ID</option>
-                                        <option value="2">Name</option>
+                                    <label class="visually-hidden" for="cmbCustomerSearch">Preference</label>
+                                    <select class="form-select" id="cmbCustomerSearch">
+                                        <option value="ID">ID</option>
+                                        <option value="Name">Name</option>
                                     </select>
                                 </div>
                                 <div class="w-50 col-sm-3">
-                                    <label class="visually-hidden" for="specificSizeInputName">Name</label>
-                                    <input type="text" class="form-control" id="specificSizeInputName" placeholder="Search customer">
+                                    <label class="visually-hidden" for="txtCustomerSearch">Name</label>
+                                    <input type="text" class="form-control" id="txtCustomerSearch" placeholder="Search customer">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                                    <button id="btnCustomerSearch" type="button" class="btn btn-outline-primary">Search</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-outline-warning">Clear</button>
+                                    <button id="btnCustomerClear" type="button" class="btn btn-outline-warning">Clear</button>
                                 </div>
                             </form>
                         </section>
@@ -97,20 +97,7 @@
                                     <th scope="col" class="bg-primary text-white">Salary</th>
                                 </tr>
                                 </thead>
-                                <tbody id="tbody" class="table-group-divider">
-                                <tr>
-                                    <th  scope="row">C001</th>
-                                    <td>Mark</td>
-                                    <td>Galle</td>
-                                    <td>20000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">C002</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>25000</td>
-                                </tr>
-                                </tbody>
+                                <tbody id="tbody-customer" class="table-group-divider"></tbody>
                             </table>
                         </section>
 
@@ -118,20 +105,20 @@
                     <section id="right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
                         <section class="col-8 p-2 bg-light rounded-4 w-100">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputCustID" placeholder="name@example.com">
-                                <label for="floatingInputCustID">Customer ID</label>
+                                <input type="text" class="form-control" id="txtCustomerID" placeholder="name@example.com">
+                                <label for="txtCustomerID">Customer ID</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputCustName" placeholder="name@example.com">
-                                <label for="floatingInputCustName">Customer Name</label>
+                                <input type="text" class="form-control" id="txtCustomerName" placeholder="name@example.com">
+                                <label for="txtCustomerName">Customer Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputCustAddress" placeholder="name@example.com">
-                                <label for="floatingInputCustAddress">Address</label>
+                                <input type="text" class="form-control" id="txtCustomerAddress" placeholder="name@example.com">
+                                <label for="txtCustomerAddress">Address</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingInputCustSalary" placeholder="name@example.com">
-                                <label for="floatingInputCustSalary">Salary</label>
+                                <input type="number" class="form-control" id="txtCustomerSalary" placeholder="name@example.com">
+                                <label for="txtCustomerSalary">Salary</label>
                             </div>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
                                 <button id="btnCustomerSave" type="button" class="btn btn-outline-success">Save</button>
@@ -155,21 +142,21 @@
                         <section id="item-search" class="mb-5">
                             <form class="row gx-3 gy-2 align-items-center">
                                 <div class="col-sm-3">
-                                    <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                                    <select class="form-select" id="specificSizeSelectItem">
-                                        <option value="1">Code</option>
-                                        <option value="2">Name</option>
+                                    <label class="visually-hidden" for="cmbItemSearch">Preference</label>
+                                    <select class="form-select" id="cmbItemSearch">
+                                        <option value="Code">Code</option>
+                                        <option value="Name">Name</option>
                                     </select>
                                 </div>
                                 <div class="w-50 col-sm-3">
-                                    <label class="visually-hidden" for="specificSizeInputName">Item</label>
-                                    <input type="text" class="form-control" id="specificSizeInputItem" placeholder="Search item">
+                                    <label class="visually-hidden" for="txtItemSearch">Item</label>
+                                    <input type="text" class="form-control" id="txtItemSearch" placeholder="Search item">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                                    <button id="btnItemSearch" type="button" class="btn btn-outline-primary">Search</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-outline-warning">Clear</button>
+                                    <button id="btnItemClear" type="button" class="btn btn-outline-warning">Clear</button>
                                 </div>
                             </form>
                         </section>
@@ -185,26 +172,7 @@
                                     <th scope="col" class="bg-primary text-white">Price</th>
                                 </tr>
                                 </thead>
-                                <tbody class="table-group-divider">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>20</td>
-                                    <td>200</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>10</td>
-                                    <td>2 000</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>40</td>
-                                    <td>30</td>
-                                </tr>
-                                </tbody>
+                                <tbody id="tbody-item" class="table-group-divider"></tbody>
                             </table>
                         </section>
 
@@ -212,25 +180,25 @@
                     <section id="item-right-content" class="d-flex col-8 col-sm-4 col-md-3 justify-content-end rounded-4">
                         <section class="col-8 p-2 bg-light rounded-4 w-100">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputItemCode" placeholder="name@example.com">
-                                <label for="floatingInputCustID">Item Code</label>
+                                <input type="email" class="form-control" id="txtItemCode" placeholder="name@example.com">
+                                <label for="txtItemCode">Item Code</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputItemName" placeholder="name@example.com">
-                                <label for="floatingInputCustName">Item Name</label>
+                                <input type="text" class="form-control" id="txtItemName" placeholder="name@example.com">
+                                <label for="txtItemName">Item Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputQuantity" placeholder="name@example.com">
-                                <label for="floatingInputQuantity">Item Quantity</label>
+                                <input type="text" class="form-control" id="txtItemQtyOnHand" placeholder="name@example.com">
+                                <label for="txtItemQtyOnHand">Item Quantity</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInputPrice" placeholder="name@example.com">
-                                <label for="floatingInputPrice">Price</label>
+                                <input type="text" class="form-control" id="txtItemPrice" placeholder="name@example.com">
+                                <label for="txtItemPrice">Price</label>
                             </div>
                             <section class="d-flex flex-wrap justify-content-center gap-2">
-                                <button type="button" class="btn btn-outline-success">Save</button>
-                                <button type="button" class="btn btn-outline-primary">update</button>
-                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                                <button id="btnItemSave" type="button" class="btn btn-outline-success">Save</button>
+                                <button id="btnItemUpdate" type="button" class="btn btn-outline-primary">update</button>
+                                <button id="btnItemDelete" type="button" class="btn btn-outline-danger">Delete</button>
                             </section>
                         </section>
                     </section>
@@ -254,32 +222,29 @@
                                 <div id="customer-detail-cover" class="row">
                                     <div id="order-id" class="d-flex flex-wrap gap-5">
                                         <div class="mt-1 col-5 col-md-3">
-                                            <label for="formGroupOrder-id-Input" class="form-label m-0">Order ID :</label>
-                                            <input type="text" class="form-control" id="formGroupOrder-id-Input" placeholder="Ex: OD-0001">
+                                            <label for="txtOrderId" class="form-label m-0">Order ID :</label>
+                                            <input type="text" class="form-control" id="txtOrderId" placeholder="Ex: OD-0001">
                                         </div>
                                         <div class="mt-1 col-5 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Order Date :</label>
-                                            <input type="text" class="form-control" id="formGroupDateInput" placeholder="30/09/2023">
+                                            <label for="txtOrderDate" class="form-label m-0">Order Date :</label>
+                                            <input type="text" class="form-control" id="txtOrderDate" disabled="true">
                                         </div>
                                     </div>
                                     <!--                order-id ////////////////////////-->
                                     <div id="customer-id" class="d-flex flex-wrap align-items-center gap-3">
                                         <div class="mt-1 col-5 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Customer ID :</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected></option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <label for="cmbCustomerIds" class="form-label m-0">Customer ID :</label>
+                                            <select id="cmbCustomerIds" class="form-select" aria-label="Default select example">
+
                                             </select>
                                         </div>
                                         <div class="mt-1 col-5 col-md-4">
-                                            <label for="formGroupDateInput" class="form-label m-0">Customer Name :</label>
-                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                                            <label for="lblCustomerName" class="form-label m-0">Customer Name :</label>
+                                            <label id="lblCustomerName"class="form-label m-0 fw-semibold"></label>
                                         </div>
                                         <div class="mt-1 col-5 col-md-4">
-                                            <label for="formGroupDateInput" class="form-label m-0">Customer Address :</label>
-                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Galle</label>
+                                            <label for="lblCustomerAddress" class="form-label m-0">Customer Address :</label>
+                                            <label id="lblCustomerAddress" class="form-label m-0 fw-semibold"></label>
                                         </div>
                                     </div>
                                     <!--                customer-id //////////////////////-->
@@ -294,35 +259,32 @@
                                 <div id="item-details-cover">
                                     <div id="item-id" class="d-flex flex-wrap gap-5 align-items-center">
                                         <div class="mt-1 col-4 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Item Code :</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected></option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <label for="cmbItemCodes" class="form-label m-0">Item Code :</label>
+                                            <select id="cmbItemCodes" class="form-select" aria-label="Default select example">
+
                                             </select>
                                         </div>
                                         <div class="mt-1 col-5 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Order qty :</label>
-                                            <input type="text" class="form-control" id="formGroupOrderQtyInput" >
+                                            <label for="txtOrderQty" class="form-label m-0">Order qty :</label>
+                                            <input type="number" class="form-control" id="txtOrderQty" >
                                         </div>
                                         <div class="col-auto">
-                                            <button type="submit" class="btn btn-warning">Add to Cart</button>
+                                            <button id="btnAddToCart" type="button" class="btn btn-warning">Add to Cart</button>
                                         </div>
                                     </div>
                                     <!--                item-id /////////////////-->
                                     <div id="item-name" class="d-flex flex-wrap align-items-center gap-3">
                                         <div class="mt-1 col-4 col-md-4">
-                                            <label for="formGroupDateInput" class="form-label m-0">Item Name :</label>
-                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">Saman</label>
+                                            <label for="lblItemName" class="form-label m-0">Item Name :</label>
+                                            <label id="lblItemName" class="form-label m-0 fw-semibold"></label>
                                         </div>
                                         <div class="mt-1 col-3 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Unit Price :</label>
-                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">200</label>
+                                            <label for="lblItemUnitPrice" class="form-label m-0">Unit Price :</label>
+                                            <label id="lblItemUnitPrice" class="form-label m-0 fw-semibold"></label>
                                         </div>
                                         <div class="mt-1 col-3 col-md-3">
-                                            <label for="formGroupDateInput" class="form-label m-0">Qty On Hand :</label>
-                                            <label for="formGroupDateInput" class="form-label m-0 fw-semibold">20</label>
+                                            <label for="lblQtyOnHand" class="form-label m-0">Qty On Hand :</label>
+                                            <label id="lblQtyOnHand" class="form-label m-0 fw-semibold"></label>
                                         </div>
                                     </div>
                                     <!--                item-name //////////////////-->
@@ -334,26 +296,26 @@
                         <!--           order-details ////////////////////////////-->
                         <section id="amount-details" class="col-4 p-2 rounded-4">
                             <div id="sub-total" class="d-flex justify-content-center align-items-center gap-2 mb-2 mt-4">
-                                <label for="formGroupDateInput" class="form-label m-0 text-danger fs-4 fw-semibold">Sub Total :</label>
-                                <label for="formGroupDateInput" class="form-label m-0 fw-semibold text-danger fs-4">2 000</label>
+                                <label for="lblSubTotal" class="form-label m-0 text-danger fs-4 fw-semibold">Sub Total :</label>
+                                <label id="lblSubTotal" class="form-label m-0 fw-semibold text-danger fs-4"></label>
                             </div>
                             <div id="total" class="d-flex justify-content-center gap-2">
-                                <label for="formGroupDateInput" class="form-label m-0 fs-5">Total :</label>
-                                <label for="formGroupDateInput" class="form-label m-0 fs-5">2 100</label>
+                                <label for="lblTotal" class="form-label m-0 fs-5">Total :</label>
+                                <label id="lblTotal" class="form-label m-0 fs-5"></label>
                             </div>
                             <div id="enter-total-div" class="row d-flex justify-content-center gap-1 my-2">
                                 <div class="mt-1 col-6 col-md-5">
-                                    <label for="formGroupCashInput" class="form-label m-0">Cash :</label>
-                                    <input type="text" class="form-control" id="formGroupCashInput" >
+                                    <label for="txtCash" class="form-label m-0">Cash :</label>
+                                    <input type="number" class="form-control" id="txtCash" >
                                 </div>
                                 <div class="mt-1 col-6 col-md-6">
-                                    <label for="formGroupDiscountInput" class="form-label m-0">Discount :</label>
-                                    <input type="text" class="form-control" id="formGroupDiscountInput" >
+                                    <label for="txtDiscount" class="form-label m-0">Discount :</label>
+                                    <input type="number" class="form-control" id="txtDiscount" >
                                 </div>
                             </div>
                             <div id="balance" class="d-flex justify-content-start gap-2 my-3 ms-3">
-                                <label for="formGroupDateInput" class="form-label m-0 fs-6">Balance :</label>
-                                <label for="formGroupDateInput" class="form-label m-0 fs-6">2 100</label>
+                                <label for="lblBalance" class="form-label m-0 fs-6">Balance :</label>
+                                <label id="lblBalance" class="form-label m-0 fs-6"></label>
                             </div>
                             <div class="col-auto d-flex justify-content-center mt-5">
                                 <button type="submit" class="btn btn-success">Place Order</button>
@@ -371,19 +333,12 @@
                         <tr>
                             <th scope="col" class="bg-primary text-white">Item Code</th>
                             <th scope="col" class="bg-primary text-white">Item Name</th>
-                            <th scope="col" class="bg-primary text-white">Price</th>
+                            <th scope="col" class="bg-primary text-white">Unit Price</th>
                             <th scope="col" class="bg-primary text-white">Quantity</th>
                             <th scope="col" class="bg-primary text-white">Total</th>
                         </tr>
                         </thead>
-                        <tbody class="table-group-divider">
-                        <tr>
-                            <th scope="row">I-001</th>
-                            <td>Mark</td>
-                            <td>200</td>
-                            <td>2</td>
-                            <td>400</td>
-                        </tr>
+                        <tbody id="tbody-orderCart" class="table-group-divider">
                         </tbody>
                     </table>
                 </section>
@@ -408,7 +363,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                                <label class="visually-hidden" for="specificSizeInputOrderId">Name</label>
                                 <input type="text" class="form-control" id="specificSizeInputOrderId" placeholder="Search Order">
                             </div>
                             <div class="col-auto">
@@ -514,80 +469,92 @@
 
     <script src="assets/bootstrap/js/bootstrap.js"></script>
     <script src="assets/bootstrap/js/jquery-3.7.1.min.js"></script>
+    <script src="controllers/DashboardController.js"></script>
+    <script src="db/db.js"></script>
+    <script src="controllers/CustomerController.js"></script>
+    <script src="controllers/validations/CustomerValidations.js"></script>
+    <script src="models/Customer.js"></script>
+    <script src="controllers/ItemController.js"></script>
+    <script src="controllers/validations/ItemValidations.js"></script>
+    <script src="models/Item.js"></script>
+    <script src="controllers/PlaceOrderController.js"></script>
+    <script src="models/CartTM.js"></script>
     <script>
-        var customers = [
-            {id: "C001", name: "Mark", address: "Galle", salary: 2000},
-            {id: "C002", name: "Jacob", address: "Thorntan", salary: 25000}
-        ];
 
-        $('#btnCustomerSave').click(function () {
-            var customer= {
-                id: $('#floatingInputCustID').val(),
-                name: $('#floatingInputCustName').val(),
-                address: $('#floatingInputCustAddress').val(),
-                salary: $('#floatingInputCustSalary').val()
-            }
-            customers.push(customer);
+        //jQuery /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            getAllCustomers();
-            clearTextFields();
-        });
+        // getAllCustomers();
+        //
+        // $('#btnCustomerSave').click(function () {
+        //     var customer= {
+        //         id: $('#txtCustomerID').val(),
+        //         name: $('#txtCustomerName').val(),
+        //         address: $('#txtCustomerAddress').val(),
+        //         salary: $('#txtCustomerSalary').val()
+        //     }
+        //     customerDB.push(customer);
+        //
+        //     getAllCustomers();
+        //     clearTextFields();
+        // });
+        //
+        // function getAllCustomers(){
+        //     $('#tbody-customer').empty();
+        //     for (let i=0; i<customerDB.length; i++){
+        //         let row= `<tr>
+        //         <th>${customerDB[i].id}</th>
+        //         <td>${customerDB[i].name}</td>
+        //         <td>${customerDB[i].address}</td>
+        //         <td>${customerDB[i].salary}</td>
+        //     </tr>`;
+        //
+        //         $('#tbody-customer').append(row);
+        //     }
+        //     bindEvents();
+        // }
+        //
+        // bindEvents();
+        //
+        // function bindEvents() {
+        //     $('#tbody-customer>tr').click(function () {
+        //         //console.log(this);//tr
+        //         //console.log($(this));//jquery ob
+        //         //console.log($(this).text());
+        //
+        //         let row = $(this);
+        //         // let customerID = row.find("th:eq(0)").text();
+        //         // let customerName = row.find("td:eq(0)").text();
+        //         // let address = row.find("td:eq(1)").text();
+        //         // let salary = parseInt(row.find("td:eq(2)").text());
+        //
+        //         let customerID = row.children().eq(0).text();
+        //         let customerName = row.children().eq(1).text();
+        //         let address = row.children().eq(2).text();
+        //         let salary = row.children().eq(3).text();
+        //
+        //         setTextFieldValues(customerID, customerName, address, salary);
+        //
+        //
+        //     });
+        // }
+        //
+        // function setTextFieldValues(id, name, address, salary){
+        //     $('#txtCustomerID').val(id);
+        //     $('#txtCustomerName').val(name);
+        //     $('#txtCustomerAddress').val(address);
+        //     $('#txtCustomerSalary').val(salary);
+        // };
+        //
+        // function clearTextFields() {
+        //     $('#txtCustomerID').val(null);
+        //     $('#txtCustomerName').val(null);
+        //     $('#txtCustomerAddress').val(null);
+        //     $('#txtCustomerSalary').val(null);
+        // }
 
-        function getAllCustomers(){
-            $('#tbody').empty();
-            for (let i=0; i<customers.length; i++){
-                let row= `<tr>
-                <th>${customers[i].id}</th>
-                <td>${customers[i].name}</td>
-                <td>${customers[i].address}</td>
-                <td>${customers[i].salary}</td>
-            </tr>`;
-
-                $('#tbody').append(row);
-            }
-            bindEvents();
-        }
-
-        bindEvents();
-
-        function bindEvents() {
-            $('#tbody>tr').click(function () {
-                //console.log(this);//tr
-                //console.log($(this));//jquery ob
-                //console.log($(this).text());
-
-                let row = $(this);
-                // let customerID = row.find("th:eq(0)").text();
-                // let customerName = row.find("td:eq(0)").text();
-                // let address = row.find("td:eq(1)").text();
-                // let salary = parseInt(row.find("td:eq(2)").text());
-
-                let customerID = row.children().eq(0).text();
-                let customerName = row.children().eq(1).text();
-                let address = row.children().eq(2).text();
-                let salary = row.children().eq(3).text();
-
-                setTextFieldValues(customerID, customerName, address, salary);
 
 
-            });
-        }
-
-        function setTextFieldValues(id, name, address, salary){
-            $('#floatingInputCustID').val(id);
-            $('#floatingInputCustName').val(name);
-            $('#floatingInputCustAddress').val(address);
-            $('#floatingInputCustSalary').val(salary);
-        };
-
-        function clearTextFields() {
-            $('#floatingInputCustID').val(null);
-            $('#floatingInputCustName').val(null);
-            $('#floatingInputCustAddress').val(null);
-            $('#floatingInputCustSalary').val(null);
-        }
-
-
+        //old js - ///////////////////////////////////////////////////////////////////////////////////////
 
         // let txtCustID = document.querySelector("#floatingInputCustID");
         // let txtCustName = document.querySelector("#floatingInputCustName");
@@ -631,125 +598,5 @@
 
 
     </script>
-     <script>
-         let imgBody = document.querySelector("body");
-
-
-         let clickHomeNav = document.querySelector("#home-nav");
-         let clickCustomerNav = document.querySelector("#customer-nav");
-         let clickItemNav = document.querySelector("#item-nav");
-         let clickOrderNav = document.querySelector("#order-nav");
-         let clickOrderDetailNav = document.querySelector("#order-detail-nav");
-         let clickLogInNav = document.querySelector("#log-in-nav");
-         let clickSignUpNav = document.querySelector("#sign-up-nav");
-
-
-         let pageHeader = document.querySelector("header");
-         let pageHome = document.querySelector("#home-page");
-         let pageCustomer = document.querySelector("#customer-page");
-         let pageItem = document.querySelector("#item-page");
-         let pageOrder = document.querySelector("#order-page");
-         let pageOrderDetail = document.querySelector("#order-detail-page");
-         let pageLogIn = document.querySelector("#log-in-page");
-         let pageSignUp = document.querySelector("#sign-up-page");
-
-         let btnLogIn = document.querySelector("#btn-log-in");
-         let btnSignUp = document.querySelector("#btn-sign-up");
-         let linkLogIn = document.querySelector("#link-log-in");
-
-         btnLogIn.addEventListener("click", function (){
-             pageHeader.style.display='block';
-             pageHome.style.display='block';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageLogIn.style.display='none';
-         });
-
-         btnSignUp.addEventListener("click", function (){
-             pageLogIn.style.display='block';
-             pageHeader.style.display='none';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageSignUp.style.display='none';
-         });
-
-         linkLogIn.addEventListener("click", function (){
-             pageLogIn.style.display='block';
-             pageSignUp.style.display='none';
-         });
-
-
-         clickHomeNav.addEventListener("click", function (){
-             pageHome.style.display='block';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageLogIn.style.display='none';
-
-             clickHomeNav.style.color='black';
-         });
-
-         clickCustomerNav.addEventListener("click", function (){
-             pageCustomer.style.display='block';
-             pageHome.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageLogIn.style.display='none';
-         });
-
-         clickItemNav.addEventListener("click", function (){
-             pageItem.style.display='block';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageLogIn.style.display='none';
-         });
-
-         clickOrderNav.addEventListener("click", function (){
-             pageOrder.style.display='block';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrderDetail.style.display='none';
-             pageLogIn.style.display='none';
-         });
-
-         clickOrderDetailNav.addEventListener("click", function (){
-             pageOrderDetail.style.display='block';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageLogIn.style.display='none';
-         });
-
-         clickLogInNav.addEventListener("click", function (){
-             pageLogIn.style.display='block';
-             pageHeader.style.display='none';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-         });
-
-         clickSignUpNav.addEventListener("click", function (){
-             pageSignUp.style.display='block';
-             pageHeader.style.display='none';
-             pageHome.style.display='none';
-             pageCustomer.style.display='none';
-             pageItem.style.display='none';
-             pageOrder.style.display='none';
-             pageOrderDetail.style.display='none';
-         });
-     </script>
 </body>
 </html>
