@@ -1,3 +1,6 @@
+function itemInitialize() {
+    getAllItems();
+}
 getAllItems();
 
 $('#btnItemSave').click(function () {
@@ -96,7 +99,7 @@ function saveItem() {
 }
 
 $("#btnItemSearch").click(function () {
-    if ($("#txtItemSearch") != null) {
+    if ($("#txtItemSearch").val() != "") {
         let option = $("#cmbItemSearch").val();
 
         $("#btnItemDelete").prop("disabled", false);

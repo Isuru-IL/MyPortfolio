@@ -1,0 +1,4 @@
+let userObject = {
+    userName:"",
+    password:""
+}

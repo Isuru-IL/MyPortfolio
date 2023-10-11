@@ -2,8 +2,9 @@ initiateUI();
 
 function initiateUI() {
     clearAll();
-    $("#home-page").css('display', 'block');
-    // $("header").css('display', 'block');
+    console.log("Log-in-page")
+    $("#log-in-page").css('display', 'block');
+    $("header").css('display', 'none');
     setTheLastView();
 }
 
@@ -68,6 +69,7 @@ function setView(viewOb) {
         clearAll();
         viewOb.css("display", "block");
         $("header").css('display', 'none');
+        saveLastView(viewOb.get(0).id);
     }else {
         clearAll();
         viewOb.css("display", "block");
@@ -87,18 +89,22 @@ $("#home-nav").click(function () {
 
 $("#customer-nav").click(function () {
     setView($("#customer-page"));
+    customerInitialize();
 });
 
 $("#item-nav").click(function () {
     setView($("#item-page"));
+    itemInitialize();
 });
 
 $("#order-nav").click(function () {
     setView($("#order-page"));
+    placeOrderInitialize();
 });
 
 $("#order-detail-nav").click(function () {
     setView($("#order-detail-page"));
+    orderDetailInitialize();
 });
 
 $("#log-in-nav").click(function () {
@@ -110,15 +116,23 @@ $("#sign-up-nav").click(function () {
 });
 
 $("#btn-log-in").click(function () {
-    setView($("#home-page"));
+    if (checkLogInUserDetails()) {
+        setView($("#home-page"));
+    }
 });
 
 $("#btn-sign-up").click(function () {
-    setView($("#log-in-page"));
+    if (checkSignUpUserDetails()) {
+        setView($("#log-in-page"));
+    }
 });
 
 $("#link-log-in").click(function () {
     setView($("#log-in-page"));
+});
+
+$("#link-sign-up").click(function () {
+    setView($("#sign-up-page"));
 });
 
 

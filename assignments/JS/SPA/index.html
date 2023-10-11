@@ -223,7 +223,7 @@
                                     <div id="order-id" class="d-flex flex-wrap gap-5">
                                         <div class="mt-1 col-5 col-md-3">
                                             <label for="txtOrderId" class="form-label m-0">Order ID :</label>
-                                            <input type="text" class="form-control" id="txtOrderId" placeholder="Ex: OD-0001">
+                                            <input type="text" class="form-control" id="txtOrderId" disabled="true">
                                         </div>
                                         <div class="mt-1 col-5 col-md-3">
                                             <label for="txtOrderDate" class="form-label m-0">Order Date :</label>
@@ -269,7 +269,7 @@
                                             <input type="number" class="form-control" id="txtOrderQty" >
                                         </div>
                                         <div class="col-auto">
-                                            <button id="btnAddToCart" type="button" class="btn btn-warning">Add to Cart</button>
+                                            <button id="btnAddToCart" type="button" class="btn btn-warning" disabled="true">Add to Cart</button>
                                         </div>
                                     </div>
                                     <!--                item-id /////////////////-->
@@ -318,7 +318,7 @@
                                 <label id="lblBalance" class="form-label m-0 fs-6"></label>
                             </div>
                             <div class="col-auto d-flex justify-content-center mt-5">
-                                <button type="submit" class="btn btn-success">Place Order</button>
+                                <button id="btnPlaceOrder" type="button" class="btn btn-success" disabled="true">Place Order</button>
                             </div>
                             <!--            enter-total-div /////////////////////-->
                         </section>
@@ -356,21 +356,21 @@
                     <section id="order-details-search" class="col-12 mb-5 d-flex justify-content-center">
                         <form class="row gx-3 gy-2 align-items-center">
                             <div class="col-sm-3">
-                                <label class="visually-hidden" for="specificSizeSelect">Preference</label>
-                                <select class="form-select" id="specificSizeSelectOrderId">
-                                    <option value="1">Order ID</option>
-                                    <option value="2">Customer ID</option>
+                                <label class="visually-hidden" for="cmbOrderSearch">Preference</label>
+                                <select class="form-select" id="cmbOrderSearch">
+                                    <option value="OrderID">Order ID</option>
+                                    <option value="CustomerID">Customer ID</option>
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <label class="visually-hidden" for="specificSizeInputOrderId">Name</label>
-                                <input type="text" class="form-control" id="specificSizeInputOrderId" placeholder="Search Order">
+                                <label class="visually-hidden" for="txtSearchOrder">Name</label>
+                                <input type="text" class="form-control" id="txtSearchOrder" placeholder="Search Order">
                             </div>
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-outline-primary">Search</button>
+                                <button id="btnOrderSearch" type="button" class="btn btn-outline-primary">Search</button>
                             </div>
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-outline-warning">Clear</button>
+                                <button id="btnOrderClear" type="button" class="btn btn-outline-warning">Clear</button>
                             </div>
                         </form>
                     </section>
@@ -386,25 +386,7 @@
                                 <th scope="col" class="bg-primary text-white">Total</th>
                             </tr>
                             </thead>
-                            <tbody class="table-group-divider">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Galle</td>
-                                <td>20 000</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>25 000</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>Nornton</td>
-                                <td>30 000</td>
-                            </tr>
+                            <tbody id="tbody-orders" class="table-group-divider">
                             </tbody>
                         </table>
                     </section>
@@ -421,16 +403,20 @@
                         <img src="assets/image/logo-icon.png" width="35px" height="35px">
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInputUserName" placeholder="name@example.com">
-                        <label for="floatingInputUserName">User Name</label>
+                        <input type="text" class="form-control" id="txtLogInUserName" placeholder="name@example.com">
+                        <label for="txtLogInUserName">User Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <input type="password" class="form-control" id="txtLogInPassword" placeholder="Password">
+                        <label for="txtLogInPassword">Password</label>
                     </div>
                     <section class="d-flex flex-wrap justify-content-center gap-2">
                         <button id="btn-log-in" type="button" class="btn btn-outline-primary w-50">Log In</button>
                     </section>
+                    <div class="d-flex justify-content-center gap-2 my-3">
+                        <p class=" m-0" style="font-size: 12px">Don't have an account?</p>
+                        <p class="d-flex align-items-center m-0"><a id="link-sign-up" class="link-opacity-100-hover" href="#" style="font-size: 12px">sign up</a></p>
+                    </div>
                 </section>
             </section>
         </section>
@@ -444,16 +430,16 @@
                         <img src="assets/image/logo-icon.png" width="35px" height="35px">
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInputSignUpUserName" placeholder="name@example.com">
-                        <label for="floatingInputSignUpUserName">User Name</label>
+                        <input type="text" class="form-control" id="txtSignUpUserName" placeholder="name@example.com">
+                        <label for="txtSignUpUserName">User Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingSignUpPassword" placeholder="Password">
-                        <label for="floatingSignUpPassword">Password</label>
+                        <input type="password" class="form-control" id="txtSignUpPassword" placeholder="Password">
+                        <label for="txtSignUpPassword">Password</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-                        <label for="floatingConfirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="txtSignUpConfirmPassword" placeholder="Confirm Password">
+                        <label for="txtSignUpConfirmPassword">Confirm Password</label>
                     </div>
                     <section class="d-flex flex-wrap justify-content-center gap-2">
                         <button id="btn-sign-up" type="button" class="btn btn-outline-primary w-50">Sign Up</button>
@@ -478,125 +464,12 @@
     <script src="controllers/validations/ItemValidations.js"></script>
     <script src="models/Item.js"></script>
     <script src="controllers/PlaceOrderController.js"></script>
+    <script src="controllers/validations/PlaceOrderValidations.js"></script>
     <script src="models/CartTM.js"></script>
-    <script>
-
-        //jQuery /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        // getAllCustomers();
-        //
-        // $('#btnCustomerSave').click(function () {
-        //     var customer= {
-        //         id: $('#txtCustomerID').val(),
-        //         name: $('#txtCustomerName').val(),
-        //         address: $('#txtCustomerAddress').val(),
-        //         salary: $('#txtCustomerSalary').val()
-        //     }
-        //     customerDB.push(customer);
-        //
-        //     getAllCustomers();
-        //     clearTextFields();
-        // });
-        //
-        // function getAllCustomers(){
-        //     $('#tbody-customer').empty();
-        //     for (let i=0; i<customerDB.length; i++){
-        //         let row= `<tr>
-        //         <th>${customerDB[i].id}</th>
-        //         <td>${customerDB[i].name}</td>
-        //         <td>${customerDB[i].address}</td>
-        //         <td>${customerDB[i].salary}</td>
-        //     </tr>`;
-        //
-        //         $('#tbody-customer').append(row);
-        //     }
-        //     bindEvents();
-        // }
-        //
-        // bindEvents();
-        //
-        // function bindEvents() {
-        //     $('#tbody-customer>tr').click(function () {
-        //         //console.log(this);//tr
-        //         //console.log($(this));//jquery ob
-        //         //console.log($(this).text());
-        //
-        //         let row = $(this);
-        //         // let customerID = row.find("th:eq(0)").text();
-        //         // let customerName = row.find("td:eq(0)").text();
-        //         // let address = row.find("td:eq(1)").text();
-        //         // let salary = parseInt(row.find("td:eq(2)").text());
-        //
-        //         let customerID = row.children().eq(0).text();
-        //         let customerName = row.children().eq(1).text();
-        //         let address = row.children().eq(2).text();
-        //         let salary = row.children().eq(3).text();
-        //
-        //         setTextFieldValues(customerID, customerName, address, salary);
-        //
-        //
-        //     });
-        // }
-        //
-        // function setTextFieldValues(id, name, address, salary){
-        //     $('#txtCustomerID').val(id);
-        //     $('#txtCustomerName').val(name);
-        //     $('#txtCustomerAddress').val(address);
-        //     $('#txtCustomerSalary').val(salary);
-        // };
-        //
-        // function clearTextFields() {
-        //     $('#txtCustomerID').val(null);
-        //     $('#txtCustomerName').val(null);
-        //     $('#txtCustomerAddress').val(null);
-        //     $('#txtCustomerSalary').val(null);
-        // }
-
-
-
-        //old js - ///////////////////////////////////////////////////////////////////////////////////////
-
-        // let txtCustID = document.querySelector("#floatingInputCustID");
-        // let txtCustName = document.querySelector("#floatingInputCustName");
-        // let txtCustAddress = document.querySelector("#floatingInputCustAddress");
-        // let txtCustSalary = document.querySelector("#floatingInputCustSalary");
-        //
-        // let tBodyCust = document.querySelector("#tbody");
-        //
-        // let btnCustSave = document.querySelector("#btnCustomerSave");
-        //
-        // let custList = new Array();
-        // btnCustSave.addEventListener("click",function () {
-        //
-        //     var customer={
-        //         id:txtCustID.value,
-        //         name:txtCustName.value,
-        //         address:txtCustAddress.value,
-        //         salary:txtCustSalary.value,
-        //     }
-        //
-        //     custList.push(customer);
-        //     console.log(custList);
-        //
-        //     var tr = document.createElement("tr");
-        //     var th = document.createElement("th");
-        //     var td1 = document.createElement("td");
-        //     var td2 = document.createElement("td");
-        //     var td3 = document.createElement("td");
-        //
-        //     th.textContent = customer.id;
-        //     td1.textContent = customer.name;
-        //     td2.textContent = customer.address;
-        //     td3.textContent = customer.salary;
-        //     tr.append(th, td1, td2, td3);
-        //
-        //
-        //     tBodyCust.append(tr);
-        //
-        // });
-
-
-
-    </script>
+    <script src="controllers/OrderDetailsController.js"></script>
+    <script src="models/Orders.js"></script>
+    <script src="controllers/LogInController.js"></script>
+    <script src="controllers/SignUpController.js"></script>
+    <script src="models/User.js"></script>
 </body>
 </html>

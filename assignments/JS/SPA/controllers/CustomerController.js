@@ -1,7 +1,10 @@
+function customerInitialize() {
+    getAllCustomers();
+}
 getAllCustomers();
 
 $('#btnCustomerSave').click(function () {
-    if (checkAll()) {
+    if (checkAllCustomers()) {
         saveCustomer();
     } else {
         alert("Please check the input fields");
@@ -10,7 +13,7 @@ $('#btnCustomerSave').click(function () {
 
 $("#btnCustomerUpdate").click(function () {
     let id = $("#txtCustomerID").val();
-    if (checkAll()) {
+    if (checkAllCustomers()) {
         updateCustomer(id);
     } else {
         alert("Please check the input fields")
@@ -38,7 +41,7 @@ $("#btnCustomerClear").click(function () {
 });
 
 $("#btnCustomerSearch").click(function () {
-    if ($("#txtCustomerSearch") != null) {
+    if ($("#txtCustomerSearch").val() != "") {
         let option = $("#cmbCustomerSearch").val();
 
         $("#btnCustomerDelete").prop("disabled", false);
