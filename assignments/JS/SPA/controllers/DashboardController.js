@@ -98,8 +98,8 @@ $("#item-nav").click(function () {
 });
 
 $("#order-nav").click(function () {
-    setView($("#order-page"));
     placeOrderInitialize();
+    setView($("#order-page"));
 });
 
 $("#order-detail-nav").click(function () {

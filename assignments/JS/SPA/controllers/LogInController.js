@@ -2,18 +2,18 @@ let password = "";
 
 function checkLogInUserDetails() {
     if ($('#txtLogInUserName').val() == "" || $('#txtLogInPassword').val() == ""){
-        alert("Please fill the input fields");
+        swal("Error!", "Please fill the input fields!", "error");
     } else {
         if (searchInvalidUserName($('#txtLogInUserName').val())) {
             if ($('#txtLogInPassword').val() == password ) {
                 clearLogInInputFields();
-                alert("Login Successful");
+                swal("Login!", "Login Successfully!", "success");
                 return true
             } else {
-                alert("Invalid Password");
+                swal("Error!", "Invalid Password.! try again", "error");
             }
         } else {
-            alert("Invalid User Name");
+            swal("Error!", "Invalid User Name.! try again", "error");
         }
         return false;
     }

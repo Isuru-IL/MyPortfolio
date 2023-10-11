@@ -1,14 +1,31 @@
+let demoItemDB = [];
 function placeOrderInitialize() {
+    setDemoItemDB();
     loadAllCustomerIds();
     loadAllItemCodes();
     setDataToOrderDate();
+    clearAllTxtFields();
 }
+setDemoItemDB();
 loadAllCustomerIds();
 loadAllItemCodes();
 setDataToOrderDate();
 getAllCartData();
 generateNextOrderId("");
 
+
+function setDemoItemDB() {
+    demoItemDB = [];
+    for (let i = 0; i < itemDB.length; i++) {
+        let demoItem = Object.assign({}, item);
+        demoItem.code = itemDB[i].code;
+        demoItem.description = itemDB[i].description;
+        demoItem.qtyOnHand = itemDB[i].qtyOnHand;
+        demoItem.unitPrice = itemDB[i].unitPrice;
+
+        demoItemDB.push(demoItem);
+    }
+}
 
 function generateNextOrderId(currentOrderId) {
     if (currentOrderId == ""){
@@ -47,7 +64,7 @@ $("#cmbItemCodes").click(function () {
     //setItemDetails ///////////////////////////////////////////////////
     let code = $("#cmbItemCodes").val();
 
-    for (let item of itemDB) {
+    for (let item of demoItemDB) {
         if (item.code == code) {
             $('#lblItemName').text(item.description);
             $('#lblItemUnitPrice').text(item.unitPrice);
@@ -67,15 +84,23 @@ function loadAllCustomerIds(){
 function loadAllItemCodes(){
     $("#cmbItemCodes").empty();
     $("#cmbItemCodes").append(`<option selected></option>`);
-    for (let item of itemDB) {
+    for (let item of demoItemDB) {
         $("#cmbItemCodes").append(`<option value="${item.code}">${item.code}</option>`);
     }
 }
 
 // Add To Cart ////////////////////////////////////////////////////////////////////////////////////////
 $('#btnAddToCart').click(function () {
-    setDataToCartTable();
-    $("#btnAddToCart").prop("disabled", true);
+    let qtyOnHand = parseInt($('#lblQtyOnHand').text());
+    let orderQty = parseInt($('#txtOrderQty').val());
+
+    if (qtyOnHand >= orderQty) {
+        setDataToCartTable();
+        $("#btnAddToCart").prop("disabled", true);
+    } else {
+        swal("Out of Stock!", "This Item is out of stock!", "error");
+    }
+
 });
 
 function searchItemIsExits(code) {
@@ -96,12 +121,12 @@ function getAllCartData() {
         </tr>`;
 
         $('#tbody-orderCart').append(row);
+        bindOrderCartTblDblClickEvent();
     }
 }
 
 function setDataToCartTable() {
 
-    //$('#tbody-orderCart').empty();
     let itemCode = $('#cmbItemCodes').val();
     let itemName = $('#lblItemName').text();
     let unitPrice = parseFloat($('#lblItemUnitPrice').text());
@@ -110,6 +135,7 @@ function setDataToCartTable() {
     let exitsItem = searchItemIsExits(itemCode);
 
     if (exitsItem != undefined) {
+        updateItemQtyAfterAddToCart(itemCode,quantity);
         exitsItem.quantity = (exitsItem.quantity + quantity);
         exitsItem.total = exitsItem.quantity * unitPrice;
 
@@ -125,9 +151,18 @@ function setDataToCartTable() {
         newCartOb.total = unitPrice*quantity;
 
         CartDB.push(newCartOb);
+        updateItemQtyAfterAddToCart(itemCode,quantity);
         clearItemDetailTxtFields();
         calcTotal();
         getAllCartData();
+    }
+}
+//updateItemQtyAfterAddToCart//////////////////////////////////
+function updateItemQtyAfterAddToCart(code,quantity) {
+    for (let item of demoItemDB) {
+        if (item.code == code) {
+            item.qtyOnHand = item.qtyOnHand - quantity;
+        }
     }
 }
 
@@ -202,10 +237,10 @@ $('#btnPlaceOrder').click(function () {
 
     OrderDB.push(newOrder);
     updateItemQuantity();
+    generateNextOrderId($('#txtOrderId').val());
     clearAllTxtFields();
     CartDB = [];
-    getAllOrders();
-    alert("Place Order Successful")
+    swal("Order placed", "Order placed successfully!", "success");
 });
 
 function updateItemQuantity() {
@@ -220,17 +255,8 @@ function updateItemQuantity() {
 }
 
 function clearAllTxtFields() {
-    generateNextOrderId($('#txtOrderId').val());
-
-    $('#cmbCustomerIds').val("");
-    $('#lblCustomerName').text("");
-    $('#lblCustomerAddress').text("");
-
-    $('#cmbItemCodes').val("");
-    $('#txtOrderQty').val("");
-    $('#lblItemName').text("");
-    $('#lblItemUnitPrice').text("");
-    $('#lblQtyOnHand').text("");
+    clearAllCustomerTxtFields();
+    clearAllItemTxtFields();
 
     $('#lblSubTotal').text("");
     $('#lblTotal').text("");
@@ -242,3 +268,62 @@ function clearAllTxtFields() {
 
     $('#btnPlaceOrder').prop("disabled", true);
 }
+function clearAllCustomerTxtFields() {
+    $('#cmbCustomerIds').val("");
+    $('#lblCustomerName').text("");
+    $('#lblCustomerAddress').text("");
+}
+function clearAllItemTxtFields() {
+    $('#cmbItemCodes').val("");
+    $('#txtOrderQty').val("");
+    $('#lblItemName').text("");
+    $('#lblItemUnitPrice').text("");
+    $('#lblQtyOnHand').text("");
+}
+
+//bind table events ////////////////////////////////////////////////////////////////
+function bindOrderCartTblDblClickEvent() {
+    $('#tbody-orderCart>tr').on("dblclick",function () {
+
+        swal({
+            title: "Are you sure?",
+            text: "Do you want to delete this order.?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    let itemCode = $(this).children().eq(0).text();
+                    let itemQuantity = parseInt($(this).children().eq(3).text());
+
+                    updateItemQtyAfterRemoveTheCart(itemCode,itemQuantity);
+                    deleteOrderInCartDB(itemCode);
+                    swal("Deleted", "Order deleted successfully!", "success");
+                } else {
+                    swal("This data is safe!");
+                }
+            });
+    });
+}
+
+//updateItemQtyAfterRemoveTheCart////////////////////////
+function updateItemQtyAfterRemoveTheCart(code,quantity) {
+    for (let item of demoItemDB) {
+        if (item.code == code) {
+            item.qtyOnHand = item.qtyOnHand + quantity;
+        }
+    }
+    clearAllItemTxtFields();
+}
+
+function deleteOrderInCartDB(code) {
+    for (let i = 0; i < CartDB.length; i++) {
+        if (CartDB[i].itemCode == code) {
+            CartDB.splice(i, 1);
+        }
+    }
+    getAllCartData();
+    calcTotal();
+}
+

@@ -29,18 +29,18 @@ $('#btnOrderSearch').click(function () {
             if (orderList != "") {
                 addSearchDataToTable(orderList);
             } else {
-                alert("Invalid OrderId");
+                swal("Error", "Invalid Order ID!", "error");
             }
         } else {
             let orderList = searchOrderByCustomerId($('#txtSearchOrder').val());
             if (orderList != "") {
                 addSearchDataToTable(orderList);
             } else {
-                alert("Invalid CustomerId");
+                swal("Error", "Invalid Customer ID!", "error");
             }
         }
     } else {
-        alert("Please input OrderID or CustomerID");
+        swal("Error", "Please input Order ID or Customer ID!", "error");
     }
 });
 

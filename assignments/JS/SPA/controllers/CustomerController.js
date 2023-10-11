@@ -7,7 +7,8 @@ $('#btnCustomerSave').click(function () {
     if (checkAllCustomers()) {
         saveCustomer();
     } else {
-        alert("Please check the input fields");
+        //alert("Please check the input fields");
+        swal("Error", "Please check the input fields!", "error");
     }
 });
 
@@ -16,24 +17,36 @@ $("#btnCustomerUpdate").click(function () {
     if (checkAllCustomers()) {
         updateCustomer(id);
     } else {
-        alert("Please check the input fields")
+        swal("Error", "Please check the input fields!", "error");
     }
 });
 
 $("#btnCustomerDelete").click(function () {
     let id = $("#txtCustomerID").val();
 
-    let consent = confirm("Do you want to delete ?");
-    if (consent) {
-        let response = deleteCustomer(id);
-        if (response) {
-            clearCustomerInputFields()
-            getAllCustomers();
-            alert("Customer Deleted");
-        } else {
-            alert("Customer Not Removed. Invalid Customer");
-        }
-    }
+    swal({
+        title: "Are you sure?",
+        text: "Do you want to delete this customer.?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                let response = deleteCustomer(id);
+                if (response) {
+                    clearCustomerInputFields()
+                    getAllCustomers();
+                    //alert("Customer Deleted");
+                    swal("Deleted", "Customer deleted successfully!", "success");
+                } else {
+                    //alert("Customer Not Removed. Invalid Customer");
+                    swal("Error", "Customer Not Removed. Invalid Customer!", "error");
+                }
+            } else {
+                swal("Customer data is safe!");
+            }
+        });
 });
 
 $("#btnCustomerClear").click(function () {
@@ -52,19 +65,22 @@ $("#btnCustomerSearch").click(function () {
              if (customerByID != null){
                  setCustomerTextFieldValues(customerByID.id, customerByID.name, customerByID.address, customerByID.salary);
              } else {
-                 alert("Invalid ID");
+                 //alert("Invalid ID");
+                 swal("Error", "Invalid ID!", "error");
              }
         } else if (option == "Name") {
             let customerByName = searchCustomerByName($("#txtCustomerSearch").val());
             if (customerByName != null){
                 setCustomerTextFieldValues(customerByName.id, customerByName.name, customerByName.address, customerByName.salary);
             } else {
-                alert("Invalid Name");
+                //alert("Invalid Name");
+                swal("Error", "Invalid Name!", "error");
             }
         }
 
     } else {
-        alert("Please input ID or Name")
+        //alert("Please input ID or Name")
+        swal("Error", "Please input Customer ID or Customer name!", "error");
     }
 
 });
@@ -89,30 +105,45 @@ function saveCustomer() {
         clearCustomerInputFields()
         getAllCustomers();
 
+        swal("Saved", "Customer saved successfully!", "success");
+
     } else {
-        alert("Customer already exits !");
+        //alert("Customer already exits !");
+        swal("Error", "Customer already exits!", "error");
     }
 }
 
 function updateCustomer(id) {
     if (searchCustomer(id) == undefined) {
-        alert("No such Customer..please check the ID");
+        //alert("Invalid ID..please check the ID");
+        swal("Error", "Invalid ID..please check the ID!", "error");
     } else {
-        let consent = confirm("Do you want to update this customer.?");
-        if (consent) {
-            let customer = searchCustomer(id);
+        swal({
+            title: "Are you sure?",
+            text: "Do you want to update this customer.?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    let customer = searchCustomer(id);
 
-            let customerName = $("#txtCustomerName").val();
-            let customerAddress = $("#txtCustomerAddress").val();
-            let customerSalary = $("#txtCustomerSalary").val();
+                    let customerName = $("#txtCustomerName").val();
+                    let customerAddress = $("#txtCustomerAddress").val();
+                    let customerSalary = $("#txtCustomerSalary").val();
 
-            customer.name = customerName;
-            customer.address = customerAddress;
-            customer.salary = customerSalary;
+                    customer.name = customerName;
+                    customer.address = customerAddress;
+                    customer.salary = customerSalary;
 
-            getAllCustomers();
-            clearCustomerInputFields()
-        }
+                    getAllCustomers();
+                    clearCustomerInputFields()
+                    swal("Updated", "Customer updated successfully!", "success");
+                } else {
+                    swal("Customer data is safe!");
+                }
+            });
     }
 }
 

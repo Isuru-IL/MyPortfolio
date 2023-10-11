@@ -4,19 +4,19 @@ let txtConfirmPassword = $('#txtSignUpConfirmPassword');
 
 function checkSignUpUserDetails() {
     if (txtUserName.val()=="" || txtPassword.val()=="" || txtConfirmPassword.val()=="") {
-        alert("Please fill the input fields");
+        swal("Error!", "Please fill the input fields!", "error");
     } else {
         if (searchValidUserName(txtUserName.val())) {
             if (txtPassword.val() == txtConfirmPassword.val()) {
                 addNewUserName(txtUserName.val(), txtPassword.val());
                 clearSignUpInputFields();
-                alert("New User add successful");
+                swal("Sign Up!", "New User add successfully!", "success");
                 return true;
             } else {
-                alert("Password not same.Check the password again");
+                swal("Error!", "Password not same.Check the password again!", "error");
             }
         } else {
-            alert("This User Name is already exits");
+            swal("Error!", "This User Name is already exits.! try again", "error");
         }
     }
     return false;

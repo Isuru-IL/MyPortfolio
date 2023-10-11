@@ -7,7 +7,7 @@ $('#btnItemSave').click(function () {
     if (checkAll()) {
         saveItem();
     } else {
-        alert("Please check the input fields");
+        swal("Error", "Please check the input fields!", "error");
     }
 });
 
@@ -16,24 +16,34 @@ $("#btnItemUpdate").click(function () {
     if (checkAll()) {
         updateItem(code);
     } else {
-        alert("Please check the input fields")
+        swal("Error", "Please check the input fields!", "error");
     }
 });
 
 $("#btnItemDelete").click(function () {
     let code = $("#txtItemCode").val();
 
-    let consent = confirm("Do you want to delete ?");
-    if (consent) {
-        let response = deleteItem(code);
-        if (response) {
-            clearItemInputFields()
-            getAllItems();
-            alert("Item Deleted");
-        } else {
-            alert("Item Not Removed. Invalid Item");
-        }
-    }
+    swal({
+        title: "Are you sure?",
+        text: "Do you want to delete this item.?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                let response = deleteItem(code);
+                if (response) {
+                    clearItemInputFields()
+                    getAllItems();
+                    swal("Deleted", "Item deleted successfully!", "success");
+                } else {
+                    swal("Error", "Item Not Removed. Invalid Item!", "error");
+                }
+            } else {
+                swal("Item data is safe!");
+            }
+        });
 });
 
 $("#btnItemClear").click(function () {
@@ -52,23 +62,34 @@ function deleteItem(code) {
 
 function updateItem(code) {
     if (searchItem(code) == undefined) {
-        alert("No such Item..please check the CODE");
+        swal("Error", "Invalid Item..please check the Code!", "error");
     } else {
-        let consentItem = confirm("Do you want to update this Item.?");
-        if (consentItem) {
-            let item = searchItem(code);
+        swal({
+            title: "Are you sure?",
+            text: "Do you want to update this item.?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    let item = searchItem(code);
 
-            let itemName = $("#txtItemName").val();
-            let qtyOnHand = $("#txtItemQtyOnHand").val();
-            let unitPrice = $("#txtItemPrice").val();
+                    let itemName = $("#txtItemName").val();
+                    let qtyOnHand = $("#txtItemQtyOnHand").val();
+                    let unitPrice = $("#txtItemPrice").val();
 
-            item.description = itemName;
-            item.qtyOnHand = qtyOnHand;
-            item.unitPrice = unitPrice;
+                    item.description = itemName;
+                    item.qtyOnHand = qtyOnHand;
+                    item.unitPrice = unitPrice;
 
-            getAllItems();
-            clearItemInputFields()
-        }
+                    getAllItems();
+                    clearItemInputFields()
+                    swal("Updated", "Item updated successfully!", "success");
+                } else {
+                    swal("Item data is safe!");
+                }
+            });
     }
 }
 
@@ -92,9 +113,10 @@ function saveItem() {
         clearItemInputFields()
         getAllItems();
         loadAllItemCodes();
+        swal("Saved", "Item saved successfully!", "success");
 
     } else {
-        alert("Item already exits !");
+        swal("Error", "Item already exits!", "error");
     }
 }
 
@@ -110,19 +132,19 @@ $("#btnItemSearch").click(function () {
             if (itemByID != null){
                 setItemTextFieldValues(itemByID.code, itemByID.description, itemByID.qtyOnHand, itemByID.unitPrice);
             } else {
-                alert("Invalid CODE");
+                swal("Error", "Invalid Item code!", "error");
             }
         } else if (option == "Name") {
             let itemByName = searchItemByName($("#txtItemSearch").val());
             if (itemByName != null){
                 setItemTextFieldValues(itemByName.code, itemByName.description, itemByName.qtyOnHand, itemByName.unitPrice);
             } else {
-                alert("Invalid Name");
+                swal("Error", "Invalid Item name!", "error");
             }
         }
 
     } else {
-        alert("Please input CODE or Name")
+        swal("Error", "Please input Item code or Item name!", "error");
     }
 
 });
