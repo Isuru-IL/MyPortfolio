@@ -186,7 +186,11 @@ function calcTotal() {
 
 //calculate balance////////////////////////////////////////
 $('#txtCash').on("keyup",function (){
-    calculateBalance();
+    if (validateTxtCash()) {
+        calculateBalance();
+    } else {
+        $('#lblBalance').text("");
+    }
 });
 
 function calculateBalance() {
@@ -198,13 +202,18 @@ function calculateBalance() {
         $('#lblBalance').text(balance);
         $("#btnPlaceOrder").prop("disabled", false);
     } else {
+        $('#lblBalance').text("");
         $("#btnPlaceOrder").prop("disabled", true);
     }
 }
 
 //calculate sub total //////////////////////////////////////
 $('#txtDiscount').on("keyup",function () {
-    calculateSubTotal();
+    if (validateTxtDiscount()) {
+        calculateSubTotal();
+    } else {
+        $('#lblSubTotal').text("");
+    }
 });
 
 function calculateSubTotal() {
@@ -218,6 +227,7 @@ function calculateSubTotal() {
         calculateBalance();
     } else {
         $('#lblSubTotal').text(total);
+        calculateBalance();
     }
 }
 
