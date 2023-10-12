@@ -213,6 +213,7 @@ $('#txtDiscount').on("keyup",function () {
         calculateSubTotal();
     } else {
         $('#lblSubTotal').text("");
+        $("#btnPlaceOrder").prop("disabled", true);
     }
 });
 
