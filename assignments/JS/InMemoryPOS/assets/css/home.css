@@ -1,0 +1,87 @@
+header{
+    background: linear-gradient(to right, #0d6efd, #0a58ca);
+    box-shadow: 0px 0px 8px 4px #0000007a;
+}
+header .nav-link{
+    color: white;
+}
+
+#home-page{
+    height: 90vh;
+    background-image: url(../../assets/image/home-bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/*customer ///////////////////////////////////*/
+#customer-page{
+    display: none;
+}
+#customer-page #customer-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+    width: 90%;
+}
+#customer-page #right-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+
+/*item /////////////////////////////*/
+#item-page{
+    display: none;
+}
+#item-page #item-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+    width: 90%;
+}
+#item-page #item-right-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+
+/*order ///////////////////////////*/
+#order-page{
+    display: none;
+}
+#order-page #content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+    width: 95%;
+}
+#order-page #right-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#order-page #invoice-details{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#order-page #item-details{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+#order-page #amount-details{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+
+/*order-detail ///////////////////////////*/
+#order-detail-page{
+    display: none;
+}
+#order-detail-page #order-detail-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+    width: 90%;
+}
+
+/*log-in-page //////////////////////*/
+#log-in-page{
+    display: none;
+}
+#log-in-page  #log-in-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
+
+/*sign-up-page /////////////////////////*/
+#sign-up-page{
+    display: none;
+}
+#sign-up-page  #sign-up-content{
+    box-shadow: 0px 0px 8px 1px #0000007a;
+}
